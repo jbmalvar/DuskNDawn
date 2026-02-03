@@ -1,7 +1,6 @@
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-[RequireComponent(typeof(AudioSource))]
 public class PlayerMovement : MonoBehaviour
 {
     public Camera playerCamera;
@@ -14,24 +13,15 @@ public class PlayerMovement : MonoBehaviour
     public float crouchHeight = 1f;
     public float crouchSpeed = 3f;
 
-    [Header("Footstep Settings")]
-    public AudioClip[] footstepClips;
-    public float baseStepInterval = 0.5f; // Adjust this for timing between steps
-    private float footstepTimer = 0;
-
     private Vector3 moveDirection = Vector3.zero;
     private float rotationX = 0;
     private CharacterController characterController;
-    private AudioSource audioSource;
 
     private bool canMove = true;
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-        audioSource = GetComponent<AudioSource>();
-
-        // Lock cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -57,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            // Small downward force to keep the controller snapped to the floor
             moveDirection.y = -0.5f;
         }
 
@@ -77,9 +68,6 @@ public class PlayerMovement : MonoBehaviour
         // Execute Move
         characterController.Move(moveDirection * Time.deltaTime);
 
-        // Footstep Logic
-        HandleFootsteps();
-
         // Camera Rotation
         if (canMove)
         {
@@ -87,27 +75,6 @@ public class PlayerMovement : MonoBehaviour
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
-        }
-    }
-
-    private void HandleFootsteps()
-    {
-        // Get horizontal velocity magnitude
-        float horizontalVelocity = new Vector3(characterController.velocity.x, 0, characterController.velocity.z).magnitude;
-
-        if (characterController.isGrounded && horizontalVelocity > 0.1f)
-        {
-            // The timer decreases based on how fast we are moving
-            footstepTimer -= Time.deltaTime * horizontalVelocity;
-
-            if (footstepTimer <= 0)
-            {
-                if (footstepClips.Length > 0)
-                {
-                    audioSource.PlayOneShot(footstepClips[Random.Range(0, footstepClips.Length)]);
-                }
-                footstepTimer = baseStepInterval;
-            }
         }
     }
 }
