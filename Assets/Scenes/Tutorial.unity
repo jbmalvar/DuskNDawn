@@ -1180,6 +1180,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 743075036}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &329510145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329510140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a3d5d11a4b645a99a1ecfba1de6c2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeTravel
+  present: {fileID: 404797967}
+  past: {fileID: 937558571}
 --- !u!1 &335737767
 GameObject:
   m_ObjectHideFlags: 0
@@ -3932,6 +3946,7 @@ GameObject:
   - component: {fileID: 1329370087}
   - component: {fileID: 1329370086}
   - component: {fileID: 1329370089}
+  - component: {fileID: 1329370090}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4057,6 +4072,19 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &1329370090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329370085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88922ec5a3df6498a93796774988d294, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteract
+  range: 3
 --- !u!1 &1359882531
 GameObject:
   m_ObjectHideFlags: 0
@@ -4517,6 +4545,7 @@ GameObject:
   - component: {fileID: 1534459813}
   - component: {fileID: 1534459812}
   - component: {fileID: 1534459811}
+  - component: {fileID: 1534459815}
   m_Layer: 0
   m_Name: Obelisk
   m_TagString: Untagged
@@ -4617,6 +4646,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 743075036}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1534459815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534459810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a3d5d11a4b645a99a1ecfba1de6c2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeTravel
+  present: {fileID: 404797967}
+  past: {fileID: 937558571}
 --- !u!1 &1559241646
 GameObject:
   m_ObjectHideFlags: 0
@@ -5301,6 +5344,7 @@ GameObject:
   - component: {fileID: 1775168481}
   - component: {fileID: 1775168480}
   - component: {fileID: 1775168479}
+  - component: {fileID: 1775168483}
   m_Layer: 0
   m_Name: Obelisk
   m_TagString: Untagged
@@ -5401,6 +5445,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 743075036}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1775168483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775168478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a3d5d11a4b645a99a1ecfba1de6c2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeTravel
+  present: {fileID: 404797967}
+  past: {fileID: 937558571}
 --- !u!1 &1808140661
 GameObject:
   m_ObjectHideFlags: 0
