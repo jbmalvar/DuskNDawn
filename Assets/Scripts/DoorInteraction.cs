@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+// Sanity Check
 public class DoorInteraction : MonoBehaviour
 {
     public float openAngle = 90f;
