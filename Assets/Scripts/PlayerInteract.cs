@@ -23,35 +23,34 @@ public class PlayerInteract : MonoBehaviour
     {
         Ray ray = new Ray(transform.position, transform.forward);
 
-        // 1. SHOOT THE LASER
         if (Physics.Raycast(ray, out RaycastHit hit, range))
         {
+            // Check for TimeTravel (Existing logic)
             TimeTravel timeScript = hit.collider.GetComponent<TimeTravel>();
+            // Check for Torch (New logic)
+            TorchPickup torchScript = hit.collider.GetComponent<TorchPickup>();
 
             if (timeScript != null)
             {
-
-                interactionPrompt.SetActive(true);
-
-                // Update what the text says
-                if (hit.collider.CompareTag("TutorialObelisk"))
-                {
-                    promptText.text = "Press E to interact";
-                }
-                else
-                {
-                    promptText.text = "E";
-                }
-
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    timeScript.Interact();
-                }
-
-                return; 
+                ShowPrompt("Press E to interact");
+                if (Input.GetKeyDown(KeyCode.E)) timeScript.Interact();
+                return;
+            }
+            else if (torchScript != null)
+            {
+                ShowPrompt("Press E to pick up Torch");
+                if (Input.GetKeyDown(KeyCode.E)) torchScript.PickUp();
+                return;
             }
         }
 
         interactionPrompt.SetActive(false);
+    }
+
+    // Small helper to keep things clean
+    void ShowPrompt(string message)
+    {
+        interactionPrompt.SetActive(true);
+        promptText.text = message;
     }
 }
