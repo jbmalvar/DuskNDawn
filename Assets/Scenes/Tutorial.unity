@@ -15469,7 +15469,7 @@ Transform:
   m_GameObject: {fileID: 1329370085}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.72365236, z: -0, w: 0.69016474}
-  m_LocalPosition: {x: 1.362, y: 0.567, z: 0.049}
+  m_LocalPosition: {x: 0.156, y: 0.567, z: 0.123}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15535,6 +15535,9 @@ MonoBehaviour:
   range: 3
   interactionPrompt: {fileID: 742729359}
   promptText: {fileID: 611482501}
+  ignoreLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &1329370091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24305,7 +24308,19 @@ PrefabInstance:
       value: EquippedTorch
       objectReference: {fileID: 0}
     - target: {fileID: 913107861429549591, guid: 1a96656b96d5a37498f73aa6b26f821b, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 913107861429549591, guid: 1a96656b96d5a37498f73aa6b26f821b, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4297266490264748553, guid: 1a96656b96d5a37498f73aa6b26f821b, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8811771925455647837, guid: 1a96656b96d5a37498f73aa6b26f821b, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
