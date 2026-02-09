@@ -6,52 +6,58 @@ public class PlayerInteract : MonoBehaviour
     public float range = 3f;
     public GameObject interactionPrompt;
     public TextMeshProUGUI promptText;
+    
+    // Set this to "Player" or "Ignore Raycast" in the Inspector
+    [SerializeField] private LayerMask ignoreLayer; 
+
+    private Camera cam;
 
     void Start()
     {
-        // Hide the text when the game starts
+        cam = Camera.main; 
         interactionPrompt.SetActive(false);
+        
+        // Safety check to make sure you have a camera tagged "MainCamera"
+        if (cam == null) Debug.LogError("No Main Camera found in scene!");
     }
 
     void Update()
     {
-
         CheckForInteractable();
     }
 
     void CheckForInteractable()
     {
-        Ray ray = new Ray(transform.position, transform.forward);
+        // This shoots the ray from the EXACT center of your screen
+        Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        
+        // Debug: See the ray in the Scene view while playing
+        Debug.DrawRay(ray.origin, ray.direction * range, Color.green);
 
-        // 1. SHOOT THE LASER
-        if (Physics.Raycast(ray, out RaycastHit hit, range))
+        // ~ignoreLayer ensures the ray doesn't hit the player/torch in your hand
+        if (Physics.Raycast(ray, out RaycastHit hit, range, ~ignoreLayer))
         {
-            TimeTravel timeScript = hit.collider.GetComponent<TimeTravel>();
-
-            if (timeScript != null)
+            if (hit.collider.TryGetComponent(out TimeTravel timeScript))
             {
-
-                interactionPrompt.SetActive(true);
-
-                // Update what the text says
-                if (hit.collider.CompareTag("TutorialObelisk"))
-                {
-                    promptText.text = "Press E to interact";
-                }
-                else
-                {
-                    promptText.text = "E";
-                }
-
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    timeScript.Interact();
-                }
-
-                return; 
+                ShowPrompt("Press E to interact");
+                if (Input.GetKeyDown(KeyCode.E)) timeScript.Interact();
+                return;
+            }
+            
+            if (hit.collider.TryGetComponent(out TorchPickup torchScript))
+            {
+                ShowPrompt("Press E to pick up Torch");
+                if (Input.GetKeyDown(KeyCode.E)) torchScript.PickUp();
+                return;
             }
         }
 
         interactionPrompt.SetActive(false);
+    }
+
+    void ShowPrompt(string message)
+    {
+        interactionPrompt.SetActive(true);
+        promptText.text = message;
     }
 }
