@@ -1,0 +1,11 @@
+Model Information:
+* title:	Obelisk
+* source:	https://sketchfab.com/3d-models/obelisk-28633b9f44c048aeb23b02b4c4e5caef
+* author:	alexknight (https://sketchfab.com/alexknight)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Obelisk" (https://sketchfab.com/3d-models/obelisk-28633b9f44c048aeb23b02b4c4e5caef) by alexknight (https://sketchfab.com/alexknight) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
