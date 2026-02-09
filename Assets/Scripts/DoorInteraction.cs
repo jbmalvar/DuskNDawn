@@ -1,8 +1,6 @@
-using System;
-using System.Collections;
 using UnityEngine;
+using System.Collections;
 
-// Sanity Check
 public class DoorInteraction : MonoBehaviour
 {
     public float openAngle = 90f;
@@ -19,16 +17,14 @@ public class DoorInteraction : MonoBehaviour
         openRotation = Quaternion.Euler(transform.eulerAngles + new Vector3(0, openAngle, 0));
     }
 
-    void Update()
+    // We removed Update(). The player script will call this method instead.
+    public void Interact()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (currentCoroutine != null)
         {
-            if (currentCoroutine != null)
-            {
-                StopCoroutine(currentCoroutine);
-            }
-            currentCoroutine = StartCoroutine(ToggleDoor());
+            StopCoroutine(currentCoroutine);
         }
+        currentCoroutine = StartCoroutine(ToggleDoor());
     }
 
     private IEnumerator ToggleDoor()

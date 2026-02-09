@@ -7,7 +7,7 @@ public class PlayerInteract : MonoBehaviour
     public GameObject interactionPrompt;
     public TextMeshProUGUI promptText;
     
-    // Set this to "Player" or "Ignore Raycast" in the Inspector
+    // Set this to "Player" or "Ignore Raycast" in the Inspector to avoid detecting yourself
     [SerializeField] private LayerMask ignoreLayer; 
 
     private Camera cam;
@@ -17,7 +17,6 @@ public class PlayerInteract : MonoBehaviour
         cam = Camera.main; 
         interactionPrompt.SetActive(false);
         
-        // Safety check to make sure you have a camera tagged "MainCamera"
         if (cam == null) Debug.LogError("No Main Camera found in scene!");
     }
 
@@ -28,15 +27,15 @@ public class PlayerInteract : MonoBehaviour
 
     void CheckForInteractable()
     {
-        // This shoots the ray from the EXACT center of your screen
         Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         
-        // Debug: See the ray in the Scene view while playing
+        // Debug draw to see the ray in Scene view
         Debug.DrawRay(ray.origin, ray.direction * range, Color.green);
 
-        // ~ignoreLayer ensures the ray doesn't hit the player/torch in your hand
+        // ~ignoreLayer inverts the mask (collides with everything EXCEPT the ignoreLayer)
         if (Physics.Raycast(ray, out RaycastHit hit, range, ~ignoreLayer))
         {
+            // --- EXISTING INTERACTIONS ---
             if (hit.collider.TryGetComponent(out TimeTravel timeScript))
             {
                 ShowPrompt("Press E to interact");
@@ -50,8 +49,17 @@ public class PlayerInteract : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E)) torchScript.PickUp();
                 return;
             }
+
+            // --- NEW DOOR INTERACTION ---
+            if (hit.collider.TryGetComponent(out DoorInteraction doorScript))
+            {
+                ShowPrompt("Press E to Open Door");
+                if (Input.GetKeyDown(KeyCode.E)) doorScript.Interact();
+                return;
+            }
         }
 
+        // If nothing was hit, or the thing hit wasn't interactable
         interactionPrompt.SetActive(false);
     }
 
