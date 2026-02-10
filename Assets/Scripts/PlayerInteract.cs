@@ -3,20 +3,23 @@ using TMPro;
 
 public class PlayerInteract : MonoBehaviour
 {
+    [Header("Settings")]
     public float range = 3f;
+    // Set this to "Player" or "Ignore Raycast" in the Inspector to avoid detecting yourself
+    [SerializeField] private LayerMask ignoreLayer;
+
+    [Header("References")]
     public GameObject interactionPrompt;
     public TextMeshProUGUI promptText;
-    
-    // Set this to "Player" or "Ignore Raycast" in the Inspector to avoid detecting yourself
-    [SerializeField] private LayerMask ignoreLayer; 
+    public PlayerInventory playerInventory; // Drag your Player object/inventory here
 
     private Camera cam;
 
     void Start()
     {
-        cam = Camera.main; 
+        cam = Camera.main;
         interactionPrompt.SetActive(false);
-        
+
         if (cam == null) Debug.LogError("No Main Camera found in scene!");
     }
 
@@ -28,7 +31,7 @@ public class PlayerInteract : MonoBehaviour
     void CheckForInteractable()
     {
         Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-        
+
         // Debug draw to see the ray in Scene view
         Debug.DrawRay(ray.origin, ray.direction * range, Color.green);
 
@@ -36,13 +39,14 @@ public class PlayerInteract : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, range, ~ignoreLayer))
         {
             // --- EXISTING INTERACTIONS ---
+
             if (hit.collider.TryGetComponent(out TimeTravel timeScript))
             {
                 ShowPrompt("Press E to interact");
                 if (Input.GetKeyDown(KeyCode.E)) timeScript.Interact();
                 return;
             }
-            
+
             if (hit.collider.TryGetComponent(out TorchPickup torchScript))
             {
                 ShowPrompt("Press E to pick up Torch");
@@ -50,11 +54,52 @@ public class PlayerInteract : MonoBehaviour
                 return;
             }
 
-            // --- NEW DOOR INTERACTION ---
+            // --- OLD DOOR SCRIPT ---
             if (hit.collider.TryGetComponent(out DoorInteraction doorScript))
             {
                 ShowPrompt("Press E to Open Door");
                 if (Input.GetKeyDown(KeyCode.E)) doorScript.Interact();
+                return;
+            }
+
+            // --- MERGED INTERACTIONS (FROM PlayerInteractions.cs) ---
+
+            // 1. Check for the Key Item
+            if (hit.collider.TryGetComponent(out KeyItem key))
+            {
+                ShowPrompt("Press E to Pickup Key");
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    if (playerInventory != null)
+                    {
+                        playerInventory.CollectKey();
+                        key.Pickup();
+                    }
+                    else
+                    {
+                        Debug.LogError("PlayerInventory not assigned in Inspector on PlayerInteract!");
+                    }
+                }
+                return;
+            }
+
+            // 2. Check for the Door Controller (The one requiring a key)
+            if (hit.collider.TryGetComponent(out DoorController doorController))
+            {
+                ShowPrompt("Press E to Open");
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    if (playerInventory != null)
+                    {
+                        doorController.AttemptOpen(playerInventory);
+                    }
+                    else
+                    {
+                        Debug.LogError("PlayerInventory not assigned in Inspector on PlayerInteract!");
+                    }
+                }
                 return;
             }
         }
