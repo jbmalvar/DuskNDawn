@@ -3251,8 +3251,8 @@ Transform:
   m_GameObject: {fileID: 298765953}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.715, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.22996, z: 5.432437}
+  m_LocalPosition: {x: 8.04, y: 1.056777, z: 0}
+  m_LocalScale: {x: 1, y: 2.3435223, z: 5.432437}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 939255477}
@@ -3347,8 +3347,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402b1a8bc50d5d943afcb3bf6f361aaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PeekEvent
-  monsterAnimator: {fileID: 0}
-  isStartTrigger: 1
+  monsterAnimator: {fileID: 1747366533}
+  isStartTrigger: 0
   hideDelay: 1
 --- !u!1 &300517655 stripped
 GameObject:
@@ -11642,7 +11642,7 @@ Transform:
   m_GameObject: {fileID: 876591717}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.9, y: 1.686, z: 1.9213}
+  m_LocalPosition: {x: 52.15, y: 1.686, z: 1.9213}
   m_LocalScale: {x: 1, y: 1, z: 0.77489}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -24470,6 +24470,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a96656b96d5a37498f73aa6b26f821b, type: 3}
+--- !u!95 &1747366533 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7857877354899852465, guid: 24813ffca58290549b7220dbab2719f1, type: 3}
+  m_PrefabInstance: {fileID: 480766505}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1750318159 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 211954023026093674, guid: 9f6eb9b041cc23f4080df303337cfcba, type: 3}
@@ -24927,8 +24932,8 @@ Transform:
   m_GameObject: {fileID: 1789754725}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.22996, z: 5.432437}
+  m_LocalPosition: {x: 2.39, y: 1.0269485, z: 0}
+  m_LocalScale: {x: 1, y: 2.2838714, z: 5.432437}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 939255477}
@@ -25023,7 +25028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402b1a8bc50d5d943afcb3bf6f361aaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PeekEvent
-  monsterAnimator: {fileID: 0}
+  monsterAnimator: {fileID: 1747366533}
   isStartTrigger: 1
   hideDelay: 2
 --- !u!1 &1801615296 stripped
@@ -28492,6 +28497,10 @@ PrefabInstance:
     - target: {fileID: 5432800633649129445, guid: cb2d036143d84394fb6419f5178bebee, type: 3}
       propertyPath: m_Name
       value: VolumeEveryLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5432800633649129445, guid: cb2d036143d84394fb6419f5178bebee, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
