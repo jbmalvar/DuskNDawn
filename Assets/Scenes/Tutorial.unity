@@ -4545,6 +4545,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoorController
   openAngle: 90
   smoothSpeed: 2
+  audioSource: {fileID: 876591721}
+  lockedSound: {fileID: 8300000, guid: 6ed0f8509e9e44272a85f74fdc61879b, type: 3}
+  openSound: {fileID: 8300000, guid: 4b66f0c5f1c594a6e9d91b86f719108c, type: 3}
+  rattleStrength: 3
+  messageText: {fileID: 0}
+  lockedMessage: Locked
+  messageDuration: 2
 --- !u!1 &546722029
 GameObject:
   m_ObjectHideFlags: 0

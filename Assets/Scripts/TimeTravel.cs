@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering; // Required for accessing Volumes
+using UnityEngine.Rendering; 
 
 public class TimeTravel : MonoBehaviour
 {
@@ -12,55 +12,65 @@ public class TimeTravel : MonoBehaviour
     [Header("Atmosphere (Post-Processing)")]
     [SerializeField] Volume presentVolume;
     [SerializeField] Volume pastVolume;
-    [SerializeField] float transitionDuration = 1.0f; // How long the shift takes
+    [SerializeField] float transitionDuration = 1.0f; 
 
     [Header("Audio")]
     [SerializeField] AudioSource ambienceSource; 
     [SerializeField] AudioClip presentAmbience;
     [SerializeField] AudioClip pastAmbience;
     [SerializeField] AudioSource sfxSource;
-    [SerializeField] AudioClip warpSound; // This was named 'timeShiftSFX' in previous errors
+    [SerializeField] AudioClip warpSound; 
 
-    private bool isPresentActive = true;
-    private Coroutine transitionCoroutine;
+    private bool isPresentActive;
+    private bool isSwitching = false; // Prevents spamming 'E'
 
     void Start()
     {
-        // Initialize State
-        isPresentActive = true;
-        UpdateWorldState();
-        
-        // Ensure Volumes are set correctly at start
-        if(presentVolume) presentVolume.weight = 1;
-        if(pastVolume) pastVolume.weight = 0;
-
-        // Start initial ambience
-        if(ambienceSource && presentAmbience)
+        // 1. SMART START
+        // Instead of forcing it to true, we check what the scene looks like right now.
+        // This allows you to place multiple obelisks without breaking them.
+        if (present != null)
         {
-            ambienceSource.clip = presentAmbience;
+            isPresentActive = present.activeSelf;
+        }
+
+        // Set volumes based on the detected state
+        if(presentVolume) presentVolume.weight = isPresentActive ? 1 : 0;
+        if(pastVolume) pastVolume.weight = isPresentActive ? 0 : 1;
+
+        // Set Audio based on the detected state
+        if(ambienceSource)
+        {
+            ambienceSource.clip = isPresentActive ? presentAmbience : pastAmbience;
             ambienceSource.Play();
         }
     }
 
     public void Interact()
     {
-        // 1. Play sound (Fixed variable name to 'warpSound')
+        // SPAM CHECK: If we are already mid-warp, ignore the click
+        if (isSwitching) return;
+
+        // SYNC CHECK (The Fix for "Press Twice"):
+        // Before we do anything, update our memory to match reality.
+        // If Obelisk A changed the world, Obelisk B updates itself right here.
+        isPresentActive = present.activeSelf;
+
+        // Play the warp sound
         if (sfxSource && warpSound) sfxSource.PlayOneShot(warpSound);
 
-        // 2. Flip the boolean variable IMMEDIATELY so we know where we are going
+        // Flip the state
         isPresentActive = !isPresentActive;
 
-        // 3. Start the transition
-        if (transitionCoroutine != null) StopCoroutine(transitionCoroutine);
-        transitionCoroutine = StartCoroutine(TransitionRoutine());
+        // Lock the script and start transition
+        isSwitching = true; 
+        StartCoroutine(TransitionRoutine());
     }
 
-    // This is the function that actually swaps the objects
     private void UpdateWorldState()
     {
-        // We swap the physical objects immediately so the player doesn't fall through floors
-        present.SetActive(isPresentActive);
-        past.SetActive(!isPresentActive);
+        if (present) present.SetActive(isPresentActive);
+        if (past) past.SetActive(!isPresentActive);
     }
 
     private IEnumerator TransitionRoutine()
@@ -70,57 +80,52 @@ public class TimeTravel : MonoBehaviour
         float startVolPast = pastVolume.weight;
         float startMusicVolume = ambienceSource.volume;
 
-        // Target weights
+        // Target weights based on where we are going
         float targetVolPresent = isPresentActive ? 1f : 0f;
         float targetVolPast = isPresentActive ? 0f : 1f;
 
-        // Select the correct audio clip for the destination
+        // Pick the correct audio tape
         AudioClip targetClip = isPresentActive ? presentAmbience : pastAmbience;
 
-        // --- PHASE 1: FADE OUT (The "Blink") ---
+        // --- PHASE 1: FADE OUT ---
         while (timer < transitionDuration / 2)
         {
             timer += Time.deltaTime;
-            float t = timer / (transitionDuration / 2); // Normalized 0-1 for this half
+            float t = timer / (transitionDuration / 2); 
 
-            // Blend Volumes
             presentVolume.weight = Mathf.Lerp(startVolPresent, targetVolPresent, t);
             pastVolume.weight = Mathf.Lerp(startVolPast, targetVolPast, t);
-
-            // Fade Audio Out
             ambienceSource.volume = Mathf.Lerp(startMusicVolume, 0f, t);
 
             yield return null;
         }
 
-        // --- THE SWAP (Mid-point) ---
-        // Fixed: Now calling the correct function name 'UpdateWorldState'
-        UpdateWorldState(); 
+        // --- THE SWAP ---
+        UpdateWorldState(); // Switch the walls/floors
         
-        // Swap the audio clip while volume is zero
         ambienceSource.clip = targetClip;
         ambienceSource.Play();
 
-        // --- PHASE 2: FADE IN (The "Reveal") ---
+        // --- PHASE 2: FADE IN ---
         timer = 0f;
         while (timer < transitionDuration / 2)
         {
             timer += Time.deltaTime;
             float t = timer / (transitionDuration / 2);
 
-            // Keep blending volumes to their final strict values
             presentVolume.weight = Mathf.Lerp(presentVolume.weight, targetVolPresent, t);
             pastVolume.weight = Mathf.Lerp(pastVolume.weight, targetVolPast, t);
-
-            // Fade Audio In
             ambienceSource.volume = Mathf.Lerp(0f, startMusicVolume, t);
 
             yield return null;
         }
 
-        // Hard set final values to ensure no float errors
+        // Clean up exact values
         presentVolume.weight = targetVolPresent;
         pastVolume.weight = targetVolPast;
         ambienceSource.volume = startMusicVolume;
+
+        // UNLOCK the button
+        isSwitching = false;
     }
 }
