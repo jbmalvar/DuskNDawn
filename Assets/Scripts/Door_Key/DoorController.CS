@@ -1,53 +1,111 @@
 using UnityEngine;
+using System.Collections;
+using TMPro; // REQUIRED for TextMeshPro
 
 public class DoorController : MonoBehaviour
 {
+    [Header("Door Settings")]
+    [SerializeField] private float openAngle = 90f;
+    [SerializeField] private float smoothSpeed = 2f;
+
+    [Header("Locked Feedback")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip lockedSound; 
+    [SerializeField] private AudioClip openSound;   
+    [SerializeField] private float rattleStrength = 3f; 
+
+    [Header("UI Feedback")]
+    [SerializeField] private TextMeshProUGUI messageText; // Drag your new text here
+    [SerializeField] private string lockedMessage = "Locked"; 
+    [SerializeField] private float messageDuration = 2f;
+
     private bool isOpen = false;
+    private bool isRattling = false; 
     private Quaternion closedRotation;
     private Quaternion openRotation;
-
-    public float openAngle = 90f;
-    public float smoothSpeed = 2f;
+    private Coroutine messageCoroutine; // We store this so we can restart it if clicked twice
 
     void Start()
     {
-        // Store the starting rotation
         closedRotation = transform.rotation;
-        // Calculate the open rotation
         openRotation = closedRotation * Quaternion.Euler(0, openAngle, 0);
+
+        // Ensure text is hidden at start
+        if(messageText != null) messageText.gameObject.SetActive(false);
     }
 
     void Update()
     {
-        // Smoothly rotate the door based on state
-        if (isOpen)
-        {
-            transform.rotation = Quaternion.Slerp(transform.rotation, openRotation, Time.deltaTime * smoothSpeed);
-        }
-        else
-        {
-            transform.rotation = Quaternion.Slerp(transform.rotation, closedRotation, Time.deltaTime * smoothSpeed);
-        }
+        if (isRattling) return;
+
+        Quaternion targetRotation = isOpen ? openRotation : closedRotation;
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * smoothSpeed);
     }
 
     public void AttemptOpen(PlayerInventory playerInv)
     {
+        if (isRattling) return;
+
         if (isOpen)
         {
-            // Optional: Close it if already open
-            Debug.Log("Door: Closing.");
             isOpen = false;
             return;
         }
 
-        if (playerInv.hasDoorKey)
+        if (playerInv != null && playerInv.hasDoorKey)
         {
-            Debug.Log("Door: Access Granted.");
             isOpen = true;
+            if(audioSource && openSound) audioSource.PlayOneShot(openSound);
+            
+            // Optional: Hide the locked message if it was showing
+            if (messageText != null) messageText.gameObject.SetActive(false);
         }
         else
         {
-            Debug.Log("Door: Locked. You need the key.");
+            // FAIL: Rattle and Show Message
+            StartCoroutine(RattleRoutine());
+            ShowLockedMessage(); // Trigger the UI
         }
+    }
+
+    private void ShowLockedMessage()
+    {
+        if (messageText != null)
+        {
+            // If a message is already fading out, stop it and start fresh
+            if (messageCoroutine != null) StopCoroutine(messageCoroutine);
+            messageCoroutine = StartCoroutine(MessageRoutine());
+        }
+    }
+
+    private IEnumerator MessageRoutine()
+    {
+        messageText.text = lockedMessage;
+        messageText.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(messageDuration);
+
+        messageText.gameObject.SetActive(false);
+    }
+
+    private IEnumerator RattleRoutine()
+    {
+        isRattling = true; 
+        if (audioSource && lockedSound) audioSource.PlayOneShot(lockedSound);
+
+        float timer = 0f;
+        float duration = 0.5f; 
+        Quaternion startRot = transform.rotation;
+
+        while (timer < duration)
+        {
+            timer += Time.deltaTime;
+            float zShake = Mathf.Sin(timer * 100f) * rattleStrength * (1f - (timer / duration));
+            transform.rotation = startRot * Quaternion.Euler(0, zShake, 0);
+            yield return null;
+        }
+
+        transform.rotation = startRot;
+        isRattling = false; 
     }
 }

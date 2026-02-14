@@ -1,17 +1,22 @@
 using UnityEngine;
 using TMPro;
+#if UNITY_EDITOR
+using UnityEditor; // Needed for auto-selecting the object
+#endif
 
 public class PlayerInteract : MonoBehaviour
 {
     [Header("Settings")]
-    public float range = 3f;
-    // Set this to "Player" or "Ignore Raycast" in the Inspector to avoid detecting yourself
+    public float range = 5f; // Increased slightly to help find walls easier
     [SerializeField] private LayerMask ignoreLayer;
+
+    [Header("Debug")]
+    public bool enableColliderFinder = false; // Uncheck this when you are done fixing!
 
     [Header("References")]
     public GameObject interactionPrompt;
     public TextMeshProUGUI promptText;
-    public PlayerInventory playerInventory; // Drag your Player object/inventory here
+    public PlayerInventory playerInventory;
 
     private Camera cam;
 
@@ -19,7 +24,6 @@ public class PlayerInteract : MonoBehaviour
     {
         cam = Camera.main;
         interactionPrompt.SetActive(false);
-
         if (cam == null) Debug.LogError("No Main Camera found in scene!");
     }
 
@@ -32,14 +36,11 @@ public class PlayerInteract : MonoBehaviour
     {
         Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
 
-        // Debug draw to see the ray in Scene view
+        // Draw the ray so you can see where you are looking
         Debug.DrawRay(ray.origin, ray.direction * range, Color.green);
 
-        // ~ignoreLayer inverts the mask (collides with everything EXCEPT the ignoreLayer)
         if (Physics.Raycast(ray, out RaycastHit hit, range, ~ignoreLayer))
         {
-            // --- EXISTING INTERACTIONS ---
-
             if (hit.collider.TryGetComponent(out TimeTravel timeScript))
             {
                 ShowPrompt("Press E to interact");
@@ -54,7 +55,6 @@ public class PlayerInteract : MonoBehaviour
                 return;
             }
 
-            // --- OLD DOOR SCRIPT ---
             if (hit.collider.TryGetComponent(out DoorInteraction doorScript))
             {
                 ShowPrompt("Press E to Open Door");
@@ -62,13 +62,10 @@ public class PlayerInteract : MonoBehaviour
                 return;
             }
 
-            // --- MERGED INTERACTIONS (FROM PlayerInteractions.cs) ---
-
-            // 1. Check for the Key Item
+            // Key Item
             if (hit.collider.TryGetComponent(out KeyItem key))
             {
                 ShowPrompt("Press E to Pickup Key");
-
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     if (playerInventory != null)
@@ -76,35 +73,22 @@ public class PlayerInteract : MonoBehaviour
                         playerInventory.CollectKey();
                         key.Pickup();
                     }
-                    else
-                    {
-                        Debug.LogError("PlayerInventory not assigned in Inspector on PlayerInteract!");
-                    }
                 }
                 return;
             }
 
-            // 2. Check for the Door Controller (The one requiring a key)
+            // Door Controller
             if (hit.collider.TryGetComponent(out DoorController doorController))
             {
                 ShowPrompt("Press E to Open");
-
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    if (playerInventory != null)
-                    {
-                        doorController.AttemptOpen(playerInventory);
-                    }
-                    else
-                    {
-                        Debug.LogError("PlayerInventory not assigned in Inspector on PlayerInteract!");
-                    }
+                    if (playerInventory != null) doorController.AttemptOpen(playerInventory);
                 }
                 return;
             }
         }
 
-        // If nothing was hit, or the thing hit wasn't interactable
         interactionPrompt.SetActive(false);
     }
 
