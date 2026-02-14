@@ -13112,14 +13112,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TimeTravel
   present: {fileID: 404797967}
   past: {fileID: 937558571}
-  presentVolume: {fileID: 0}
-  pastVolume: {fileID: 0}
+  presentVolume: {fileID: 60825936}
+  pastVolume: {fileID: 75085836}
   transitionDuration: 1
-  ambienceSource: {fileID: 0}
-  presentAmbience: {fileID: 0}
-  pastAmbience: {fileID: 0}
-  sfxSource: {fileID: 0}
-  warpSound: {fileID: 0}
+  ambienceSource: {fileID: 876591721}
+  presentAmbience: {fileID: 8300000, guid: 7a18c70ff8af3e14f828be8b98750dd0, type: 3}
+  pastAmbience: {fileID: 8300000, guid: 68144c0bc7be1444c83730af5015d1c7, type: 3}
+  sfxSource: {fileID: 876591721}
+  warpSound: {fileID: 8300000, guid: 4a60d280eef65114c8e4926aac10628e, type: 3}
 --- !u!4 &1465078691 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 569655254227853485, guid: 1a96656b96d5a37498f73aa6b26f821b, type: 3}
@@ -16412,14 +16412,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TimeTravel
   present: {fileID: 404797967}
   past: {fileID: 937558571}
-  presentVolume: {fileID: 0}
-  pastVolume: {fileID: 0}
+  presentVolume: {fileID: 60825936}
+  pastVolume: {fileID: 75085836}
   transitionDuration: 1
-  ambienceSource: {fileID: 0}
-  presentAmbience: {fileID: 0}
-  pastAmbience: {fileID: 0}
-  sfxSource: {fileID: 0}
-  warpSound: {fileID: 0}
+  ambienceSource: {fileID: 876591721}
+  presentAmbience: {fileID: 8300000, guid: 7a18c70ff8af3e14f828be8b98750dd0, type: 3}
+  pastAmbience: {fileID: 8300000, guid: 68144c0bc7be1444c83730af5015d1c7, type: 3}
+  sfxSource: {fileID: 876591721}
+  warpSound: {fileID: 8300000, guid: 4a60d280eef65114c8e4926aac10628e, type: 3}
 --- !u!1 &1868361505 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5819624984202142780, guid: 9f6eb9b041cc23f4080df303337cfcba, type: 3}
