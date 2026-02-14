@@ -229,6 +229,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoorInteraction
   openAngle: 90
   openSpeed: 2
+--- !u!114 &60825936 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5912915369351099352, guid: cb2d036143d84394fb6419f5178bebee, type: 3}
+  m_PrefabInstance: {fileID: 319340204706564890}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.Volume
 --- !u!1 &65667323
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,6 +317,55 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.2737368e-13, y: 4.0000005, z: 4.000001}
   m_Center: {x: 0.0000076293945, y: 2.0000005, z: 1.9999986}
+--- !u!1 &75085835
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 75085837}
+  - component: {fileID: 75085836}
+  m_Layer: 0
+  m_Name: PastVolumeEveryLevel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &75085836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75085835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.Volume
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 0
+  sharedProfile: {fileID: 11400000, guid: 50cdc8aebc1ea6547ba46466203c88ee, type: 2}
+--- !u!4 &75085837
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75085835}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.0165759, y: 3.1695406, z: 4.732384}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &91561462
 GameObject:
   m_ObjectHideFlags: 0
@@ -1918,135 +1978,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 284096078}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &285732225
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 285732227}
-  - component: {fileID: 285732226}
-  m_Layer: 0
-  m_Name: Audio Source
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!82 &285732226
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285732225}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: d3a7b37f033dd9344ae16a066d9dc541, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.8
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!4 &285732227
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285732225}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.70205, y: 9.61, z: 0.30641}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &292190218 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3425034450812426412, guid: 9f6eb9b041cc23f4080df303337cfcba, type: 3}
@@ -4189,7 +4120,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TimeTravel
   present: {fileID: 404797967}
   past: {fileID: 937558571}
-  presentIsVisible: 1
+  presentVolume: {fileID: 0}
+  pastVolume: {fileID: 0}
+  transitionDuration: 1
+  ambienceSource: {fileID: 0}
+  presentAmbience: {fileID: 0}
+  pastAmbience: {fileID: 0}
+  sfxSource: {fileID: 0}
+  warpSound: {fileID: 0}
 --- !u!65 &490589990
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4409,7 +4347,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TimeTravel
   present: {fileID: 404797967}
   past: {fileID: 937558571}
-  presentIsVisible: 1
+  presentVolume: {fileID: 60825936}
+  pastVolume: {fileID: 75085836}
+  transitionDuration: 1
+  ambienceSource: {fileID: 876591721}
+  presentAmbience: {fileID: 8300000, guid: 7a18c70ff8af3e14f828be8b98750dd0, type: 3}
+  pastAmbience: {fileID: 8300000, guid: 68144c0bc7be1444c83730af5015d1c7, type: 3}
+  sfxSource: {fileID: 876591721}
+  warpSound: {fileID: 8300000, guid: 4a60d280eef65114c8e4926aac10628e, type: 3}
 --- !u!65 &522796007
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4442,7 +4387,7 @@ GameObject:
   - component: {fileID: 532951832}
   - component: {fileID: 532951831}
   m_Layer: 0
-  m_Name: Audio Source (1)
+  m_Name: jumpScareAudio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11447,7 +11392,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TimeTravel
   present: {fileID: 404797967}
   past: {fileID: 937558571}
-  presentIsVisible: 1
+  presentVolume: {fileID: 0}
+  pastVolume: {fileID: 0}
+  transitionDuration: 1
+  ambienceSource: {fileID: 0}
+  presentAmbience: {fileID: 0}
+  pastAmbience: {fileID: 0}
+  sfxSource: {fileID: 0}
+  warpSound: {fileID: 0}
 --- !u!65 &1312450822
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13160,7 +13112,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TimeTravel
   present: {fileID: 404797967}
   past: {fileID: 937558571}
-  presentIsVisible: 1
+  presentVolume: {fileID: 0}
+  pastVolume: {fileID: 0}
+  transitionDuration: 1
+  ambienceSource: {fileID: 0}
+  presentAmbience: {fileID: 0}
+  pastAmbience: {fileID: 0}
+  sfxSource: {fileID: 0}
+  warpSound: {fileID: 0}
 --- !u!4 &1465078691 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 569655254227853485, guid: 1a96656b96d5a37498f73aa6b26f821b, type: 3}
@@ -13465,7 +13424,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TimeTravel
   present: {fileID: 404797967}
   past: {fileID: 937558571}
-  presentIsVisible: 1
+  presentVolume: {fileID: 0}
+  pastVolume: {fileID: 0}
+  transitionDuration: 1
+  ambienceSource: {fileID: 0}
+  presentAmbience: {fileID: 0}
+  pastAmbience: {fileID: 0}
+  sfxSource: {fileID: 0}
+  warpSound: {fileID: 0}
 --- !u!65 &1481631123
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13889,7 +13855,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TimeTravel
   present: {fileID: 404797967}
   past: {fileID: 937558571}
-  presentIsVisible: 1
+  presentVolume: {fileID: 0}
+  pastVolume: {fileID: 0}
+  transitionDuration: 1
+  ambienceSource: {fileID: 0}
+  presentAmbience: {fileID: 0}
+  pastAmbience: {fileID: 0}
+  sfxSource: {fileID: 0}
+  warpSound: {fileID: 0}
 --- !u!1 &1535975680
 GameObject:
   m_ObjectHideFlags: 0
@@ -16439,7 +16412,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TimeTravel
   present: {fileID: 404797967}
   past: {fileID: 937558571}
-  presentIsVisible: 1
+  presentVolume: {fileID: 0}
+  pastVolume: {fileID: 0}
+  transitionDuration: 1
+  ambienceSource: {fileID: 0}
+  presentAmbience: {fileID: 0}
+  pastAmbience: {fileID: 0}
+  sfxSource: {fileID: 0}
+  warpSound: {fileID: 0}
 --- !u!1 &1868361505 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5819624984202142780, guid: 9f6eb9b041cc23f4080df303337cfcba, type: 3}
@@ -18172,7 +18152,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5432800633649129445, guid: cb2d036143d84394fb6419f5178bebee, type: 3}
       propertyPath: m_Name
-      value: VolumeEveryLevel
+      value: PresentVolumeEveryLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5912915369351099352, guid: cb2d036143d84394fb6419f5178bebee, type: 3}
+      propertyPath: weight
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18256,13 +18240,13 @@ SceneRoots:
   - {fileID: 404797968}
   - {fileID: 937558572}
   - {fileID: 1985810631}
-  - {fileID: 285732227}
   - {fileID: 1605537444}
   - {fileID: 381007560}
   - {fileID: 1341880321}
-  - {fileID: 319340204706564890}
   - {fileID: 939255477}
   - {fileID: 480766505}
   - {fileID: 863193910}
   - {fileID: 742729363}
   - {fileID: 532951832}
+  - {fileID: 319340204706564890}
+  - {fileID: 75085837}
