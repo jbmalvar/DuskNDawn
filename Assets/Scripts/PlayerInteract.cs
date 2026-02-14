@@ -11,7 +11,7 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private LayerMask ignoreLayer;
 
     [Header("Debug")]
-    public bool enableColliderFinder = true; // Uncheck this when you are done fixing!
+    public bool enableColliderFinder = false; // Uncheck this when you are done fixing!
 
     [Header("References")]
     public GameObject interactionPrompt;
@@ -41,35 +41,6 @@ public class PlayerInteract : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit, range, ~ignoreLayer))
         {
-            // =========================================================
-            //  THE "FINDER TOOL"
-            // =========================================================
-            if (enableColliderFinder && hit.collider is BoxCollider)
-            {
-                // 1. Get the parent name to help locate it in hierarchy
-                string parentName = hit.transform.parent != null ? hit.transform.parent.name : "No Parent";
-                
-                // 2. Log useful info with color for visibility
-                Debug.Log($"<color=red>BLOCKED BY:</color> {hit.collider.name} \n<color=yellow>PARENT:</color> {parentName}");
-
-                // 3. Draw a box around the hit object in the Scene view so you can see the invisible wall
-                // (Only works if you have Gizmos enabled in Game view or look at Scene view)
-                Debug.DrawRay(hit.point, Vector3.up, Color.red, 1f); 
-
-                // 4. EDITOR ONLY: Auto-select the object in the Hierarchy
-                #if UNITY_EDITOR
-                // This makes Unity highlight the object as if you clicked it
-                if (Selection.activeGameObject != hit.collider.gameObject) 
-                {
-                    Selection.activeGameObject = hit.collider.gameObject;
-                    EditorGUIUtility.PingObject(hit.collider.gameObject);
-                }
-                #endif
-            }
-            // =========================================================
-
-            // ... Your existing logic continues below ...
-
             if (hit.collider.TryGetComponent(out TimeTravel timeScript))
             {
                 ShowPrompt("Press E to interact");

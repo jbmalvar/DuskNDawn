@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Stamina Settings")]
     public float maxStamina = 100f;
-    public float runDrainSpeed = 20f; // How fast energy goes down
+    public float runDrainSpeed = 10f; // How fast energy goes down
     public float regenSpeed = 15f;    // How fast energy comes back
     private float currentStamina;
     private bool isExhausted = false; // Tracks if we pushed too hard
@@ -31,7 +31,8 @@ public class PlayerMovement : MonoBehaviour
     public float bobSpeed = 10f;
     public float bobAmount = 0.05f;
     public AudioClip[] footstepClips;
-    public float baseStepInterval = 0.5f;
+    public float baseStepInterval = 0.5f; // Time between steps when WALKING
+    public float runStepInterval = 0.35f; // NEW: Time between steps when RUNNING
 
     // Private internals
     private CharacterController characterController;
@@ -182,20 +183,37 @@ public class PlayerMovement : MonoBehaviour
 
     void HandleFootsteps(float speedX, float speedY)
     {
+        // 1. Check if we are moving
         if (Mathf.Abs(speedX) > 0.1f || Mathf.Abs(speedY) > 0.1f)
         {
-            // Normalize speed to prevent machine gun audio
-            float speedRatio = (new Vector2(speedX, speedY).magnitude) / walkSpeed;
-            
-            footstepTimer -= Time.deltaTime * speedRatio;
+            // 2. Count down using standard time (removed the speed multiplier math)
+            footstepTimer -= Time.deltaTime;
 
             if (footstepTimer <= 0)
             {
+                // Play Sound
                 if (footstepClips.Length > 0)
                     audioSource.PlayOneShot(footstepClips[Random.Range(0, footstepClips.Length)]);
-                
-                footstepTimer = baseStepInterval;
+
+                // 3. Reset Timer: Check if we are running or walking
+                // Calculate current raw speed
+                float currentSpeed = new Vector2(speedX, speedY).magnitude;
+
+                // If speed is faster than walkSpeed (plus a tiny buffer), we are running
+                if (currentSpeed > walkSpeed + 0.1f) 
+                {
+                    footstepTimer = runStepInterval; // Use the specific run time
+                }
+                else
+                {
+                    footstepTimer = baseStepInterval; // Use the specific walk time
+                }
             }
+        }
+        else
+        {
+            // Reset timer so the first step plays immediately when we start moving again
+            footstepTimer = 0;
         }
     }
 }
