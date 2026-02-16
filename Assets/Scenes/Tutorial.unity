@@ -9198,8 +9198,9 @@ MonoBehaviour:
   fadeDuration: 1
   timeBetweenMessages: 0.5
   moveMessage: Use WASD to move
-  interactMessage: Press E to interact with objects
-  goalMessage: 'Find the Obelisk.
+  interactMessage: "Press E to interact with objects. \nFind keys around the map
+    to \nopen locked doors"
+  goalMessage: 'Use the obelisks.
 
     Traverse between the past and the present.
     Escape or he''ll find you'
@@ -17605,7 +17606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 913107861429549591, guid: 1a96656b96d5a37498f73aa6b26f821b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4297266490264748553, guid: 1a96656b96d5a37498f73aa6b26f821b, type: 3}
       propertyPath: m_Layer
