@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7ca5a9710db4327439c9f8cb8204615e
+guid: 5a5fe2a543e35ef44980fcf5ac79551a
 AudioImporter:
   externalObjects: {}
   serializedVersion: 6
@@ -25,5 +25,5 @@ AssetOrigin:
   productId: 189879
   packageName: Footsteps - Essentials
   packageVersion: 1.3
-  assetPath: Assets/Sounds/Footsteps_Tile_Walk_05.wav
+  assetPath: Assets/Footsteps - Essentials/Footsteps_Tile/Footsteps_Tile_Run/Footsteps_Tile_Run_02.wav
   uploadId: 473093
