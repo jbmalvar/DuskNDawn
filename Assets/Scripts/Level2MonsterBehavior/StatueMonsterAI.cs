@@ -8,33 +8,37 @@ public class StatueMonsterAI : MonoBehaviour
     public float chaseSpeed = 10f; 
     
     [Header("Detection")]
-    public Renderer monsterRenderer; // Drag your mesh here!
+    public Renderer monsterRenderer; 
     public Camera mainCam;
+    public AudioSource movementAudio;
     
+    // Internal variables
     private NavMeshAgent agent;
     private Animator animator;
 
     void Start()
     {
+        // 1. Get the Agent (It is on THIS object, the Driver)
         agent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
         
-        // Auto-assign player and camera if missing
-        if (mainCam == null) mainCam = Camera.main;
-        if (player == null) 
-        {
-            GameObject p = GameObject.FindGameObjectWithTag("Player");
-            if (p != null) player = p.transform;
-        }
-        
-        agent.speed = chaseSpeed;
+        // 2. Get the Animator (It is on the CHILD object, the Passenger)
+        // We use GetComponentInChildren to find it automatically.
+        animator = GetComponentInChildren<Animator>();
 
-        // --- THE "LEVEL 2" TRIGGER ---
-        // This tells the Animator: "We are in the chase level now. Stop idling."
-        // Since Level 1 doesn't have this script, this will never happen there.
-        if (animator != null)
+        // 3. Get the Renderer (It is on the CHILD)
+        if (monsterRenderer == null) monsterRenderer = GetComponentInChildren<Renderer>();
+        
+        // 4. Setup Player/Camera
+        if (mainCam == null) mainCam = Camera.main;
+        if (player == null) player = GameObject.FindGameObjectWithTag("Player")?.transform;
+
+        // 5. Force the Agent settings
+        if (agent != null)
         {
-            animator.SetBool("isChasing", true);
+            agent.speed = chaseSpeed;
+            agent.acceleration = 100f;
+            agent.angularSpeed = 2000f; 
+            agent.autoBraking = false;
         }
     }
 
@@ -42,7 +46,6 @@ public class StatueMonsterAI : MonoBehaviour
     {
         if (player == null) return;
 
-        // Logic: If visible, FREEZE. If hidden, CHASE.
         if (IsVisibleToCamera())
         {
             Freeze();
@@ -55,20 +58,9 @@ public class StatueMonsterAI : MonoBehaviour
 
     bool IsVisibleToCamera()
     {
-        // Check if monster is inside the camera's view
+        if (monsterRenderer == null) return false;
         Plane[] planes = GeometryUtility.CalculateFrustumPlanes(mainCam);
-        if (GeometryUtility.TestPlanesAABB(planes, monsterRenderer.bounds))
-        {
-            // Optional: Add Raycast here if you want walls to block line of sight
-            return true; 
-        }
-        return false;
-    }
-
-    void Freeze()
-    {
-        if (agent != null) agent.isStopped = true; // Stop moving
-        if (animator != null) animator.speed = 0;  // PAUSE animation (Statue effect)
+        return GeometryUtility.TestPlanesAABB(planes, monsterRenderer.bounds);
     }
 
     void Chase()
@@ -77,14 +69,34 @@ public class StatueMonsterAI : MonoBehaviour
         {
             agent.isStopped = false; 
             agent.SetDestination(player.position);
+
+            // AUDIO ON
+            if (movementAudio != null && !movementAudio.isPlaying) movementAudio.Play();
         }
         
+        // ANIMATION RUN
         if (animator != null)
         {
-            animator.speed = 1; // UNPAUSE animation
-            
-            // Redundancy: Ensure we stay in the running state
+            animator.speed = 1; 
             animator.SetBool("isChasing", true); 
+        }
+    }
+
+    void Freeze()
+    {
+        if (agent != null) 
+        {
+            agent.isStopped = true;
+            agent.velocity = Vector3.zero;
+        }
+
+        // AUDIO OFF
+        if (movementAudio != null) movementAudio.Stop();
+
+        // ANIMATION FREEZE
+        if (animator != null) 
+        {
+            animator.speed = 0; 
         }
     }
 }
