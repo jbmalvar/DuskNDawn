@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &272497566 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7221699896322321627, guid: f5511c172200b874fadc7a2be197076a, type: 3}
+  m_PrefabInstance: {fileID: 892339548}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &343417354
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,12 +136,13 @@ GameObject:
   - component: {fileID: 343417357}
   - component: {fileID: 343417356}
   - component: {fileID: 343417355}
+  - component: {fileID: 343417359}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &343417355
 BoxCollider:
@@ -231,6 +237,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &343417359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343417354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshSurface
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 203420805b4ea8749950a256fb1ca857, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1001 &503716080
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -291,9 +329,18 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7047464929666956578, guid: 24813ffca58290549b7220dbab2719f1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 783051734}
+    - targetCorrespondingSourceObject: {fileID: 7047464929666956578, guid: 24813ffca58290549b7220dbab2719f1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 783051737}
     - targetCorrespondingSourceObject: {fileID: 3404436977560904993, guid: 24813ffca58290549b7220dbab2719f1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 503716082}
+    - targetCorrespondingSourceObject: {fileID: 3404436977560904993, guid: 24813ffca58290549b7220dbab2719f1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 503716085}
   m_SourcePrefab: {fileID: 100100000, guid: 24813ffca58290549b7220dbab2719f1, type: 3}
 --- !u!1 &503716081 stripped
 GameObject:
@@ -314,8 +361,83 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StatueMonsterAI
   player: {fileID: 0}
   chaseSpeed: 10
-  runAnimationBool: isRunning
-  lookBuffer: 0.1
+  monsterRenderer: {fileID: 0}
+  mainCam: {fileID: 0}
+--- !u!137 &503716083 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1510098758230899531, guid: 24813ffca58290549b7220dbab2719f1, type: 3}
+  m_PrefabInstance: {fileID: 503716080}
+  m_PrefabAsset: {fileID: 0}
+--- !u!195 &503716085
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503716081}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.008256351
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.02147476
+  m_BaseOffset: 0.01073738
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!1 &783051733 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7047464929666956578, guid: 24813ffca58290549b7220dbab2719f1, type: 3}
+  m_PrefabInstance: {fileID: 503716080}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &783051734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783051733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 253f1225b8b6b384d9e5e74a6b3de7e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StatueMonsterAI
+  player: {fileID: 272497566}
+  chaseSpeed: 10
+  monsterRenderer: {fileID: 503716083}
+  mainCam: {fileID: 860360674}
+--- !u!195 &783051737
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783051733}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!20 &860360674 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2512893432028338788, guid: f5511c172200b874fadc7a2be197076a, type: 3}
+  m_PrefabInstance: {fileID: 892339548}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &892339548
 PrefabInstance:
   m_ObjectHideFlags: 0
