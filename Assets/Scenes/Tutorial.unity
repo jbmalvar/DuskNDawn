@@ -4545,12 +4545,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoorController
   openAngle: 90
   smoothSpeed: 2
+  requiredKeyID: firstDoor
   audioSource: {fileID: 876591721}
   lockedSound: {fileID: 8300000, guid: 6ed0f8509e9e44272a85f74fdc61879b, type: 3}
   openSound: {fileID: 8300000, guid: 4b66f0c5f1c594a6e9d91b86f719108c, type: 3}
   rattleStrength: 3
   messageText: {fileID: 1557624113}
   lockedMessage: Seems to be locked. Find a key
+  wrongKeyMessage: Wrong Key. Find a different one.
   messageDuration: 2
 --- !u!1 &546722029
 GameObject:
@@ -8490,7 +8492,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2141b3e7f580524d8e098053be68495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
-  hasDoorKey: 0
 --- !u!4 &889546072 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 569655254227853485, guid: 1a96656b96d5a37498f73aa6b26f821b, type: 3}
@@ -15788,6 +15789,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba091bc887ade3e4eb894d5ab17a5b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeyItem
+  keyID: firstDoor
 --- !u!65 &1722294994
 BoxCollider:
   m_ObjectHideFlags: 0

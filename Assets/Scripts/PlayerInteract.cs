@@ -65,12 +65,15 @@ public class PlayerInteract : MonoBehaviour
             // Key Item
             if (hit.collider.TryGetComponent(out KeyItem key))
             {
-                ShowPrompt("Press E to Pickup Key");
+                // Optional: Show specific key name in prompt "Press E to Pickup Red Key"
+                ShowPrompt($"Press E to Pickup {key.keyID}"); 
+                
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     if (playerInventory != null)
                     {
-                        playerInventory.CollectKey();
+                        // Pass the ID from the KeyItem to the Inventory
+                        playerInventory.CollectKey(key.keyID); 
                         key.Pickup();
                     }
                 }
