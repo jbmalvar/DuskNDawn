@@ -69694,8 +69694,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdbac268a4a2b4a4b9e24071532f4c68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  staminaBar: {fileID: 0}
-  staminaCanvasGroup: {fileID: 0}
+  staminaBar: {fileID: 1916467203}
+  staminaCanvasGroup: {fileID: 1916467202}
   maxStamina: 100
   runDrainSpeed: 20
   regenSpeed: 15
