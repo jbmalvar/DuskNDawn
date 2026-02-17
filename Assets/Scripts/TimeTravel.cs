@@ -5,6 +5,8 @@ using UnityEngine.Rendering;
 
 public class TimeTravel : MonoBehaviour
 {
+    public static System.Action<bool> OnTimeSwapped;
+
     [Header("World Objects")]
     [SerializeField] GameObject present;
     [SerializeField] GameObject past;
@@ -71,6 +73,8 @@ public class TimeTravel : MonoBehaviour
     {
         if (present) present.SetActive(isPresentActive);
         if (past) past.SetActive(!isPresentActive);
+
+        OnTimeSwapped?.Invoke(isPresentActive);
     }
 
     private IEnumerator TransitionRoutine()
