@@ -1,0 +1,11 @@
+Model Information:
+* title:	Stone Fountain with Vines
+* source:	https://sketchfab.com/3d-models/stone-fountain-with-vines-fdfd259238ce45a48f441930d16aacad
+* author:	ConhuirParker (https://sketchfab.com/ConhuirParker)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Stone Fountain with Vines" (https://sketchfab.com/3d-models/stone-fountain-with-vines-fdfd259238ce45a48f441930d16aacad) by ConhuirParker (https://sketchfab.com/ConhuirParker) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

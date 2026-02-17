@@ -1,0 +1,11 @@
+Model Information:
+* title:	Door_ Metal_ Old
+* source:	https://sketchfab.com/3d-models/door--metal--old-92e4da30e63642aaa3ef252f615c4a9d
+* author:	Mehdi Shahsavan (https://sketchfab.com/ahmagh2e)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Door_ Metal_ Old" (https://sketchfab.com/3d-models/door--metal--old-92e4da30e63642aaa3ef252f615c4a9d) by Mehdi Shahsavan (https://sketchfab.com/ahmagh2e) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

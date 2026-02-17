@@ -1,0 +1,11 @@
+Model Information:
+* title:	Dead tree
+* source:	https://sketchfab.com/3d-models/dead-tree-3db412498aec432da8687afe37cc32bb
+* author:	YN14R (https://sketchfab.com/YN14R)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Dead tree" (https://sketchfab.com/3d-models/dead-tree-3db412498aec432da8687afe37cc32bb) by YN14R (https://sketchfab.com/YN14R) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
