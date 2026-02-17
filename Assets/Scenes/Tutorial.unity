@@ -6498,12 +6498,25 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.26885504, y: 2.566766, z: 2.452234}
   m_Center: {x: 0.00000005960466, y: 1.2678579, z: -1.2212416}
+--- !u!114 &707011956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707011951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd4acf08eab08b546809006fabc25f4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  nextLevelIndex: 2
 --- !u!1 &716453446 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5236561765933100219, guid: 9f6eb9b041cc23f4080df303337cfcba, type: 3}
@@ -7574,12 +7587,25 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 4.000001, y: 0, z: 4.000001}
   m_Center: {x: -2.0000024, y: 0, z: 2.0000005}
+--- !u!114 &788495009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788495001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd4acf08eab08b546809006fabc25f4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelEndTrigger
+  nextLevelIndex: 2
 --- !u!1 &800079566
 GameObject:
   m_ObjectHideFlags: 0
@@ -8596,12 +8622,18 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7464707196259700027, guid: 9f6eb9b041cc23f4080df303337cfcba, type: 3}
       insertIndex: -1
       addedObject: {fileID: 788495005}
+    - targetCorrespondingSourceObject: {fileID: 7464707196259700027, guid: 9f6eb9b041cc23f4080df303337cfcba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 788495009}
     - targetCorrespondingSourceObject: {fileID: 8342740781738090824, guid: 9f6eb9b041cc23f4080df303337cfcba, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2066722009}
     - targetCorrespondingSourceObject: {fileID: 1123923082199896678, guid: 9f6eb9b041cc23f4080df303337cfcba, type: 3}
       insertIndex: -1
       addedObject: {fileID: 707011955}
+    - targetCorrespondingSourceObject: {fileID: 1123923082199896678, guid: 9f6eb9b041cc23f4080df303337cfcba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 707011956}
     - targetCorrespondingSourceObject: {fileID: 1293942151914787710, guid: 9f6eb9b041cc23f4080df303337cfcba, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2021838647}
