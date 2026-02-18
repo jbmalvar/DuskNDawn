@@ -107,7 +107,7 @@ public class StatueMonsterAI : MonoBehaviour
         {
             animator.speed = 1; 
             animator.SetBool("isChasing", false); 
-            animator.Play("jump_attack"); 
+            animator.Play("Jumpscare"); 
         }
 
         // 4. Play Scream
