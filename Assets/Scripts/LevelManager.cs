@@ -14,7 +14,7 @@ public class LevelManager : MonoBehaviour
    void Start()
     {
         // 1. Force the correct panels to show/hide immediately on load
-        PlayerPrefs.DeleteAll();
+        // PlayerPrefs.DeleteAll();
         mainMenuPanel.SetActive(true);
         levelSelectPanel.SetActive(false);
 
