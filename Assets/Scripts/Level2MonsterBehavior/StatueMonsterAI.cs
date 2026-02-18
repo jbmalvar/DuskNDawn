@@ -35,14 +35,17 @@ public class StatueMonsterAI : MonoBehaviour
         if (mainCam == null) mainCam = Camera.main;
         if (player == null) player = GameObject.FindGameObjectWithTag("Player")?.transform;
 
-        // Force Agent settings to prevent sliding/drifting
-        if (agent != null)
-        {
-            agent.speed = chaseSpeed;
-            agent.acceleration = 100f;
-            agent.angularSpeed = 2000f; 
-            agent.autoBraking = false;
-        }
+        // Force Agent settings
+    if (agent != null)
+            {
+                // FORCE SNAP TO NEAREST BLUE SPOT
+                NavMeshHit hit;
+                // Look for a spot within 5 meters
+                if (UnityEngine.AI.NavMesh.SamplePosition(transform.position, out hit, 5.0f, UnityEngine.AI.NavMesh.AllAreas))
+                {
+                    agent.Warp(hit.position); // Teleport to the valid spot
+                }
+            }
     }
 
     void Update()
@@ -83,6 +86,7 @@ public class StatueMonsterAI : MonoBehaviour
     }
 
     // --- SEQUENCE: ANIMATION -> WAIT -> UI ---
+
     IEnumerator JumpscareRoutine()
     {
         isDead = true; 
@@ -94,7 +98,7 @@ public class StatueMonsterAI : MonoBehaviour
             if (movementScript != null) movementScript.enabled = false;
         }
 
-        // 2. Freeze Monster Base & Stop Footsteps
+        // 2. Freeze Monster Base
         if (agent != null) 
         {
             agent.isStopped = true;
@@ -102,7 +106,7 @@ public class StatueMonsterAI : MonoBehaviour
         }
         if (movementAudio != null) movementAudio.Stop(); 
 
-        // 3. Force Animation (Do this FIRST so the model starts moving)
+        // 3. Force Animation 
         if (animator != null) 
         {
             animator.speed = 1; 
@@ -114,27 +118,42 @@ public class StatueMonsterAI : MonoBehaviour
         if (jumpscareAudio != null) jumpscareAudio.Play();
 
         // 5. THE DEATH STARE LOOP
-        // Instead of waiting blindly, we control the camera every frame for the duration
+        // Save the original clip plane so we can restore it later if needed
+        float originalClip = mainCam.nearClipPlane;
+        mainCam.nearClipPlane = 0.01f; // <--- MAGIC FIX: Allows rendering SUPER close
+
         float timer = 0;
         while (timer < jumpScareDuration)
         {
-            // Keep the monster facing the player
-            Vector3 targetPosition = new Vector3(player.position.x, transform.position.y, player.position.z);
+            // Keep the monster body facing the camera
+            Vector3 targetPosition = new Vector3(mainCam.transform.position.x, transform.position.y, mainCam.transform.position.z);
             transform.LookAt(targetPosition);
 
-            // Keep the Camera locked on the Monster's "Eyes"
             if (mainCam != null && monsterRenderer != null)
             {
-                // We update this every frame so if the animation lunges forward, the camera follows
+                // A. Find the center of the head (Eyes)
                 Vector3 eyePos = monsterRenderer.bounds.center;
-                eyePos.y = monsterRenderer.bounds.max.y - 0.2f; // Top of head minus a tiny bit
+                eyePos.y = monsterRenderer.bounds.max.y - 0.25f; // Adjust this if looking too high/low
 
-                mainCam.transform.LookAt(eyePos);
+                // B. Lock Camera slightly in front of the face
+                // Change '0.75f' to move closer/further. 
+                // 0.4f is "Nose touching lens", 0.8f is "Personal space invasion"
+                float faceDistance = 0.75f; 
+                
+                // This math places the camera directly in front of the monster's face
+                // regardless of how the animation leans forward
+                Vector3 intenseSpot = eyePos + (transform.forward * faceDistance);
+
+                mainCam.transform.position = intenseSpot; 
+                mainCam.transform.LookAt(eyePos);        
             }
 
             timer += Time.deltaTime;
-            yield return null; // Wait for the next frame
+            yield return null; 
         }
+
+        // Restore camera setting (good practice)
+        mainCam.nearClipPlane = originalClip;
 
         // 6. Show UI
         if (deathCanvas != null)
