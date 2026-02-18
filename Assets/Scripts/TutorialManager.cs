@@ -18,8 +18,6 @@ public class TutorialManager : MonoBehaviour
     [TextArea] public string goalMessage = "Find the Obelisk.\nTraverse between two worlds to solve the puzzle.";
 
     // Private tracking
-    private bool hasMoved = false;
-    private bool hasInteracted = false;
     private Vector3 startPos;
     private Transform playerTransform;
 
