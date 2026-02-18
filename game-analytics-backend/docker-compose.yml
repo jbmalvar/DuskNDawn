@@ -17,5 +17,16 @@ services:
     volumes:
       - mongo-data:/data/db
 
+  # ADD THIS NEW BLOCK:
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_URL: mongodb://mongo-db:27017/
+    depends_on:
+      - mongo-db
+
 volumes:
   mongo-data:
