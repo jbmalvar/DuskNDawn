@@ -31,8 +31,8 @@ public class AnalyticsManager : MonoBehaviour
     public static AnalyticsManager Instance;
 
     // Points to your local Docker container
-    public string backendEndpoint = "http://localhost:3000/analytics"; 
-
+    // public string backendEndpoint = "https://httpbin.org/post";
+    public string backendEndpoint = "http://34.172.200.224:3000/analytics";
     private string sessionId;
     private int dormantTabCount = 0;
     private LevelEvents currentLevelEvents;

@@ -2045,7 +2045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bdafabb82314d94cbe25e3ff253847d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnalyticsManager
-  backendEndpoint: http://localhost:3000/analytics
+  backendEndpoint: http://34.172.200.224:3000/analytics
 --- !u!65 &1709779269
 BoxCollider:
   m_ObjectHideFlags: 0
