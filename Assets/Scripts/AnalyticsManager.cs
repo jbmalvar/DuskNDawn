@@ -8,8 +8,9 @@ using UnityEngine.Networking;
 [Serializable]
 public class LevelEvents
 {
+    public int level_index;
     public int obelisk_travels;
-    public bool gotten_the_key;
+    public int keys_obtained;
     public List<string> unlocked_doors = new List<string>();
     public int deaths;
 }
@@ -30,9 +31,9 @@ public class AnalyticsManager : MonoBehaviour
 {
     public static AnalyticsManager Instance;
 
-    // Points to your local Docker container
-    // public string backendEndpoint = "https://httpbin.org/post";
     public string backendEndpoint = "http://34.172.200.224:3000/analytics";
+    public float sendIntervalSeconds = 60f; // <-- Added interval duration
+
     private string sessionId;
     private int dormantTabCount = 0;
     private LevelEvents currentLevelEvents;
@@ -52,12 +53,17 @@ public class AnalyticsManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        // <-- Start the automatic 1-minute timer when the script loads
+        StartCoroutine(AnalyticsHeartbeat()); 
+    }
+
     private void Update()
     {
-        // TEMPORARY TEST: Press Spacebar to track a death and send the data
+        // Pre-existing trigger: Press Spacebar to track a death and send the data
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            TrackDeath();
             SendLevelAnalytics();
             Debug.Log("Spacebar pressed: Attempting to send analytics...");
         }
@@ -68,13 +74,25 @@ public class AnalyticsManager : MonoBehaviour
         if (!hasFocus) dormantTabCount++;
     }
 
+    // --- Automatic Timer Routine ---
+    private IEnumerator AnalyticsHeartbeat()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(sendIntervalSeconds);
+            Debug.Log("60 seconds elapsed: Attempting to send analytics...");
+            SendLevelAnalytics();
+        }
+    }
+
     // --- Call these from your player/game logic ---
+    public void SetCurrentLevel(int level) => currentLevelEvents.level_index = level;
     public void TrackObeliskTravel() => currentLevelEvents.obelisk_travels++;
-    public void TrackKeyObtained() => currentLevelEvents.gotten_the_key = true;
+    public void TrackKeyObtained() => currentLevelEvents.keys_obtained++; 
     public void TrackDoorUnlocked(string doorId) => currentLevelEvents.unlocked_doors.Add(doorId);
     public void TrackDeath() => currentLevelEvents.deaths++;
 
-    // --- Call this when the level ends ---
+    // --- Call this when the level ends, on spacebar, or every 60 seconds ---
     public void SendLevelAnalytics()
     {
         AnalyticsPayload payload = new AnalyticsPayload
@@ -89,7 +107,11 @@ public class AnalyticsManager : MonoBehaviour
         };
 
         StartCoroutine(PostData(JsonUtility.ToJson(payload)));
-        currentLevelEvents = new LevelEvents(); // Reset for next level
+        
+        // Preserve level index but reset the counters for the next minute/run
+        int lastLevel = currentLevelEvents.level_index;
+        currentLevelEvents = new LevelEvents(); 
+        currentLevelEvents.level_index = lastLevel;
     }
 
     private IEnumerator PostData(string json)

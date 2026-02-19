@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering; 
 
+
 public class TimeTravel : MonoBehaviour
 {
     public static System.Action<bool> OnTimeSwapped;
@@ -52,7 +53,6 @@ public class TimeTravel : MonoBehaviour
     {
         // SPAM CHECK: If we are already mid-warp, ignore the click
         if (isSwitching) return;
-
         // SYNC CHECK (The Fix for "Press Twice"):
         // Before we do anything, update our memory to match reality.
         // If Obelisk A changed the world, Obelisk B updates itself right here.
@@ -73,7 +73,7 @@ public class TimeTravel : MonoBehaviour
     {
         if (present) present.SetActive(isPresentActive);
         if (past) past.SetActive(!isPresentActive);
-
+        AnalyticsManager.Instance.TrackObeliskTravel();
         OnTimeSwapped?.Invoke(isPresentActive);
     }
 

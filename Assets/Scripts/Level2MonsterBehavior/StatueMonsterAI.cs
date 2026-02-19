@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Collections; // Required for Coroutines
 
+
 public class StatueMonsterAI : MonoBehaviour
 {
     [Header("Settings")]
@@ -89,6 +90,7 @@ public class StatueMonsterAI : MonoBehaviour
 
     IEnumerator JumpscareRoutine()
     {
+        AnalyticsManager.Instance.TrackDeath();
         isDead = true; 
 
         // 1. DISABLE PLAYER CONTROL

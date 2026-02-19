@@ -62,6 +62,7 @@ public class DoorController : MonoBehaviour
             // 1. Player has the CORRECT key
             if (playerInv.HasKey(requiredKeyID))
             {
+                AnalyticsManager.Instance.TrackDoorUnlocked(requiredKeyID);
                 OpenDoor();
             }
             // 2. Player has keys, but NOT the right one
