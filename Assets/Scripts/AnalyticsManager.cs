@@ -5,16 +5,7 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.Networking;
 
-[Serializable]
-public class LevelEvents
-{
-    public int level_index;
-    public int obelisk_travels;
-    public int keys_obtained;
-    public List<string> unlocked_doors = new List<string>();
-    public int deaths;
-}
-
+// 1. The LevelEvents wrapper is gone! Everything is in one flat payload.
 [Serializable]
 public class AnalyticsPayload
 {
@@ -23,8 +14,14 @@ public class AnalyticsPayload
     public string ip_address;
     public string session_id;
     public string timestamp;
-    public LevelEvents level_data;
     public int dormant_tabs; 
+    
+    // 2. Event data is now tracked at the top level
+    public int level_index;
+    public int obelisk_travels;
+    public int keys_obtained;
+    public List<string> unlocked_doors = new List<string>();
+    public int deaths;
 }
 
 public class AnalyticsManager : MonoBehaviour
@@ -32,11 +29,17 @@ public class AnalyticsManager : MonoBehaviour
     public static AnalyticsManager Instance;
 
     public string backendEndpoint = "http://34.172.200.224:3000/analytics";
-    public float sendIntervalSeconds = 60f; // <-- Added interval duration
+    public float sendIntervalSeconds = 60f; 
 
     private string sessionId;
     private int dormantTabCount = 0;
-    private LevelEvents currentLevelEvents;
+    
+    // 3. We use individual tracking variables here instead of the nested class
+    private int currentLevelIndex;
+    private int obeliskTravels;
+    private int keysObtained;
+    private List<string> unlockedDoors = new List<string>();
+    private int deaths;
 
     private void Awake()
     {
@@ -45,7 +48,6 @@ public class AnalyticsManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
             sessionId = Guid.NewGuid().ToString();
-            currentLevelEvents = new LevelEvents();
         }
         else
         {
@@ -55,13 +57,11 @@ public class AnalyticsManager : MonoBehaviour
 
     private void Start()
     {
-        // <-- Start the automatic 1-minute timer when the script loads
         StartCoroutine(AnalyticsHeartbeat()); 
     }
 
     private void Update()
     {
-        // Pre-existing trigger: Press Spacebar to track a death and send the data
         if (Input.GetKeyDown(KeyCode.Space))
         {
             SendLevelAnalytics();
@@ -74,7 +74,6 @@ public class AnalyticsManager : MonoBehaviour
         if (!hasFocus) dormantTabCount++;
     }
 
-    // --- Automatic Timer Routine ---
     private IEnumerator AnalyticsHeartbeat()
     {
         while (true)
@@ -85,16 +84,17 @@ public class AnalyticsManager : MonoBehaviour
         }
     }
 
-    // --- Call these from your player/game logic ---
-    public void SetCurrentLevel(int level) => currentLevelEvents.level_index = level;
-    public void TrackObeliskTravel() => currentLevelEvents.obelisk_travels++;
-    public void TrackKeyObtained() => currentLevelEvents.keys_obtained++; 
-    public void TrackDoorUnlocked(string doorId) => currentLevelEvents.unlocked_doors.Add(doorId);
-    public void TrackDeath() => currentLevelEvents.deaths++;
+    // --- Tracking Methods ---
+    public void SetCurrentLevel(int level) => currentLevelIndex = level;
+    public void TrackObeliskTravel() => obeliskTravels++;
+    public void TrackKeyObtained() => keysObtained++; 
+    public void TrackDoorUnlocked(string doorId) => unlockedDoors.Add(doorId);
+    public void TrackDeath() => deaths++;
 
-    // --- Call this when the level ends, on spacebar, or every 60 seconds ---
+    // --- Send and Reset ---
     public void SendLevelAnalytics()
     {
+        // 4. Populate the flat payload directly from our variables
         AnalyticsPayload payload = new AnalyticsPayload
         {
             player_uid = SystemInfo.deviceUniqueIdentifier,
@@ -102,16 +102,23 @@ public class AnalyticsManager : MonoBehaviour
             ip_address = "handled_by_backend",
             session_id = sessionId,
             timestamp = DateTimeOffset.UtcNow.ToString("o"),
-            level_data = currentLevelEvents,
-            dormant_tabs = dormantTabCount
+            dormant_tabs = dormantTabCount,
+            
+            level_index = currentLevelIndex,
+            obelisk_travels = obeliskTravels,
+            keys_obtained = keysObtained,
+            unlocked_doors = new List<string>(unlockedDoors), // Create a copy of the list
+            deaths = deaths
         };
 
         StartCoroutine(PostData(JsonUtility.ToJson(payload)));
         
-        // Preserve level index but reset the counters for the next minute/run
-        int lastLevel = currentLevelEvents.level_index;
-        currentLevelEvents = new LevelEvents(); 
-        currentLevelEvents.level_index = lastLevel;
+        // 5. Reset the event counters for the next minute/run
+        // (We do not reset currentLevelIndex so it remembers what level we are on)
+        obeliskTravels = 0;
+        keysObtained = 0;
+        unlockedDoors.Clear();
+        deaths = 0;
     }
 
     private IEnumerator PostData(string json)
