@@ -9613,8 +9613,10 @@ MonoBehaviour:
   fadeDuration: 1
   timeBetweenMessages: 0.5
   moveMessage: Use WASD to move
-  interactMessage: "Press E to interact with objects. \nUse obelisks to traverse
-    between the past\nand the present."
+  interactMessage: 'Press E to interact with objects.
+
+    Use obelisks around the
+    map. They change parts of the map '
   goalMessage: "Find keys around the map to \nopen locked doors\nEscape or he'll
     find you"
 --- !u!4 &979881752
