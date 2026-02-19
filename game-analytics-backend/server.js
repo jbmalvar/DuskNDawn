@@ -6,7 +6,7 @@ const port = 3000;
 
 app.use(express.json());
 
-const mongoUrl = 'mongodb://mongo-db:27017';
+const mongoUrl = 'mongodb+srv://GS:<db_password>@march16.cizdio7.mongodb.net/?appName=March16';
 const dbName = 'GameAnalytics';
 const collectionName = 'LevelEvents';
 
