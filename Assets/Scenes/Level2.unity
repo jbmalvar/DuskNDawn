@@ -58937,7 +58937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd4acf08eab08b546809006fabc25f4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelEndTrigger
-  nextLevelIndex: 3
+  nextLevelIndex: 4
 --- !u!1 &813016673
 GameObject:
   m_ObjectHideFlags: 0
@@ -67073,7 +67073,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.033333335
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 713d9128248d65248b20d341e60634dc, type: 2}
   m_BuildHeightMesh: 0
