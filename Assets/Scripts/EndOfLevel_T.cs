@@ -22,7 +22,6 @@ public class LevelEndTrigger : MonoBehaviour
             if (nextLevelIndex > PlayerPrefs.GetInt("LevelReached", 1))
             {
                 PlayerPrefs.SetInt("LevelReached", nextLevelIndex);
-                AnalyticsManager.Instance.SetCurrentLevel(nextLevelIndex);
                 PlayerPrefs.Save(); 
             }
             
@@ -32,6 +31,7 @@ public class LevelEndTrigger : MonoBehaviour
             }
             else
             {
+                AnalyticsManager.Instance.SetCurrentLevel(nextLevelIndex - 1);
                 SceneManager.LoadScene(nextLevelIndex);
             }
         }
