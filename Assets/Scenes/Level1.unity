@@ -75212,7 +75212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StatueMonsterAI
   player: {fileID: 2139681838}
-  chaseSpeed: 20
+  chaseSpeed: 10
   monsterRenderer: {fileID: 1316230177}
   mainCam: {fileID: 53996596}
   movementAudio: {fileID: 2139675547}
@@ -75230,7 +75230,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 10
-  m_Acceleration: 100
+  m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 2000
   m_StoppingDistance: 0
