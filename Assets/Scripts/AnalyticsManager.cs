@@ -26,7 +26,8 @@ public class AnalyticsManager : MonoBehaviour
 {
     public static AnalyticsManager Instance;
 
-    public string backendEndpoint = "http://34.172.200.224:3000/analytics";
+    public string backendEndpoint = "https://game-analytics-latest.onrender.com";
+    // public string backendEndpoint = "http://34.172.200.224:3000/analytics";
     
     // 1. Lowered the interval to 30 seconds
     public float sendIntervalSeconds = 30f; 
