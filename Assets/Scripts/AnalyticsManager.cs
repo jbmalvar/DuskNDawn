@@ -5,7 +5,6 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.Networking;
 
-// 1. The LevelEvents wrapper is gone! Everything is in one flat payload.
 [Serializable]
 public class AnalyticsPayload
 {
@@ -16,7 +15,6 @@ public class AnalyticsPayload
     public string timestamp;
     public int dormant_tabs; 
     
-    // 2. Event data is now tracked at the top level
     public int level_index;
     public int obelisk_travels;
     public int keys_obtained;
@@ -29,12 +27,13 @@ public class AnalyticsManager : MonoBehaviour
     public static AnalyticsManager Instance;
 
     public string backendEndpoint = "http://34.172.200.224:3000/analytics";
-    public float sendIntervalSeconds = 60f; 
+    
+    // 1. Lowered the interval to 30 seconds
+    public float sendIntervalSeconds = 30f; 
 
     private string sessionId;
     private int dormantTabCount = 0;
     
-    // 3. We use individual tracking variables here instead of the nested class
     private int currentLevelIndex;
     private int obeliskTravels;
     private int keysObtained;
@@ -79,7 +78,8 @@ public class AnalyticsManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(sendIntervalSeconds);
-            Debug.Log("60 seconds elapsed: Attempting to send analytics...");
+            // 2. Updated the log message to reflect the new 30-second timer
+            Debug.Log("30 seconds elapsed: Attempting to send analytics...");
             SendLevelAnalytics();
         }
     }
@@ -91,10 +91,9 @@ public class AnalyticsManager : MonoBehaviour
     public void TrackDoorUnlocked(string doorId) => unlockedDoors.Add(doorId);
     public void TrackDeath() => deaths++;
 
-    // --- Send and Reset ---
+    // --- Send (NO RESET) ---
     public void SendLevelAnalytics()
     {
-        // 4. Populate the flat payload directly from our variables
         AnalyticsPayload payload = new AnalyticsPayload
         {
             player_uid = SystemInfo.deviceUniqueIdentifier,
@@ -107,18 +106,14 @@ public class AnalyticsManager : MonoBehaviour
             level_index = currentLevelIndex,
             obelisk_travels = obeliskTravels,
             keys_obtained = keysObtained,
-            unlocked_doors = new List<string>(unlockedDoors), // Create a copy of the list
+            unlocked_doors = new List<string>(unlockedDoors), 
             deaths = deaths
         };
 
         StartCoroutine(PostData(JsonUtility.ToJson(payload)));
         
-        // 5. Reset the event counters for the next minute/run
-        // (We do not reset currentLevelIndex so it remembers what level we are on)
-        obeliskTravels = 0;
-        keysObtained = 0;
-        unlockedDoors.Clear();
-        deaths = 0;
+        // 3. The reset lines that were here are completely gone!
+        // The numbers will now keep climbing until the player quits or the scene restarts.
     }
 
     private IEnumerator PostData(string json)
