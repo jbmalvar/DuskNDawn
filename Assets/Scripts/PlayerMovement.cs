@@ -135,7 +135,7 @@ public class PlayerMovement : MonoBehaviour
 
             // Apply the WebGL dampener only in the browser build
             #if UNITY_WEBGL && !UNITY_EDITOR
-                currentLookSpeed *= 0.25f; // Adjust this decimal to fine-tune the browser sensitivity
+                currentLookSpeed *= 0.5f; // Adjust this decimal to fine-tune the browser sensitivity
             #endif
 
             rotationX += -Input.GetAxis("Mouse Y") * currentLookSpeed;
