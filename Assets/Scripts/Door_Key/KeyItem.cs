@@ -10,7 +10,7 @@ public class KeyItem : MonoBehaviour
     public void Pickup()
     {
         Debug.Log($"KeyItem: You picked up the {keyID}.");
-        AnalyticsManager.Instance.TrackKeyObtained();
+        AnalyticsManager.Instance.TrackKeyObtained(keyID);
         Destroy(gameObject); 
     }
 }

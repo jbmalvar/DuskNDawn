@@ -11,6 +11,7 @@ public class VictoryTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            AnalyticsManager.Instance.SetWinner();
             ShowVictoryScreen();
         }
     }

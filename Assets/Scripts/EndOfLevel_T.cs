@@ -31,7 +31,6 @@ public class LevelEndTrigger : MonoBehaviour
             }
             else
             {
-                AnalyticsManager.Instance.SetCurrentLevel(nextLevelIndex - 1);
                 SceneManager.LoadScene(nextLevelIndex);
             }
         }
