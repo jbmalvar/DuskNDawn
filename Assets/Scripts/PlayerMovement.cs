@@ -126,10 +126,22 @@ public class PlayerMovement : MonoBehaviour
         // --- 3. CAMERA ---
         if (canMove)
         {
-            rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
+            // rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
+            // rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
+            // playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+            // transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+            // Create a local variable for the look speed
+            float currentLookSpeed = lookSpeed;
+
+            // Apply the WebGL dampener only in the browser build
+            #if UNITY_WEBGL && !UNITY_EDITOR
+                currentLookSpeed *= 0.25f; // Adjust this decimal to fine-tune the browser sensitivity
+            #endif
+
+            rotationX += -Input.GetAxis("Mouse Y") * currentLookSpeed;
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-            transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+            transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * currentLookSpeed, 0);
         }
 
         // --- 4. EXTRAS ---
