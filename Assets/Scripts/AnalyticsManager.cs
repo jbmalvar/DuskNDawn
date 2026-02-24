@@ -93,7 +93,7 @@ public class AnalyticsManager : MonoBehaviour
             version_number = Application.version, // Change this to your assigned version if needed
             ip_address = "handled_by_backend",
             session_id = Guid.NewGuid().ToString(),
-            levels = new LevelEvents[4],
+            levels = new LevelEvents[5],
             winner = false,
             dormant_tabs = 0
         };
@@ -119,7 +119,7 @@ public class AnalyticsManager : MonoBehaviour
     // Sets the active level (0 to 3). Time will automatically start accumulating for the new level.
     public void SetCurrentLevelIndex(int zeroBasedLevelIndex)
     {
-        if (zeroBasedLevelIndex >= 0 && zeroBasedLevelIndex < 4)
+        if (zeroBasedLevelIndex >= 0 && zeroBasedLevelIndex < 5)
         {
             currentLevelIndex = zeroBasedLevelIndex;
             isTrackingTime = true;
