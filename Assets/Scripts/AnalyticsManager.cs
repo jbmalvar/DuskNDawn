@@ -12,7 +12,7 @@ public class LevelEvents
     public List<string> keys_gotten = new List<string>();
     public List<string> unlocked_doors = new List<string>();
     public int deaths;
-    public float time_spent; // Tracks seconds spent in this specific level
+    public float time_spent; 
 }
 
 [Serializable]
@@ -23,7 +23,7 @@ public class AnalyticsPayload
     public string ip_address;
     public string session_id;
     public string timestamp;
-    public LevelEvents[] levels; // Fixed array of 4 levels
+    public LevelEvents[] levels; 
     public bool winner;
     public int dormant_tabs;
 }
@@ -36,8 +36,9 @@ public class AnalyticsManager : MonoBehaviour
     public float sendIntervalSeconds = 30f;
 
     private AnalyticsPayload sessionData;
-    private int currentLevelIndex = 0; // 0 = Level 1, 3 = Level 4
+    private int currentLevelIndex = 0; 
     private bool isTrackingTime = true;
+    private bool isDormant = false; // Added to prevent double-counting in WebGL
 
     private void Awake()
     {
@@ -61,45 +62,69 @@ public class AnalyticsManager : MonoBehaviour
     private void Update()
     {
         // Add delta time to the current level's time_spent
-        if (isTrackingTime && currentLevelIndex >= 0 && currentLevelIndex < 4 && !sessionData.winner)
+        if (isTrackingTime && currentLevelIndex >= 0 && currentLevelIndex < sessionData.levels.Length && !sessionData.winner)
         {
             sessionData.levels[currentLevelIndex].time_spent += Time.deltaTime;
         }
-
-        // // TEMPORARY TEST: Press Spacebar to track a death and send the data
-        // if (Input.GetKeyDown(KeyCode.Space))
-        // {
-        //     TrackDeath();
-        //     SendLevelAnalytics();
-        //     Debug.Log("Spacebar pressed: Attempting to send analytics...");
-        // }
     }
 
+    // --- WebGL Dormant Tab Fixes ---
     private void OnApplicationFocus(bool hasFocus)
     {
-        if (!hasFocus) sessionData.dormant_tabs++;
+        // Triggers when clicking on/off the WebGL Canvas on the webpage
+        HandleDormancy(!hasFocus);
+    }
+
+    private void OnApplicationPause(bool pauseStatus)
+    {
+        // Triggers when actually switching browser tabs
+        HandleDormancy(pauseStatus);
+    }
+
+    private void HandleDormancy(bool isNowDormant)
+    {
+        if (isNowDormant && !isDormant)
+        {
+            isDormant = true;
+            sessionData.dormant_tabs++;
+        }
+        else if (!isNowDormant && isDormant)
+        {
+            isDormant = false;
+        }
     }
 
     private void OnApplicationQuit()
     {
+        // NOTE: This rarely fires in WebGL, but we keep it just in case.
         SendLevelAnalytics();
     }
 
     private void InitializeSessionData()
     {
+        // --- WebGL Player UID Fix ---
+        string savedUID = PlayerPrefs.GetString("Analytics_PlayerUID", "");
+        if (string.IsNullOrEmpty(savedUID))
+        {
+            // First time playing: Generate a new ID and save it to the browser
+            savedUID = Guid.NewGuid().ToString();
+            PlayerPrefs.SetString("Analytics_PlayerUID", savedUID);
+            PlayerPrefs.Save();
+        }
+
         sessionData = new AnalyticsPayload
         {
-            player_uid = SystemInfo.deviceUniqueIdentifier,
-            version_number = Application.version, // Change this to your assigned version if needed
+            player_uid = savedUID, // Now pulls from browser LocalStorage
+            version_number = "1.1", 
             ip_address = "handled_by_backend",
-            session_id = Guid.NewGuid().ToString(),
-            levels = new LevelEvents[5],
+            session_id = Guid.NewGuid().ToString(), // Perfectly fine for WebGL
+            levels = new LevelEvents[5], // Explicitly 5 levels
             winner = false,
             dormant_tabs = 0
         };
 
-        // Initialize the 4 levels so they aren't null
-        for (int i = 0; i < 4; i++)
+        // Dynamically initialize based on the array length so it never crashes
+        for (int i = 0; i < sessionData.levels.Length; i++)
         {
             sessionData.levels[i] = new LevelEvents();
         }
@@ -114,61 +139,49 @@ public class AnalyticsManager : MonoBehaviour
         }
     }
 
-    // --- Call these from your player/game logic ---
-
-    // Sets the active level (0 to 3). Time will automatically start accumulating for the new level.
+    // --- Game Logic Trackers ---
     public void SetCurrentLevelIndex(int zeroBasedLevelIndex)
     {
-        if (zeroBasedLevelIndex >= 0 && zeroBasedLevelIndex < 5)
+        if (zeroBasedLevelIndex >= 0 && zeroBasedLevelIndex < sessionData.levels.Length)
         {
             currentLevelIndex = zeroBasedLevelIndex;
             isTrackingTime = true;
         }
         else
         {
-            Debug.LogWarning("Level index out of bounds (must be 0-3).");
+            Debug.LogWarning($"Level index {zeroBasedLevelIndex} out of bounds.");
         }
     }
 
-    // Pause time tracking (e.g., if the game is paused or transitioning)
     public void PauseTimeTracking(bool pause) => isTrackingTime = !pause;
 
     public void TrackObeliskTravel() => sessionData.levels[currentLevelIndex].obelisk_travels++;
     
-    // Now takes a string so you can track WHICH key was gotten
-    // Mimics a Set by checking if the list already contains the key/door
     public void TrackKeyObtained(string keyId) 
     {
         if (!sessionData.levels[currentLevelIndex].keys_gotten.Contains(keyId))
-        {
             sessionData.levels[currentLevelIndex].keys_gotten.Add(keyId);
-        }
     }
     
     public void TrackDoorUnlocked(string doorId) 
     {
         if (!sessionData.levels[currentLevelIndex].unlocked_doors.Contains(doorId))
-        {
             sessionData.levels[currentLevelIndex].unlocked_doors.Add(doorId);
-        }
     }
     
     public void TrackDeath() => sessionData.levels[currentLevelIndex].deaths++;
 
-    // Call this when the player beats the final level
     public void SetWinner()
     {
         sessionData.winner = true;
-        isTrackingTime = false; // Stop the clock
+        isTrackingTime = false; 
         SendLevelAnalytics();
     }
 
     // --- Network Logic ---
     public void SendLevelAnalytics()
     {
-        // Update the timestamp to the exact moment of sending
         sessionData.timestamp = DateTimeOffset.UtcNow.ToString("o");
-
         string jsonPayload = JsonUtility.ToJson(sessionData);
         StartCoroutine(PostData(jsonPayload));
     }
