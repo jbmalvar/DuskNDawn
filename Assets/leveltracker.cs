@@ -16,7 +16,7 @@ public class LevelTracker : MonoBehaviour
             // the database to know the second they start a new level
             // AnalyticsManager.Instance.SendLevelAnalytics(); 
             
-            Debug.Log($"Analytics: Now tracking Level {levelIndex + 1}");
+            Debug.Log($"Analytics: Now tracking Level {levelIndex}");
         }
         else
         {

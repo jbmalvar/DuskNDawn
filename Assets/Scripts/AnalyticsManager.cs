@@ -30,7 +30,28 @@ public class AnalyticsPayload
 
 public class AnalyticsManager : MonoBehaviour
 {
-    public static AnalyticsManager Instance;
+    // --- The Lazy-Loading Auto-Instantiating Singleton ---
+    private static AnalyticsManager _instance;
+    public static AnalyticsManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                // First, check if it exists but we just lost the pointer
+                _instance = FindObjectOfType<AnalyticsManager>();
+                
+                // If it's truly missing, allocate and create it on the fly
+                if (_instance == null)
+                {
+                    GameObject singletonObject = new GameObject("AnalyticsManager_AutoCreated");
+                    _instance = singletonObject.AddComponent<AnalyticsManager>();
+                    // AddComponent immediately calls Awake(), handling initialization
+                }
+            }
+            return _instance;
+        }
+    }
 
     public string backendEndpoint = "https://dndgameanalytics.duckdns.org/analytics";
     public float sendIntervalSeconds = 30f;
@@ -38,19 +59,28 @@ public class AnalyticsManager : MonoBehaviour
     private AnalyticsPayload sessionData;
     private int currentLevelIndex = 0; 
     private bool isTrackingTime = true;
-    private bool isDormant = false; // Added to prevent double-counting in WebGL
+    private bool isDormant = false; 
+    private bool isInitialized = false;
 
     private void Awake()
     {
-        if (Instance == null)
+        // Enforce the singleton pattern
+        if (_instance == null)
         {
-            Instance = this;
+            _instance = this;
             DontDestroyOnLoad(gameObject);
             InitializeSessionData();
         }
-        else
+        else if (_instance != this)
         {
             Destroy(gameObject);
+            return;
+        }
+
+        // Catch-all for components manually dragged into scenes
+        if (!isInitialized) 
+        {
+            InitializeSessionData();
         }
     }
 
@@ -61,28 +91,27 @@ public class AnalyticsManager : MonoBehaviour
 
     private void Update()
     {
-        // Add delta time to the current level's time_spent
-        if (isTrackingTime && currentLevelIndex >= 0 && currentLevelIndex < sessionData.levels.Length && !sessionData.winner)
+        if (isTrackingTime && IsLevelIndexValid() && !sessionData.winner)
         {
             sessionData.levels[currentLevelIndex].time_spent += Time.deltaTime;
         }
     }
 
-    // --- WebGL Dormant Tab Fixes ---
+    // --- WebGL Dormant Tab Logic ---
     private void OnApplicationFocus(bool hasFocus)
     {
-        // Triggers when clicking on/off the WebGL Canvas on the webpage
         HandleDormancy(!hasFocus);
     }
 
     private void OnApplicationPause(bool pauseStatus)
     {
-        // Triggers when actually switching browser tabs
         HandleDormancy(pauseStatus);
     }
 
     private void HandleDormancy(bool isNowDormant)
     {
+        if (!isInitialized) return;
+
         if (isNowDormant && !isDormant)
         {
             isDormant = true;
@@ -96,17 +125,17 @@ public class AnalyticsManager : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        // NOTE: This rarely fires in WebGL, but we keep it just in case.
-        SendLevelAnalytics();
+        if (isInitialized) SendLevelAnalytics();
     }
 
+    // --- Data Initialization ---
     private void InitializeSessionData()
     {
-        // --- WebGL Player UID Fix ---
+        if (isInitialized) return;
+
         string savedUID = PlayerPrefs.GetString("Analytics_PlayerUID", "");
         if (string.IsNullOrEmpty(savedUID))
         {
-            // First time playing: Generate a new ID and save it to the browser
             savedUID = Guid.NewGuid().ToString();
             PlayerPrefs.SetString("Analytics_PlayerUID", savedUID);
             PlayerPrefs.Save();
@@ -114,20 +143,21 @@ public class AnalyticsManager : MonoBehaviour
 
         sessionData = new AnalyticsPayload
         {
-            player_uid = savedUID, // Now pulls from browser LocalStorage
-            version_number = "1.1", 
+            player_uid = savedUID, 
+            version_number = Application.version, 
             ip_address = "handled_by_backend",
-            session_id = Guid.NewGuid().ToString(), // Perfectly fine for WebGL
-            levels = new LevelEvents[5], // Explicitly 5 levels
+            session_id = Guid.NewGuid().ToString(), 
+            levels = new LevelEvents[5], 
             winner = false,
             dormant_tabs = 0
         };
 
-        // Dynamically initialize based on the array length so it never crashes
         for (int i = 0; i < sessionData.levels.Length; i++)
         {
             sessionData.levels[i] = new LevelEvents();
         }
+
+        isInitialized = true;
     }
 
     private IEnumerator AnalyticsHeartbeat()
@@ -135,8 +165,17 @@ public class AnalyticsManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(sendIntervalSeconds);
-            SendLevelAnalytics();
+            if (isInitialized) SendLevelAnalytics();
         }
+    }
+
+    // --- Safety Check ---
+    private bool IsLevelIndexValid()
+    {
+        return sessionData != null && 
+               sessionData.levels != null && 
+               currentLevelIndex >= 0 && 
+               currentLevelIndex < sessionData.levels.Length;
     }
 
     // --- Game Logic Trackers ---
@@ -149,30 +188,37 @@ public class AnalyticsManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning($"Level index {zeroBasedLevelIndex} out of bounds.");
+            Debug.LogWarning($"Analytics: Level index {zeroBasedLevelIndex} out of bounds.");
         }
     }
 
     public void PauseTimeTracking(bool pause) => isTrackingTime = !pause;
 
-    public void TrackObeliskTravel() => sessionData.levels[currentLevelIndex].obelisk_travels++;
+    public void TrackObeliskTravel()
+    {
+        if (IsLevelIndexValid()) sessionData.levels[currentLevelIndex].obelisk_travels++;
+    }
     
     public void TrackKeyObtained(string keyId) 
     {
-        if (!sessionData.levels[currentLevelIndex].keys_gotten.Contains(keyId))
+        if (IsLevelIndexValid() && !sessionData.levels[currentLevelIndex].keys_gotten.Contains(keyId))
             sessionData.levels[currentLevelIndex].keys_gotten.Add(keyId);
     }
     
     public void TrackDoorUnlocked(string doorId) 
     {
-        if (!sessionData.levels[currentLevelIndex].unlocked_doors.Contains(doorId))
+        if (IsLevelIndexValid() && !sessionData.levels[currentLevelIndex].unlocked_doors.Contains(doorId))
             sessionData.levels[currentLevelIndex].unlocked_doors.Add(doorId);
     }
     
-    public void TrackDeath() => sessionData.levels[currentLevelIndex].deaths++;
+    public void TrackDeath()
+    {
+        if (IsLevelIndexValid()) sessionData.levels[currentLevelIndex].deaths++;
+    }
 
     public void SetWinner()
     {
+        if (!isInitialized) return;
         sessionData.winner = true;
         isTrackingTime = false; 
         SendLevelAnalytics();
@@ -181,6 +227,8 @@ public class AnalyticsManager : MonoBehaviour
     // --- Network Logic ---
     public void SendLevelAnalytics()
     {
+        if (!isInitialized || sessionData == null) return;
+
         sessionData.timestamp = DateTimeOffset.UtcNow.ToString("o");
         string jsonPayload = JsonUtility.ToJson(sessionData);
         StartCoroutine(PostData(jsonPayload));
@@ -197,10 +245,10 @@ public class AnalyticsManager : MonoBehaviour
 
             yield return request.SendWebRequest();
 
-            if (request.result == UnityWebRequest.Result.Success)
-                Debug.Log("Analytics Sent!");
-            else
+            if (request.result != UnityWebRequest.Result.Success)
+            {
                 Debug.LogError($"Analytics Error: {request.error}");
+            }
         }
     }
 }
