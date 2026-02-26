@@ -2964,7 +2964,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 569655254227853485, guid: 1a96656b96d5a37498f73aa6b26f821b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.664
+      value: -14.215956
       objectReference: {fileID: 0}
     - target: {fileID: 569655254227853485, guid: 1a96656b96d5a37498f73aa6b26f821b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8760,7 +8760,7 @@ Transform:
   m_GameObject: {fileID: 876591717}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.193972, y: 1.686, z: 1.9213}
+  m_LocalPosition: {x: -17.138205, y: 1.686, z: 1.9213}
   m_LocalScale: {x: 1, y: 1, z: 0.77489}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9613,10 +9613,12 @@ MonoBehaviour:
   fadeDuration: 1
   timeBetweenMessages: 0.5
   moveMessage: Use WASD to move
+  sprintMessage: Hold Shift to sprint
   interactMessage: 'Press E to interact with objects.
 
     Use obelisks around the
     map. They change parts of the map '
+  pauseMessage: Press Escape to pause
   goalMessage: "Find keys around the map to \nopen locked doors\nEscape or he'll
     find you"
 --- !u!4 &979881752
@@ -10283,7 +10285,7 @@ Transform:
   m_GameObject: {fileID: 1037468341}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -9.357, y: -0.008599997, z: 6.03}
+  m_LocalPosition: {x: -11.909994, y: -0.008599997, z: 6.03}
   m_LocalScale: {x: 13.577523, y: 7.1495004, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11727,7 +11729,7 @@ Transform:
   m_GameObject: {fileID: 1206430330}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.312, y: 0, z: 0}
+  m_LocalPosition: {x: 0.13820434, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

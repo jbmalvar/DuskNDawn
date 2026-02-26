@@ -1,12 +1,13 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using System; // Required for Func<bool>
 
 public class TutorialManager : MonoBehaviour
 {
     [Header("UI Reference")]
     public TextMeshProUGUI tutorialText;
-    public CanvasGroup textCanvasGroup; // Add a CanvasGroup component to your Text object!
+    public CanvasGroup textCanvasGroup; 
 
     [Header("Settings")]
     public float fadeDuration = 1.0f;
@@ -14,71 +15,66 @@ public class TutorialManager : MonoBehaviour
 
     [Header("Messages")]
     [TextArea] public string moveMessage = "Use WASD to move";
+    [TextArea] public string sprintMessage = "Hold Shift to sprint";
     [TextArea] public string interactMessage = "Press E to interact with objects";
+    [TextArea] public string pauseMessage = "Press Escape to pause";
     [TextArea] public string goalMessage = "Find the Obelisk.\nTraverse between two worlds to solve the puzzle.";
 
-    // Private tracking
     private Vector3 startPos;
     private Transform playerTransform;
 
     void Start()
     {
-        // Find player automatically if tagged, otherwise assume Camera root
-        if(GameObject.FindGameObjectWithTag("Player"))
-            playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        else
-            playerTransform = Camera.main.transform.root;
-
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        playerTransform = player != null ? player.transform : Camera.main.transform.root;
         startPos = playerTransform.position;
         
-        // Ensure alpha is 0 to start, then begin the sequence
         textCanvasGroup.alpha = 0;
         StartCoroutine(TutorialSequence());
     }
 
     IEnumerator TutorialSequence()
     {
-        // --- STEP 1: MOVEMENT ---
-        tutorialText.text = moveMessage;
+        // 1. MOVEMENT
+        yield return StartCoroutine(ShowMessageAndWait(moveMessage, () => Vector3.Distance(playerTransform.position, startPos) >= 2.0f));
+
+        // 2. SPRINT
+        yield return StartCoroutine(ShowMessageAndWait(sprintMessage, () => Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)));
+
+        // 3. INTERACTION
+        yield return StartCoroutine(ShowMessageAndWait(interactMessage, () => Input.GetKeyDown(KeyCode.E)));
+
+        // 4. PAUSE (Time-based, displays for 4 seconds)
+        yield return StartCoroutine(ShowMessageAndWait(pauseMessage, null, 4.0f));
+
+        // 5. THE GOAL (Time-based, no input condition)
+        yield return StartCoroutine(ShowMessageAndWait(goalMessage, null, 6.0f));
+        
+        // Tutorial Complete
+        tutorialText.gameObject.SetActive(false);
+    }
+
+    // --- HELPER METHODS ---
+
+    IEnumerator ShowMessageAndWait(string message, Func<bool> exitCondition, float delayIfNoCondition = 0f)
+    {
+        tutorialText.text = message;
         yield return StartCoroutine(FadeText(1)); // Fade In
 
-        // Wait until player moves 2 units away from start
-        while (Vector3.Distance(playerTransform.position, startPos) < 2.0f)
+        // Wait for either the specific input/action, or a timer if no condition is provided
+        if (exitCondition != null)
         {
-            yield return null;
+            yield return new WaitUntil(exitCondition);
+        }
+        else
+        {
+            yield return new WaitForSeconds(delayIfNoCondition);
         }
 
         yield return StartCoroutine(FadeText(0)); // Fade Out
         yield return new WaitForSeconds(timeBetweenMessages);
-
-
-        // --- STEP 2: INTERACTION ---
-        tutorialText.text = interactMessage;
-        yield return StartCoroutine(FadeText(1));
-
-        // Wait until player presses E
-        while (!Input.GetKeyDown(KeyCode.E))
-        {
-            yield return null;
-        }
-
-        yield return StartCoroutine(FadeText(0));
-        yield return new WaitForSeconds(timeBetweenMessages);
-
-
-        // --- STEP 3: THE GOAL ---
-        tutorialText.text = goalMessage;
-        yield return StartCoroutine(FadeText(1));
-
-        yield return new WaitForSeconds(6.0f); // Read time
-
-        yield return StartCoroutine(FadeText(0));
-        
-        // Tutorial Complete - Disable text object to save resources
-        tutorialText.gameObject.SetActive(false);
     }
 
-    // Helper to fade text seamlessly
     IEnumerator FadeText(float targetAlpha)
     {
         float startAlpha = textCanvasGroup.alpha;
