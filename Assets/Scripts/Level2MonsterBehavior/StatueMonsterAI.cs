@@ -170,8 +170,39 @@ public class StatueMonsterAI : MonoBehaviour
     bool IsVisibleToCamera()
     {
         if (monsterRenderer == null) return false;
+
+        // 1. Check if the monster is inside the camera's field of view (X-Ray check)
         Plane[] planes = GeometryUtility.CalculateFrustumPlanes(mainCam);
-        return GeometryUtility.TestPlanesAABB(planes, monsterRenderer.bounds);
+        if (GeometryUtility.TestPlanesAABB(planes, monsterRenderer.bounds))
+        {
+            // 2. Line of Sight Check (Occlusion check)
+            // It's on screen, but is it behind a wall? Let's shoot a ray from the camera to the monster.
+            Vector3 origin = mainCam.transform.position;
+            Vector3 target = monsterRenderer.bounds.center;
+            Vector3 direction = target - origin;
+            float distance = direction.magnitude;
+
+            RaycastHit hit;
+            
+            // Cast a ray. QueryTriggerInteraction.Ignore ensures invisible trigger boxes don't block our view!
+            if (Physics.Raycast(origin, direction.normalized, out hit, distance, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore))
+            {
+                // Did the raycast hit the monster (or any of its child objects)?
+                if (hit.transform.root == this.transform.root || hit.transform == this.transform)
+                {
+                    return true; // We can see the monster! Freeze it.
+                }
+                
+                // If we hit something else first (like a wall, door, or prop), the monster is hidden.
+                return false; 
+            }
+
+            // If the raycast hit absolutely nothing, the path is clear.
+            return true;
+        }
+
+        // Not in the camera's view at all
+        return false;
     }
 
     void Chase()
