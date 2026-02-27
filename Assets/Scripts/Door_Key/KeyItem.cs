@@ -11,6 +11,13 @@ public class KeyItem : MonoBehaviour
     {
         Debug.Log($"KeyItem: You picked up the {keyID}.");
         AnalyticsManager.Instance.TrackKeyObtained(keyID);
+
+        ObjectiveManager manager = FindFirstObjectByType<ObjectiveManager>();
+        if (manager != null)
+        {
+            manager.OnKeyCollected();
+        }
+
         Destroy(gameObject); 
     }
 }
