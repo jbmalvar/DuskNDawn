@@ -5684,10 +5684,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LockedKey2
       objectReference: {fileID: 0}
+    - target: {fileID: 374289202576707483, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2093443782267337543, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 788fff606789bfd4a9094af94b12bfdb, type: 2}
+      objectReference: {fileID: 2100000, guid: 8ba49f643de797d40a0201f8a6789123, type: 2}
     - target: {fileID: 3705028537381535112, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       propertyPath: m_LocalPosition.x
       value: -50.018
@@ -59124,10 +59128,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LockedKey3
       objectReference: {fileID: 0}
+    - target: {fileID: 374289202576707483, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2093443782267337543, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 599abbb0301f83848b83a0d73234c1cd, type: 2}
+      objectReference: {fileID: 2100000, guid: 8ba49f643de797d40a0201f8a6789123, type: 2}
     - target: {fileID: 3705028537381535112, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       propertyPath: m_LocalPosition.x
       value: -82.541
@@ -60584,10 +60592,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: KeyLocked1
       objectReference: {fileID: 0}
+    - target: {fileID: 374289202576707483, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2093443782267337543, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: db7e186f056c53044850021bd166e555, type: 2}
+      objectReference: {fileID: 2100000, guid: 8ba49f643de797d40a0201f8a6789123, type: 2}
     - target: {fileID: 3705028537381535112, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       propertyPath: m_LocalPosition.x
       value: -71.92
