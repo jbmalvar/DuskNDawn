@@ -17,6 +17,7 @@ public class TutorialManager : MonoBehaviour
     [TextArea] public string moveMessage = "Use WASD to move";
     [TextArea] public string sprintMessage = "Hold Shift to sprint";
     [TextArea] public string interactMessage = "Press E to interact with objects";
+    [TextArea] public string mapMessage = "Press Tab to look at the map.\nYellow = Key, Grey = Obelisk, Green = You";
     [TextArea] public string pauseMessage = "Press Escape to pause";
     [TextArea] public string goalMessage = "Find the Obelisk.\nTraverse between two worlds to solve the puzzle.";
 
@@ -44,10 +45,13 @@ public class TutorialManager : MonoBehaviour
         // 3. INTERACTION
         yield return StartCoroutine(ShowMessageAndWait(interactMessage, () => Input.GetKeyDown(KeyCode.E)));
 
-        // 4. PAUSE (Time-based, displays for 4 seconds)
+        // 4. MAP
+        yield return StartCoroutine(ShowMessageAndWait(mapMessage, () => Input.GetKeyDown(KeyCode.Tab)));
+
+        // 5. PAUSE (Time-based, displays for 4 seconds)
         yield return StartCoroutine(ShowMessageAndWait(pauseMessage, null, 4.0f));
 
-        // 5. THE GOAL (Time-based, no input condition)
+        // 6. THE GOAL (Time-based, no input condition)
         yield return StartCoroutine(ShowMessageAndWait(goalMessage, null, 6.0f));
         
         // Tutorial Complete

@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 1094242}
   - component: {fileID: 1094244}
   - component: {fileID: 1094243}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (95)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1042,6 +1042,133 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 20048170}
   m_Mesh: {fileID: -629719859055844128, guid: 4224dfcf39b9ca848800011919f8cef9, type: 3}
+--- !u!1 &20749804
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 20749807}
+  - component: {fileID: 20749806}
+  - component: {fileID: 20749805}
+  m_Layer: 0
+  m_Name: MapLight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &20749805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20749804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_CustomShadowLayers: 0
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
+--- !u!108 &20749806
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20749804}
+  m_Enabled: 1
+  serializedVersion: 12
+  m_Type: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize2D: {x: 0.5, y: 0.5}
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
+--- !u!4 &20749807
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20749804}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1468319212}
+  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &21294646
 GameObject:
   m_ObjectHideFlags: 0
@@ -1321,10 +1448,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 675212223}
-  - {fileID: 418159980}
-  - {fileID: 947371491}
-  - {fileID: 815567666}
-  - {fileID: 2013040638}
+  - {fileID: 1226831918}
+  - {fileID: 2038303532}
+  - {fileID: 934880977}
+  - {fileID: 1639182713}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &25519415
@@ -1338,7 +1465,7 @@ GameObject:
   - component: {fileID: 25519416}
   - component: {fileID: 25519418}
   - component: {fileID: 25519417}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (98)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1830,7 +1957,7 @@ GameObject:
   - component: {fileID: 32421334}
   - component: {fileID: 32421336}
   - component: {fileID: 32421335}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (162)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2178,7 +2305,7 @@ GameObject:
   - component: {fileID: 34520631}
   - component: {fileID: 34520633}
   - component: {fileID: 34520632}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3434,7 +3561,7 @@ GameObject:
   - component: {fileID: 52687088}
   - component: {fileID: 52687090}
   - component: {fileID: 52687089}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (122)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3726,7 +3853,7 @@ GameObject:
   - component: {fileID: 61767865}
   - component: {fileID: 61767867}
   - component: {fileID: 61767866}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (66)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4390,7 +4517,7 @@ GameObject:
   - component: {fileID: 69449611}
   - component: {fileID: 69449613}
   - component: {fileID: 69449612}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (129)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4480,7 +4607,7 @@ GameObject:
   - component: {fileID: 70040089}
   - component: {fileID: 70040091}
   - component: {fileID: 70040090}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (158)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4570,7 +4697,7 @@ GameObject:
   - component: {fileID: 73125519}
   - component: {fileID: 73125521}
   - component: {fileID: 73125520}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4750,7 +4877,7 @@ GameObject:
   - component: {fileID: 76231539}
   - component: {fileID: 76231541}
   - component: {fileID: 76231540}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (79)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5280,7 +5407,7 @@ GameObject:
   - component: {fileID: 86897841}
   - component: {fileID: 86897843}
   - component: {fileID: 86897842}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (179)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6059,7 +6186,7 @@ GameObject:
   - component: {fileID: 95751187}
   - component: {fileID: 95751189}
   - component: {fileID: 95751188}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6138,6 +6265,119 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 95751186}
   m_Mesh: {fileID: 3562073674547505438, guid: 9a485cda8f2180046bf630ba61116527, type: 3}
+--- !u!1 &96331979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 96331980}
+  - component: {fileID: 96331983}
+  - component: {fileID: 96331982}
+  - component: {fileID: 96331981}
+  m_Layer: 9
+  m_Name: Quad
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &96331980
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96331979}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 5.2889996, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1693672640}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!64 &96331981
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96331979}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &96331982
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96331979}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 4df3cba9156e7194cb6ea6cb38c7fcc1, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &96331983
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96331979}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &96681895
 GameObject:
   m_ObjectHideFlags: 0
@@ -6441,7 +6681,7 @@ GameObject:
   - component: {fileID: 99461806}
   - component: {fileID: 99461808}
   - component: {fileID: 99461807}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6643,7 +6883,7 @@ GameObject:
   - component: {fileID: 101272948}
   - component: {fileID: 101272950}
   - component: {fileID: 101272949}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (223)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6823,7 +7063,7 @@ GameObject:
   - component: {fileID: 103288282}
   - component: {fileID: 103288284}
   - component: {fileID: 103288283}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (152)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7561,7 +7801,7 @@ GameObject:
   - component: {fileID: 109005277}
   - component: {fileID: 109005279}
   - component: {fileID: 109005278}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (238)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8374,7 +8614,7 @@ GameObject:
   - component: {fileID: 115807412}
   - component: {fileID: 115807414}
   - component: {fileID: 115807413}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8868,7 +9108,7 @@ GameObject:
   - component: {fileID: 124029551}
   - component: {fileID: 124029553}
   - component: {fileID: 124029552}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (42)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9109,7 +9349,7 @@ GameObject:
   - component: {fileID: 127855367}
   - component: {fileID: 127855369}
   - component: {fileID: 127855368}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (198)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9379,7 +9619,7 @@ GameObject:
   - component: {fileID: 131853145}
   - component: {fileID: 131853147}
   - component: {fileID: 131853146}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (39)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9873,7 +10113,7 @@ GameObject:
   - component: {fileID: 136344023}
   - component: {fileID: 136344025}
   - component: {fileID: 136344024}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (77)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10024,7 +10264,7 @@ GameObject:
   - component: {fileID: 138739741}
   - component: {fileID: 138739743}
   - component: {fileID: 138739742}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (174)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10633,7 +10873,7 @@ GameObject:
   - component: {fileID: 145067037}
   - component: {fileID: 145067039}
   - component: {fileID: 145067038}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (72)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10723,7 +10963,7 @@ GameObject:
   - component: {fileID: 146058765}
   - component: {fileID: 146058767}
   - component: {fileID: 146058766}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (196)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11130,7 +11370,7 @@ GameObject:
   - component: {fileID: 147160578}
   - component: {fileID: 147160580}
   - component: {fileID: 147160579}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (82)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11602,7 +11842,7 @@ GameObject:
   - component: {fileID: 153783782}
   - component: {fileID: 153783784}
   - component: {fileID: 153783783}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (165)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11872,7 +12112,7 @@ GameObject:
   - component: {fileID: 156701731}
   - component: {fileID: 156701733}
   - component: {fileID: 156701732}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (233)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12564,7 +12804,7 @@ GameObject:
   - component: {fileID: 164216509}
   - component: {fileID: 164216511}
   - component: {fileID: 164216510}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (119)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12654,7 +12894,7 @@ GameObject:
   - component: {fileID: 164246660}
   - component: {fileID: 164246662}
   - component: {fileID: 164246661}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13029,7 +13269,7 @@ GameObject:
   - component: {fileID: 165986817}
   - component: {fileID: 165986819}
   - component: {fileID: 165986818}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (118)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13701,7 +13941,7 @@ GameObject:
   - component: {fileID: 172430473}
   - component: {fileID: 172430475}
   - component: {fileID: 172430474}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (213)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14105,7 +14345,7 @@ GameObject:
   - component: {fileID: 176781231}
   - component: {fileID: 176781233}
   - component: {fileID: 176781232}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (212)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14285,7 +14525,7 @@ GameObject:
   - component: {fileID: 177267746}
   - component: {fileID: 177267748}
   - component: {fileID: 177267747}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (145)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14375,7 +14615,7 @@ GameObject:
   - component: {fileID: 178436000}
   - component: {fileID: 178436002}
   - component: {fileID: 178436001}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (189)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15870,7 +16110,7 @@ GameObject:
   - component: {fileID: 200734291}
   - component: {fileID: 200734293}
   - component: {fileID: 200734292}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16712,7 +16952,7 @@ GameObject:
   - component: {fileID: 218368250}
   - component: {fileID: 218368252}
   - component: {fileID: 218368251}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (234)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16802,7 +17042,7 @@ GameObject:
   - component: {fileID: 219599270}
   - component: {fileID: 219599272}
   - component: {fileID: 219599271}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (93)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17245,7 +17485,7 @@ GameObject:
   - component: {fileID: 222380369}
   - component: {fileID: 222380371}
   - component: {fileID: 222380370}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (160)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17335,7 +17575,7 @@ GameObject:
   - component: {fileID: 224943014}
   - component: {fileID: 224943016}
   - component: {fileID: 224943015}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18223,7 +18463,7 @@ GameObject:
   - component: {fileID: 239587629}
   - component: {fileID: 239587631}
   - component: {fileID: 239587630}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (163)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19348,7 +19588,7 @@ GameObject:
   - component: {fileID: 258182731}
   - component: {fileID: 258182733}
   - component: {fileID: 258182732}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (41)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19611,7 +19851,7 @@ GameObject:
   - component: {fileID: 262298320}
   - component: {fileID: 262298322}
   - component: {fileID: 262298321}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (99)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21266,7 +21506,7 @@ GameObject:
   - component: {fileID: 285203543}
   - component: {fileID: 285203545}
   - component: {fileID: 285203544}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22075,7 +22315,7 @@ GameObject:
   - component: {fileID: 301546660}
   - component: {fileID: 301546662}
   - component: {fileID: 301546661}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (80)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22255,7 +22495,7 @@ GameObject:
   - component: {fileID: 304432400}
   - component: {fileID: 304432402}
   - component: {fileID: 304432401}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (192)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23907,7 +24147,7 @@ GameObject:
   - component: {fileID: 324387721}
   - component: {fileID: 324387723}
   - component: {fileID: 324387722}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (60)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24177,7 +24417,7 @@ GameObject:
   - component: {fileID: 327596723}
   - component: {fileID: 327596725}
   - component: {fileID: 327596724}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (81)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25793,7 +26033,7 @@ GameObject:
   - component: {fileID: 350261217}
   - component: {fileID: 350261219}
   - component: {fileID: 350261218}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26356,7 +26596,7 @@ GameObject:
   - component: {fileID: 355366906}
   - component: {fileID: 355366908}
   - component: {fileID: 355366907}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (31)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26446,7 +26686,7 @@ GameObject:
   - component: {fileID: 356611273}
   - component: {fileID: 356611275}
   - component: {fileID: 356611274}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (35)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27232,7 +27472,7 @@ GameObject:
   - component: {fileID: 366800093}
   - component: {fileID: 366800095}
   - component: {fileID: 366800094}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (121)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27686,7 +27926,7 @@ GameObject:
   - component: {fileID: 380204527}
   - component: {fileID: 380204529}
   - component: {fileID: 380204528}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28950,7 +29190,7 @@ GameObject:
   - component: {fileID: 401248995}
   - component: {fileID: 401248997}
   - component: {fileID: 401248996}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (68)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29182,7 +29422,7 @@ GameObject:
   - component: {fileID: 404041142}
   - component: {fileID: 404041144}
   - component: {fileID: 404041143}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (218)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29825,7 +30065,7 @@ GameObject:
   - component: {fileID: 412180199}
   - component: {fileID: 412180201}
   - component: {fileID: 412180200}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (156)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30830,7 +31070,7 @@ GameObject:
   - component: {fileID: 423233935}
   - component: {fileID: 423233937}
   - component: {fileID: 423233936}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (115)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31122,7 +31362,7 @@ GameObject:
   - component: {fileID: 424246493}
   - component: {fileID: 424246495}
   - component: {fileID: 424246494}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (147)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32226,7 +32466,7 @@ GameObject:
   - component: {fileID: 442443264}
   - component: {fileID: 442443266}
   - component: {fileID: 442443265}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (110)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32720,7 +32960,7 @@ GameObject:
   - component: {fileID: 449378383}
   - component: {fileID: 449378385}
   - component: {fileID: 449378384}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33618,7 +33858,7 @@ GameObject:
   - component: {fileID: 465519291}
   - component: {fileID: 465519293}
   - component: {fileID: 465519292}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (200)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35668,7 +35908,7 @@ GameObject:
   - component: {fileID: 492257519}
   - component: {fileID: 492257521}
   - component: {fileID: 492257520}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (74)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36791,7 +37031,7 @@ GameObject:
   - component: {fileID: 501657204}
   - component: {fileID: 501657206}
   - component: {fileID: 501657205}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (215)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36881,7 +37121,7 @@ GameObject:
   - component: {fileID: 502140597}
   - component: {fileID: 502140599}
   - component: {fileID: 502140598}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (188)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37666,7 +37906,7 @@ GameObject:
   - component: {fileID: 516127894}
   - component: {fileID: 516127896}
   - component: {fileID: 516127895}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38070,7 +38310,7 @@ GameObject:
   - component: {fileID: 518113699}
   - component: {fileID: 518113701}
   - component: {fileID: 518113700}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (124)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38250,7 +38490,7 @@ GameObject:
   - component: {fileID: 527945429}
   - component: {fileID: 527945431}
   - component: {fileID: 527945430}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (235)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38520,7 +38760,7 @@ GameObject:
   - component: {fileID: 538177203}
   - component: {fileID: 538177205}
   - component: {fileID: 538177204}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (50)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38880,7 +39120,7 @@ GameObject:
   - component: {fileID: 542498700}
   - component: {fileID: 542498702}
   - component: {fileID: 542498701}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (102)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39414,7 +39654,7 @@ GameObject:
   - component: {fileID: 547346677}
   - component: {fileID: 547346679}
   - component: {fileID: 547346678}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (141)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40308,7 +40548,7 @@ GameObject:
   - component: {fileID: 550880375}
   - component: {fileID: 550880377}
   - component: {fileID: 550880376}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40870,7 +41110,7 @@ GameObject:
   - component: {fileID: 554713736}
   - component: {fileID: 554713738}
   - component: {fileID: 554713737}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41421,7 +41661,7 @@ GameObject:
   - component: {fileID: 563550100}
   - component: {fileID: 563550102}
   - component: {fileID: 563550101}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (207)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42122,7 +42362,7 @@ GameObject:
   - component: {fileID: 578701948}
   - component: {fileID: 578701950}
   - component: {fileID: 578701949}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43792,7 +44032,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 22297572}
+    m_TransformParent: {fileID: 934880977}
     m_Modifications:
     - target: {fileID: -6689036041284674117, guid: 2b6a868d730c74793ab61241cdae7f69, type: 3}
       propertyPath: m_Name
@@ -43836,11 +44076,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 2b6a868d730c74793ab61241cdae7f69, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 2b6a868d730c74793ab61241cdae7f69, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 2b6a868d730c74793ab61241cdae7f69, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -44089,6 +44329,40 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 608060030}
   m_Mesh: {fileID: 8733429697405204941, guid: 2c75db744c42b6644af3709244028145, type: 3}
+--- !u!1 &608124564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 608124565}
+  m_Layer: 0
+  m_Name: MapShit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &608124565
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608124564}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 38.75726, y: 88.6645, z: 8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1468319212}
+  - {fileID: 2113162268}
+  - {fileID: 1004587111}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &611784617
 GameObject:
   m_ObjectHideFlags: 0
@@ -44909,7 +45183,7 @@ GameObject:
   - component: {fileID: 634296776}
   - component: {fileID: 634296778}
   - component: {fileID: 634296777}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (216)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44999,7 +45273,7 @@ GameObject:
   - component: {fileID: 635829021}
   - component: {fileID: 635829023}
   - component: {fileID: 635829022}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (49)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45089,7 +45363,7 @@ GameObject:
   - component: {fileID: 636155343}
   - component: {fileID: 636155345}
   - component: {fileID: 636155344}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (58)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45272,7 +45546,7 @@ GameObject:
   - component: {fileID: 639302896}
   - component: {fileID: 639302898}
   - component: {fileID: 639302897}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (178)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45893,7 +46167,7 @@ GameObject:
   - component: {fileID: 647946677}
   - component: {fileID: 647946679}
   - component: {fileID: 647946678}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (171)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47278,7 +47552,7 @@ GameObject:
   - component: {fileID: 659483321}
   - component: {fileID: 659483323}
   - component: {fileID: 659483322}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (143)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47660,7 +47934,7 @@ GameObject:
   - component: {fileID: 668096876}
   - component: {fileID: 668096878}
   - component: {fileID: 668096877}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (138)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49048,7 +49322,7 @@ GameObject:
   - component: {fileID: 689197258}
   - component: {fileID: 689197260}
   - component: {fileID: 689197259}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (36)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49323,7 +49597,7 @@ GameObject:
   - component: {fileID: 693403279}
   - component: {fileID: 693403281}
   - component: {fileID: 693403280}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (205)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49418,7 +49692,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &693596534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50384,7 +50658,7 @@ GameObject:
   - component: {fileID: 709678789}
   - component: {fileID: 709678791}
   - component: {fileID: 709678790}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (240)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50918,7 +51192,7 @@ GameObject:
   - component: {fileID: 711324451}
   - component: {fileID: 711324453}
   - component: {fileID: 711324452}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55080,7 +55354,7 @@ GameObject:
   - component: {fileID: 757665758}
   - component: {fileID: 757665760}
   - component: {fileID: 757665759}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (52)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55170,7 +55444,7 @@ GameObject:
   - component: {fileID: 758308717}
   - component: {fileID: 758308719}
   - component: {fileID: 758308718}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (139)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55978,7 +56252,7 @@ GameObject:
   - component: {fileID: 767819143}
   - component: {fileID: 767819145}
   - component: {fileID: 767819144}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (73)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56158,7 +56432,7 @@ GameObject:
   - component: {fileID: 768422937}
   - component: {fileID: 768422939}
   - component: {fileID: 768422938}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (232)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56922,7 +57196,7 @@ GameObject:
   - component: {fileID: 779458105}
   - component: {fileID: 779458107}
   - component: {fileID: 779458106}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (199)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57012,7 +57286,7 @@ GameObject:
   - component: {fileID: 780527462}
   - component: {fileID: 780527464}
   - component: {fileID: 780527463}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (226)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57214,7 +57488,7 @@ GameObject:
   - component: {fileID: 781315495}
   - component: {fileID: 781315497}
   - component: {fileID: 781315496}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (173)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57904,6 +58178,119 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797511277}
   m_Mesh: {fileID: -629719859055844128, guid: 4224dfcf39b9ca848800011919f8cef9, type: 3}
+--- !u!1 &799048119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 799048120}
+  - component: {fileID: 799048123}
+  - component: {fileID: 799048122}
+  - component: {fileID: 799048121}
+  m_Layer: 9
+  m_Name: Quad
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &799048120
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799048119}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 4.459, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1781377258}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!64 &799048121
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799048119}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &799048122
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799048119}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 4df3cba9156e7194cb6ea6cb38c7fcc1, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &799048123
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799048119}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &799249674
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58470,7 +58857,7 @@ GameObject:
   - component: {fileID: 805346865}
   - component: {fileID: 805346867}
   - component: {fileID: 805346866}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (193)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59464,7 +59851,7 @@ GameObject:
   - component: {fileID: 815141397}
   - component: {fileID: 815141399}
   - component: {fileID: 815141398}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (228)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59720,7 +60107,7 @@ GameObject:
   - component: {fileID: 821235826}
   - component: {fileID: 821235828}
   - component: {fileID: 821235827}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61280,7 +61667,7 @@ GameObject:
   - component: {fileID: 847881785}
   - component: {fileID: 847881787}
   - component: {fileID: 847881786}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61561,6 +61948,82 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 849137337}
   m_Mesh: {fileID: 4104380202958562290, guid: 88edf07bd5ec49e4ba15033761df1835, type: 3}
+--- !u!1 &850587052
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 850587053}
+  - component: {fileID: 850587055}
+  - component: {fileID: 850587054}
+  m_Layer: 5
+  m_Name: BlackBackground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &850587053
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850587052}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1861989684}
+  m_Father: {fileID: 2113162268}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &850587054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850587052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &850587055
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850587052}
+  m_CullTransparentMesh: 1
 --- !u!1 &852269191
 GameObject:
   m_ObjectHideFlags: 0
@@ -62088,7 +62551,7 @@ GameObject:
   - component: {fileID: 854552044}
   - component: {fileID: 854552046}
   - component: {fileID: 854552045}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62470,7 +62933,7 @@ GameObject:
   - component: {fileID: 864216976}
   - component: {fileID: 864216978}
   - component: {fileID: 864216977}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (202)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62852,7 +63315,7 @@ GameObject:
   - component: {fileID: 866772107}
   - component: {fileID: 866772109}
   - component: {fileID: 866772108}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (84)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63901,7 +64364,7 @@ GameObject:
   - component: {fileID: 880766765}
   - component: {fileID: 880766767}
   - component: {fileID: 880766766}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (117)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64305,7 +64768,7 @@ GameObject:
   - component: {fileID: 885001252}
   - component: {fileID: 885001254}
   - component: {fileID: 885001253}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (161)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65293,7 +65756,7 @@ GameObject:
   - component: {fileID: 891597206}
   - component: {fileID: 891597208}
   - component: {fileID: 891597207}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (69)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65607,7 +66070,7 @@ GameObject:
   - component: {fileID: 895084566}
   - component: {fileID: 895084568}
   - component: {fileID: 895084567}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (137)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65877,7 +66340,7 @@ GameObject:
   - component: {fileID: 899573997}
   - component: {fileID: 899573999}
   - component: {fileID: 899573998}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (59)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66169,7 +66632,7 @@ GameObject:
   - component: {fileID: 901900671}
   - component: {fileID: 901900673}
   - component: {fileID: 901900672}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (62)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66731,7 +67194,7 @@ GameObject:
   - component: {fileID: 906751785}
   - component: {fileID: 906751787}
   - component: {fileID: 906751786}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67463,6 +67926,119 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913850496}
   m_Mesh: {fileID: 6576051620408410808, guid: 1bee23ebf775d644db85dc192e6d051b, type: 3}
+--- !u!1 &913931865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 913931866}
+  - component: {fileID: 913931869}
+  - component: {fileID: 913931868}
+  - component: {fileID: 913931867}
+  m_Layer: 9
+  m_Name: Quad
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &913931866
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913931865}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -10.360889, y: 5.6, z: -57.30995}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2038303532}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!64 &913931867
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913931865}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &913931868
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913931865}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 7f08fb36039da514ba3f415393f199f5, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &913931869
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913931865}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &914437170 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4011077083501845521, guid: 5fe6194b562581343b266bb252a5bf9a, type: 3}
@@ -69719,6 +70295,39 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 934770229}
   m_Mesh: {fileID: -1674268716328342803, guid: 5765bfe14c0d81d4cb8e13fba1d6b482, type: 3}
+--- !u!1 &934880976
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 934880977}
+  m_Layer: 0
+  m_Name: ObeliskHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &934880977
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934880976}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 815567666}
+  - {fileID: 1580519624}
+  m_Father: {fileID: 22297572}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &934906483
 GameObject:
   m_ObjectHideFlags: 0
@@ -70083,7 +70692,7 @@ GameObject:
   - component: {fileID: 937043393}
   - component: {fileID: 937043395}
   - component: {fileID: 937043394}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (55)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70162,6 +70771,119 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 937043392}
   m_Mesh: {fileID: 3562073674547505438, guid: 9a485cda8f2180046bf630ba61116527, type: 3}
+--- !u!1 &938399654
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 938399655}
+  - component: {fileID: 938399658}
+  - component: {fileID: 938399657}
+  - component: {fileID: 938399656}
+  m_Layer: 9
+  m_Name: Quad
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &938399655
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938399654}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -16.113, y: 5.6, z: 56.195}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1226831918}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!64 &938399656
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938399654}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &938399657
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938399654}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 7f08fb36039da514ba3f415393f199f5, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &938399658
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938399654}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &938711187
 GameObject:
   m_ObjectHideFlags: 0
@@ -70286,7 +71008,7 @@ GameObject:
   - component: {fileID: 940358385}
   - component: {fileID: 940358387}
   - component: {fileID: 940358386}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (57)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70690,7 +71412,7 @@ GameObject:
   - component: {fileID: 942690727}
   - component: {fileID: 942690729}
   - component: {fileID: 942690728}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (140)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70780,7 +71502,7 @@ GameObject:
   - component: {fileID: 943124999}
   - component: {fileID: 943125001}
   - component: {fileID: 943125000}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (220)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71593,7 +72315,7 @@ GameObject:
   - component: {fileID: 951775214}
   - component: {fileID: 951775216}
   - component: {fileID: 951775215}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (221)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71683,7 +72405,7 @@ GameObject:
   - component: {fileID: 952560296}
   - component: {fileID: 952560298}
   - component: {fileID: 952560297}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (120)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73158,7 +73880,7 @@ GameObject:
   - component: {fileID: 970257246}
   - component: {fileID: 970257248}
   - component: {fileID: 970257247}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (164)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75181,7 +75903,7 @@ GameObject:
   - component: {fileID: 999608861}
   - component: {fileID: 999608863}
   - component: {fileID: 999608862}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (150)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75440,6 +76162,53 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1002997773}
   m_Mesh: {fileID: -9139091897953597641, guid: 7048aee7957d3cb48b3533402e08a0b0, type: 3}
+--- !u!1 &1004587110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1004587111}
+  - component: {fileID: 1004587112}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1004587111
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004587110}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.549412, y: -88.6645, z: 0.27208042}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 608124565}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1004587112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004587110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b523e7395505d84fa7b871b1cbaf2c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MapController
+  mapUI: {fileID: 2113162264}
+  mapLight: {fileID: 20749804}
+  mouseLookScript: {fileID: 1206349970}
 --- !u!1 &1007400699
 GameObject:
   m_ObjectHideFlags: 0
@@ -76534,7 +77303,7 @@ GameObject:
   - component: {fileID: 1021829443}
   - component: {fileID: 1021829445}
   - component: {fileID: 1021829444}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (91)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77345,7 +78114,7 @@ GameObject:
   - component: {fileID: 1032459508}
   - component: {fileID: 1032459510}
   - component: {fileID: 1032459509}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77637,7 +78406,7 @@ GameObject:
   - component: {fileID: 1037136179}
   - component: {fileID: 1037136181}
   - component: {fileID: 1037136180}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (90)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77929,7 +78698,7 @@ GameObject:
   - component: {fileID: 1037547196}
   - component: {fileID: 1037547198}
   - component: {fileID: 1037547197}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78896,7 +79665,7 @@ GameObject:
   - component: {fileID: 1050998800}
   - component: {fileID: 1050998802}
   - component: {fileID: 1050998801}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (78)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78986,7 +79755,7 @@ GameObject:
   - component: {fileID: 1051443208}
   - component: {fileID: 1051443210}
   - component: {fileID: 1051443209}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (89)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79076,7 +79845,7 @@ GameObject:
   - component: {fileID: 1051869064}
   - component: {fileID: 1051869066}
   - component: {fileID: 1051869065}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (83)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79166,7 +79935,7 @@ GameObject:
   - component: {fileID: 1051900219}
   - component: {fileID: 1051900221}
   - component: {fileID: 1051900220}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (195)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79346,7 +80115,7 @@ GameObject:
   - component: {fileID: 1053908054}
   - component: {fileID: 1053908056}
   - component: {fileID: 1053908055}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82980,7 +83749,7 @@ GameObject:
   - component: {fileID: 1084461391}
   - component: {fileID: 1084461393}
   - component: {fileID: 1084461392}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (155)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84638,7 +85407,7 @@ GameObject:
   - component: {fileID: 1109445852}
   - component: {fileID: 1109445854}
   - component: {fileID: 1109445853}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (230)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85697,7 +86466,7 @@ GameObject:
   - component: {fileID: 1118581074}
   - component: {fileID: 1118581076}
   - component: {fileID: 1118581075}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (148)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86286,7 +87055,7 @@ GameObject:
   - component: {fileID: 1135743933}
   - component: {fileID: 1135743935}
   - component: {fileID: 1135743934}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (132)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87055,7 +87824,7 @@ GameObject:
   - component: {fileID: 1142833671}
   - component: {fileID: 1142833673}
   - component: {fileID: 1142833672}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (203)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87635,7 +88404,7 @@ GameObject:
   - component: {fileID: 1149575467}
   - component: {fileID: 1149575469}
   - component: {fileID: 1149575468}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (182)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88845,7 +89614,7 @@ GameObject:
   - component: {fileID: 1170821082}
   - component: {fileID: 1170821084}
   - component: {fileID: 1170821083}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (75)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89047,7 +89816,7 @@ GameObject:
   - component: {fileID: 1172353917}
   - component: {fileID: 1172353919}
   - component: {fileID: 1172353918}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (151)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89631,7 +90400,7 @@ GameObject:
   - component: {fileID: 1179065883}
   - component: {fileID: 1179065885}
   - component: {fileID: 1179065884}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (126)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90284,7 +91053,7 @@ GameObject:
   - component: {fileID: 1185307785}
   - component: {fileID: 1185307787}
   - component: {fileID: 1185307786}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (53)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90374,7 +91143,7 @@ GameObject:
   - component: {fileID: 1187402987}
   - component: {fileID: 1187402989}
   - component: {fileID: 1187402988}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (183)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91083,7 +91852,7 @@ GameObject:
   - component: {fileID: 1195389136}
   - component: {fileID: 1195389138}
   - component: {fileID: 1195389137}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (211)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91285,7 +92054,7 @@ GameObject:
   - component: {fileID: 1200131002}
   - component: {fileID: 1200131004}
   - component: {fileID: 1200131003}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (38)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91855,6 +92624,7 @@ Transform:
   m_Children:
   - {fileID: 715705563}
   - {fileID: 1101303230}
+  - {fileID: 1274512692}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1210607983
@@ -93175,7 +93945,7 @@ GameObject:
   - component: {fileID: 1224892008}
   - component: {fileID: 1224892010}
   - component: {fileID: 1224892009}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (135)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93481,6 +94251,39 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226575971}
   m_Mesh: {fileID: -5724389992471290456, guid: 276b4390d133cc74e8c7cc60d8fcd604, type: 3}
+--- !u!1 &1226831917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1226831918}
+  m_Layer: 0
+  m_Name: ObeliskHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1226831918
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226831917}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 418159980}
+  - {fileID: 938399655}
+  m_Father: {fileID: 22297572}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1229465332
 GameObject:
   m_ObjectHideFlags: 0
@@ -95832,7 +96635,7 @@ GameObject:
   - component: {fileID: 1253441656}
   - component: {fileID: 1253441658}
   - component: {fileID: 1253441657}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (116)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96034,7 +96837,7 @@ GameObject:
   - component: {fileID: 1255317640}
   - component: {fileID: 1255317642}
   - component: {fileID: 1255317641}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (71)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96798,7 +97601,7 @@ GameObject:
   - component: {fileID: 1263114793}
   - component: {fileID: 1263114795}
   - component: {fileID: 1263114794}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (40)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97404,7 +98207,7 @@ GameObject:
   - component: {fileID: 1268155030}
   - component: {fileID: 1268155032}
   - component: {fileID: 1268155031}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (191)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97678,6 +98481,119 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1274421060}
   m_Mesh: {fileID: 8733429697405204941, guid: 2c75db744c42b6644af3709244028145, type: 3}
+--- !u!1 &1274512691
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1274512692}
+  - component: {fileID: 1274512695}
+  - component: {fileID: 1274512694}
+  - component: {fileID: 1274512693}
+  m_Layer: 9
+  m_Name: Quad
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1274512692
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274512691}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 3.6399999, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1206349973}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!64 &1274512693
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274512691}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1274512694
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274512691}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9283782d717b7924d9c8a066130cf35e, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1274512695
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274512691}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1274669441
 GameObject:
   m_ObjectHideFlags: 0
@@ -97779,7 +98695,7 @@ GameObject:
   - component: {fileID: 1275464074}
   - component: {fileID: 1275464076}
   - component: {fileID: 1275464075}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (224)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99017,7 +99933,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 22297572}
+    m_TransformParent: {fileID: 1639182713}
     m_Modifications:
     - target: {fileID: -6689036041284674117, guid: 2b6a868d730c74793ab61241cdae7f69, type: 3}
       propertyPath: m_Name
@@ -99041,7 +99957,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 2b6a868d730c74793ab61241cdae7f69, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.9
+      value: -5.8999996
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 2b6a868d730c74793ab61241cdae7f69, type: 3}
       propertyPath: m_LocalPosition.y
@@ -99061,11 +99977,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 2b6a868d730c74793ab61241cdae7f69, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 2b6a868d730c74793ab61241cdae7f69, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 2b6a868d730c74793ab61241cdae7f69, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -99106,7 +100022,7 @@ GameObject:
   - component: {fileID: 1293726175}
   - component: {fileID: 1293726177}
   - component: {fileID: 1293726176}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (114)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99627,7 +100543,7 @@ GameObject:
   - component: {fileID: 1300446028}
   - component: {fileID: 1300446030}
   - component: {fileID: 1300446029}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (45)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100338,7 +101254,7 @@ GameObject:
   - component: {fileID: 1308173348}
   - component: {fileID: 1308173350}
   - component: {fileID: 1308173349}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (33)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100720,7 +101636,7 @@ GameObject:
   - component: {fileID: 1312100304}
   - component: {fileID: 1312100306}
   - component: {fileID: 1312100305}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (177)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101012,7 +101928,7 @@ GameObject:
   - component: {fileID: 1313918147}
   - component: {fileID: 1313918149}
   - component: {fileID: 1313918148}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101102,7 +102018,7 @@ GameObject:
   - component: {fileID: 1317393732}
   - component: {fileID: 1317393734}
   - component: {fileID: 1317393733}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (100)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102161,7 +103077,7 @@ GameObject:
   - component: {fileID: 1328010574}
   - component: {fileID: 1328010576}
   - component: {fileID: 1328010575}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105908,7 +106824,7 @@ GameObject:
   - component: {fileID: 1371930893}
   - component: {fileID: 1371930895}
   - component: {fileID: 1371930894}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (159)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106918,7 +107834,7 @@ GameObject:
   - component: {fileID: 1386182283}
   - component: {fileID: 1386182285}
   - component: {fileID: 1386182284}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (32)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107816,7 +108732,7 @@ GameObject:
   - component: {fileID: 1396403722}
   - component: {fileID: 1396403724}
   - component: {fileID: 1396403723}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (214)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107967,7 +108883,7 @@ GameObject:
   - component: {fileID: 1398359202}
   - component: {fileID: 1398359204}
   - component: {fileID: 1398359203}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108147,7 +109063,7 @@ GameObject:
   - component: {fileID: 1399821358}
   - component: {fileID: 1399821360}
   - component: {fileID: 1399821359}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (166)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108417,7 +109333,7 @@ GameObject:
   - component: {fileID: 1404537373}
   - component: {fileID: 1404537375}
   - component: {fileID: 1404537374}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (97)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108507,7 +109423,7 @@ GameObject:
   - component: {fileID: 1407100805}
   - component: {fileID: 1407100807}
   - component: {fileID: 1407100806}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109817,7 +110733,7 @@ GameObject:
   - component: {fileID: 1419167232}
   - component: {fileID: 1419167234}
   - component: {fileID: 1419167233}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (133)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109907,7 +110823,7 @@ GameObject:
   - component: {fileID: 1423810709}
   - component: {fileID: 1423810711}
   - component: {fileID: 1423810710}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (154)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110109,7 +111025,7 @@ GameObject:
   - component: {fileID: 1424199807}
   - component: {fileID: 1424199809}
   - component: {fileID: 1424199808}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110260,7 +111176,7 @@ GameObject:
   - component: {fileID: 1427515007}
   - component: {fileID: 1427515009}
   - component: {fileID: 1427515008}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (112)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110350,7 +111266,7 @@ GameObject:
   - component: {fileID: 1430673168}
   - component: {fileID: 1430673170}
   - component: {fileID: 1430673169}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (67)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111068,7 +111984,7 @@ GameObject:
   - component: {fileID: 1440926630}
   - component: {fileID: 1440926632}
   - component: {fileID: 1440926631}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (146)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111158,7 +112074,7 @@ GameObject:
   - component: {fileID: 1441277297}
   - component: {fileID: 1441277299}
   - component: {fileID: 1441277298}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112387,7 +113303,7 @@ GameObject:
   - component: {fileID: 1460837389}
   - component: {fileID: 1460837391}
   - component: {fileID: 1460837390}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (236)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113077,6 +113993,135 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466608577}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1468319211
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1468319212}
+  - component: {fileID: 1468319214}
+  - component: {fileID: 1468319213}
+  m_Layer: 0
+  m_Name: MapCamera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1468319212
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468319211}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.49910033, y: 0.5008981, z: -0.5008981, w: 0.49910033}
+  m_LocalPosition: {x: -33.75726, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 20749807}
+  m_Father: {fileID: 608124565}
+  m_LocalEulerAnglesHint: {x: 90, y: 90.214, z: 0.0079956055}
+--- !u!114 &1468319213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468319211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+  m_Version: 2
+--- !u!20 &1468319214
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468319211}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 1
+  orthographic size: 55
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 567
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 8400000, guid: 01f066af681b8f84caf2d5d63b31fcfc, type: 2}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
 --- !u!1 &1468873855
 GameObject:
   m_ObjectHideFlags: 0
@@ -114507,7 +115552,7 @@ GameObject:
   - component: {fileID: 1480803191}
   - component: {fileID: 1480803193}
   - component: {fileID: 1480803192}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (65)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114597,7 +115642,7 @@ GameObject:
   - component: {fileID: 1481813582}
   - component: {fileID: 1481813584}
   - component: {fileID: 1481813583}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (47)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115271,7 +116316,7 @@ GameObject:
   - component: {fileID: 1487564253}
   - component: {fileID: 1487564255}
   - component: {fileID: 1487564254}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (157)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115550,7 +116595,7 @@ GameObject:
   - component: {fileID: 1490559714}
   - component: {fileID: 1490559716}
   - component: {fileID: 1490559715}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (64)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115904,7 +116949,7 @@ GameObject:
   - component: {fileID: 1496328658}
   - component: {fileID: 1496328660}
   - component: {fileID: 1496328659}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (125)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116084,7 +117129,7 @@ GameObject:
   - component: {fileID: 1497969999}
   - component: {fileID: 1497970001}
   - component: {fileID: 1497970000}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (111)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116651,7 +117696,7 @@ GameObject:
   - component: {fileID: 1512644235}
   - component: {fileID: 1512644237}
   - component: {fileID: 1512644236}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (108)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116831,7 +117876,7 @@ GameObject:
   - component: {fileID: 1514376765}
   - component: {fileID: 1514376767}
   - component: {fileID: 1514376766}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (176)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117094,7 +118139,7 @@ GameObject:
   - component: {fileID: 1516460435}
   - component: {fileID: 1516460437}
   - component: {fileID: 1516460436}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (169)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117498,7 +118543,7 @@ GameObject:
   - component: {fileID: 1518557723}
   - component: {fileID: 1518557725}
   - component: {fileID: 1518557724}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (225)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117588,7 +118633,7 @@ GameObject:
   - component: {fileID: 1518945037}
   - component: {fileID: 1518945039}
   - component: {fileID: 1518945038}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (144)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117678,7 +118723,7 @@ GameObject:
   - component: {fileID: 1519021147}
   - component: {fileID: 1519021149}
   - component: {fileID: 1519021148}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (113)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118243,7 +119288,7 @@ GameObject:
   - component: {fileID: 1523255559}
   - component: {fileID: 1523255561}
   - component: {fileID: 1523255560}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (109)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118445,7 +119490,7 @@ GameObject:
   - component: {fileID: 1523806876}
   - component: {fileID: 1523806878}
   - component: {fileID: 1523806877}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (172)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119007,7 +120052,7 @@ GameObject:
   - component: {fileID: 1529937245}
   - component: {fileID: 1529937247}
   - component: {fileID: 1529937246}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (149)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119389,7 +120434,7 @@ GameObject:
   - component: {fileID: 1533424457}
   - component: {fileID: 1533424459}
   - component: {fileID: 1533424458}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (210)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121652,7 +122697,7 @@ GameObject:
   - component: {fileID: 1564185464}
   - component: {fileID: 1564185466}
   - component: {fileID: 1564185465}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (37)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121927,7 +122972,7 @@ GameObject:
   - component: {fileID: 1571034227}
   - component: {fileID: 1571034229}
   - component: {fileID: 1571034228}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (86)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122410,6 +123455,119 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1576336102}
   m_Mesh: {fileID: 8733429697405204941, guid: 2c75db744c42b6644af3709244028145, type: 3}
+--- !u!1 &1580519623
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1580519624}
+  - component: {fileID: 1580519627}
+  - component: {fileID: 1580519626}
+  - component: {fileID: 1580519625}
+  m_Layer: 9
+  m_Name: Quad
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1580519624
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580519623}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 21.63911, y: 5.6, z: 21.072}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 934880977}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!64 &1580519625
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580519623}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1580519626
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580519623}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 7f08fb36039da514ba3f415393f199f5, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1580519627
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580519623}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1580712581
 GameObject:
   m_ObjectHideFlags: 0
@@ -122925,7 +124083,7 @@ GameObject:
   - component: {fileID: 1587752169}
   - component: {fileID: 1587752171}
   - component: {fileID: 1587752170}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (76)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123015,7 +124173,7 @@ GameObject:
   - component: {fileID: 1588280805}
   - component: {fileID: 1588280807}
   - component: {fileID: 1588280806}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (219)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123480,7 +124638,7 @@ GameObject:
   - component: {fileID: 1592862780}
   - component: {fileID: 1592862782}
   - component: {fileID: 1592862781}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (170)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123660,7 +124818,7 @@ GameObject:
   - component: {fileID: 1594615439}
   - component: {fileID: 1594615441}
   - component: {fileID: 1594615440}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (107)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124132,7 +125290,7 @@ GameObject:
   - component: {fileID: 1602712544}
   - component: {fileID: 1602712546}
   - component: {fileID: 1602712545}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (241)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124492,7 +125650,7 @@ GameObject:
   - component: {fileID: 1607207065}
   - component: {fileID: 1607207067}
   - component: {fileID: 1607207066}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (70)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126023,7 +127181,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 22297572}
+    m_TransformParent: {fileID: 2038303532}
     m_Modifications:
     - target: {fileID: -6689036041284674117, guid: 2b6a868d730c74793ab61241cdae7f69, type: 3}
       propertyPath: m_Name
@@ -126067,11 +127225,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 2b6a868d730c74793ab61241cdae7f69, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 2b6a868d730c74793ab61241cdae7f69, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 2b6a868d730c74793ab61241cdae7f69, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -126219,7 +127377,7 @@ GameObject:
   - component: {fileID: 1631726666}
   - component: {fileID: 1631726668}
   - component: {fileID: 1631726667}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (54)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127113,7 +128271,7 @@ GameObject:
   - component: {fileID: 1635676962}
   - component: {fileID: 1635676964}
   - component: {fileID: 1635676963}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (63)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127416,6 +128574,39 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1638111055}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1639182712
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1639182713}
+  m_Layer: 0
+  m_Name: ObeliskHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1639182713
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639182712}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2013040638}
+  - {fileID: 1713425768}
+  m_Father: {fileID: 22297572}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1639204383
 GameObject:
   m_ObjectHideFlags: 0
@@ -128520,7 +129711,7 @@ GameObject:
   - component: {fileID: 1646788049}
   - component: {fileID: 1646788051}
   - component: {fileID: 1646788050}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (239)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128790,7 +129981,7 @@ GameObject:
   - component: {fileID: 1649629860}
   - component: {fileID: 1649629862}
   - component: {fileID: 1649629861}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (204)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129582,7 +130773,7 @@ GameObject:
   - component: {fileID: 1657656554}
   - component: {fileID: 1657656556}
   - component: {fileID: 1657656555}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (123)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129964,7 +131155,7 @@ GameObject:
   - component: {fileID: 1667471583}
   - component: {fileID: 1667471585}
   - component: {fileID: 1667471584}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (131)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130378,7 +131569,7 @@ GameObject:
   - component: {fileID: 1675993406}
   - component: {fileID: 1675993408}
   - component: {fileID: 1675993407}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (87)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130895,7 +132086,7 @@ GameObject:
   - component: {fileID: 1681654000}
   - component: {fileID: 1681654002}
   - component: {fileID: 1681654001}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131725,7 +132916,7 @@ GameObject:
   - component: {fileID: 1690023674}
   - component: {fileID: 1690023676}
   - component: {fileID: 1690023675}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (206)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132298,7 +133489,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3705028537381535112, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 96331980}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 374289202576707483, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       insertIndex: -1
@@ -132322,6 +133516,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeyItem
   keyID: key2
+--- !u!4 &1693672640 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3705028537381535112, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
+  m_PrefabInstance: {fileID: 1693672634}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1695931293
 GameObject:
   m_ObjectHideFlags: 0
@@ -132960,7 +134159,7 @@ GameObject:
   - component: {fileID: 1700263156}
   - component: {fileID: 1700263158}
   - component: {fileID: 1700263157}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (167)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133192,7 +134391,7 @@ GameObject:
   - component: {fileID: 1707441976}
   - component: {fileID: 1707441978}
   - component: {fileID: 1707441977}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (187)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133512,6 +134711,119 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713256218}
   m_Mesh: {fileID: 4104380202958562290, guid: 88edf07bd5ec49e4ba15033761df1835, type: 3}
+--- !u!1 &1713425767
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1713425768}
+  - component: {fileID: 1713425771}
+  - component: {fileID: 1713425770}
+  - component: {fileID: 1713425769}
+  m_Layer: 9
+  m_Name: Quad
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1713425768
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713425767}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -5.87, y: 5.6, z: 19.65}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1639182713}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!64 &1713425769
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713425767}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1713425770
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713425767}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 7f08fb36039da514ba3f415393f199f5, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1713425771
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713425767}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1714530697
 GameObject:
   m_ObjectHideFlags: 0
@@ -133905,7 +135217,7 @@ GameObject:
   - component: {fileID: 1719954175}
   - component: {fileID: 1719954177}
   - component: {fileID: 1719954176}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (92)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134421,7 +135733,7 @@ GameObject:
   - component: {fileID: 1728307682}
   - component: {fileID: 1728307684}
   - component: {fileID: 1728307683}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (197)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134561,7 +135873,7 @@ GameObject:
   - component: {fileID: 1736432065}
   - component: {fileID: 1736432067}
   - component: {fileID: 1736432066}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134965,7 +136277,7 @@ GameObject:
   - component: {fileID: 1743296009}
   - component: {fileID: 1743296011}
   - component: {fileID: 1743296010}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (217)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135776,7 +137088,7 @@ GameObject:
   - component: {fileID: 1754044197}
   - component: {fileID: 1754044199}
   - component: {fileID: 1754044198}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (130)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137820,6 +139132,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeyItem
   keyID: key1
+--- !u!4 &1781377258 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3705028537381535112, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
+  m_PrefabInstance: {fileID: 1899156513}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1781527694
 GameObject:
   m_ObjectHideFlags: 0
@@ -138218,7 +139535,7 @@ GameObject:
   - component: {fileID: 1789567741}
   - component: {fileID: 1789567743}
   - component: {fileID: 1789567742}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (44)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140620,7 +141937,7 @@ GameObject:
   - component: {fileID: 1824034784}
   - component: {fileID: 1824034786}
   - component: {fileID: 1824034785}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (175)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141024,7 +142341,7 @@ GameObject:
   - component: {fileID: 1830162213}
   - component: {fileID: 1830162215}
   - component: {fileID: 1830162214}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (106)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141962,7 +143279,7 @@ GameObject:
   - component: {fileID: 1850014328}
   - component: {fileID: 1850014330}
   - component: {fileID: 1850014329}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (136)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143110,6 +144427,78 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1861480559}
   m_Mesh: {fileID: 8733429697405204941, guid: 2c75db744c42b6644af3709244028145, type: 3}
+--- !u!1 &1861989683
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1861989684}
+  - component: {fileID: 1861989686}
+  - component: {fileID: 1861989685}
+  m_Layer: 5
+  m_Name: RawImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1861989684
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861989683}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 850587053}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1861989685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861989683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 8400000, guid: 01f066af681b8f84caf2d5d63b31fcfc, type: 2}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1861989686
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861989683}
+  m_CullTransparentMesh: 1
 --- !u!4 &1862099799 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 210876550206325803, guid: e87ea63bf3339784bb6459a7c836d16e, type: 3}
@@ -143238,7 +144627,7 @@ GameObject:
   - component: {fileID: 1863825594}
   - component: {fileID: 1863825596}
   - component: {fileID: 1863825595}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (105)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143577,7 +144966,7 @@ GameObject:
   - component: {fileID: 1864904382}
   - component: {fileID: 1864904384}
   - component: {fileID: 1864904383}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (48)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144028,7 +145417,7 @@ GameObject:
   - component: {fileID: 1873764230}
   - component: {fileID: 1873764232}
   - component: {fileID: 1873764231}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (134)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144617,7 +146006,7 @@ GameObject:
   - component: {fileID: 1878869901}
   - component: {fileID: 1878869903}
   - component: {fileID: 1878869902}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (181)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144858,7 +146247,7 @@ GameObject:
   - component: {fileID: 1882743163}
   - component: {fileID: 1882743165}
   - component: {fileID: 1882743164}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (34)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145335,7 +146724,7 @@ GameObject:
   - component: {fileID: 1894776428}
   - component: {fileID: 1894776430}
   - component: {fileID: 1894776429}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (186)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145627,7 +147016,7 @@ GameObject:
   - component: {fileID: 1896542569}
   - component: {fileID: 1896542571}
   - component: {fileID: 1896542570}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (128)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145890,7 +147279,7 @@ GameObject:
   - component: {fileID: 1899131259}
   - component: {fileID: 1899131261}
   - component: {fileID: 1899131260}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (88)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146027,7 +147416,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3705028537381535112, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 799048120}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 374289202576707483, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       insertIndex: -1
@@ -146356,7 +147748,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 22297572}
+    m_TransformParent: {fileID: 1226831918}
     m_Modifications:
     - target: {fileID: -6689036041284674117, guid: 2b6a868d730c74793ab61241cdae7f69, type: 3}
       propertyPath: m_Name
@@ -146400,11 +147792,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 2b6a868d730c74793ab61241cdae7f69, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 2b6a868d730c74793ab61241cdae7f69, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 2b6a868d730c74793ab61241cdae7f69, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -146440,7 +147832,7 @@ GameObject:
   - component: {fileID: 1906958071}
   - component: {fileID: 1906958073}
   - component: {fileID: 1906958072}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (180)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146862,7 +148254,7 @@ GameObject:
   - component: {fileID: 1909603655}
   - component: {fileID: 1909603657}
   - component: {fileID: 1909603656}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148297,7 +149689,7 @@ GameObject:
   - component: {fileID: 1926592841}
   - component: {fileID: 1926592843}
   - component: {fileID: 1926592842}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (101)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148387,7 +149779,7 @@ GameObject:
   - component: {fileID: 1926802356}
   - component: {fileID: 1926802358}
   - component: {fileID: 1926802357}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (43)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148589,7 +149981,7 @@ GameObject:
   - component: {fileID: 1928343957}
   - component: {fileID: 1928343959}
   - component: {fileID: 1928343958}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (227)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148998,7 +150390,7 @@ GameObject:
   - component: {fileID: 1933354170}
   - component: {fileID: 1933354172}
   - component: {fileID: 1933354171}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149247,7 +150639,7 @@ GameObject:
   - component: {fileID: 1936142482}
   - component: {fileID: 1936142484}
   - component: {fileID: 1936142483}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (231)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150273,7 +151665,7 @@ GameObject:
   - component: {fileID: 1947489994}
   - component: {fileID: 1947489996}
   - component: {fileID: 1947489995}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (222)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150368,7 +151760,7 @@ GameObject:
   - component: {fileID: 1949582888}
   - component: {fileID: 1949582890}
   - component: {fileID: 1949582889}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (94)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150548,7 +151940,7 @@ GameObject:
   - component: {fileID: 1951988293}
   - component: {fileID: 1951988295}
   - component: {fileID: 1951988294}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151918,7 +153310,7 @@ GameObject:
   - component: {fileID: 1976186671}
   - component: {fileID: 1976186673}
   - component: {fileID: 1976186672}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (153)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152427,7 +153819,7 @@ GameObject:
   - component: {fileID: 1979281300}
   - component: {fileID: 1979281302}
   - component: {fileID: 1979281301}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (96)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152517,7 +153909,7 @@ GameObject:
   - component: {fileID: 1980351295}
   - component: {fileID: 1980351297}
   - component: {fileID: 1980351296}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (208)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153242,7 +154634,7 @@ GameObject:
   - component: {fileID: 1984949594}
   - component: {fileID: 1984949596}
   - component: {fileID: 1984949595}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (201)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153332,7 +154724,7 @@ GameObject:
   - component: {fileID: 1986724319}
   - component: {fileID: 1986724321}
   - component: {fileID: 1986724320}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (127)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155169,7 +156561,7 @@ GameObject:
   - component: {fileID: 2013445330}
   - component: {fileID: 2013445332}
   - component: {fileID: 2013445331}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (185)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155410,7 +156802,7 @@ GameObject:
   - component: {fileID: 2017445103}
   - component: {fileID: 2017445105}
   - component: {fileID: 2017445104}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (46)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156137,6 +157529,39 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2035168760}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2038303531
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2038303532}
+  m_Layer: 0
+  m_Name: ObeliskHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2038303532
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038303531}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 947371491}
+  - {fileID: 913931866}
+  m_Father: {fileID: 22297572}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2039501177
 GameObject:
   m_ObjectHideFlags: 0
@@ -156959,7 +158384,7 @@ GameObject:
   - component: {fileID: 2045886395}
   - component: {fileID: 2045886397}
   - component: {fileID: 2045886396}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (85)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157341,7 +158766,7 @@ GameObject:
   - component: {fileID: 2050328823}
   - component: {fileID: 2050328825}
   - component: {fileID: 2050328824}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157543,7 +158968,7 @@ GameObject:
   - component: {fileID: 2050971259}
   - component: {fileID: 2050971261}
   - component: {fileID: 2050971260}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (229)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158154,7 +159579,7 @@ GameObject:
   - component: {fileID: 2058755234}
   - component: {fileID: 2058755236}
   - component: {fileID: 2058755235}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158536,7 +159961,7 @@ GameObject:
   - component: {fileID: 2061398504}
   - component: {fileID: 2061398506}
   - component: {fileID: 2061398505}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (61)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158626,7 +160051,7 @@ GameObject:
   - component: {fileID: 2064538754}
   - component: {fileID: 2064538756}
   - component: {fileID: 2064538755}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (237)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159052,7 +160477,7 @@ GameObject:
   - component: {fileID: 2068004197}
   - component: {fileID: 2068004199}
   - component: {fileID: 2068004198}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (194)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159232,7 +160657,7 @@ GameObject:
   - component: {fileID: 2071938824}
   - component: {fileID: 2071938826}
   - component: {fileID: 2071938825}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (56)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160288,7 +161713,7 @@ GameObject:
   - component: {fileID: 2091911561}
   - component: {fileID: 2091911563}
   - component: {fileID: 2091911562}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (190)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160670,7 +162095,7 @@ GameObject:
   - component: {fileID: 2096677366}
   - component: {fileID: 2096677368}
   - component: {fileID: 2096677367}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (142)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161074,7 +162499,7 @@ GameObject:
   - component: {fileID: 2099175311}
   - component: {fileID: 2099175313}
   - component: {fileID: 2099175312}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (168)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161169,7 +162594,7 @@ GameObject:
   - component: {fileID: 2100826160}
   - component: {fileID: 2100826162}
   - component: {fileID: 2100826161}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161775,7 +163200,7 @@ GameObject:
   - component: {fileID: 2103481410}
   - component: {fileID: 2103481412}
   - component: {fileID: 2103481411}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (51)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162067,7 +163492,7 @@ GameObject:
   - component: {fileID: 2108343730}
   - component: {fileID: 2108343732}
   - component: {fileID: 2108343731}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162423,7 +163848,7 @@ GameObject:
   - component: {fileID: 2111321760}
   - component: {fileID: 2111321762}
   - component: {fileID: 2111321761}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (104)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162513,7 +163938,7 @@ GameObject:
   - component: {fileID: 2112323645}
   - component: {fileID: 2112323647}
   - component: {fileID: 2112323646}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (103)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162592,6 +164017,108 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2112323644}
   m_Mesh: {fileID: 3562073674547505438, guid: 9a485cda8f2180046bf630ba61116527, type: 3}
+--- !u!1 &2113162264
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2113162268}
+  - component: {fileID: 2113162267}
+  - component: {fileID: 2113162266}
+  - component: {fileID: 2113162265}
+  m_Layer: 5
+  m_Name: MapScreen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2113162265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113162264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &2113162266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113162264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &2113162267
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113162264}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &2113162268
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113162264}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 850587053}
+  m_Father: {fileID: 608124565}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1 &2114662417
 GameObject:
   m_ObjectHideFlags: 0
@@ -163075,7 +164602,7 @@ GameObject:
   - component: {fileID: 2119331501}
   - component: {fileID: 2119331503}
   - component: {fileID: 2119331502}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (209)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164238,7 +165765,7 @@ GameObject:
   - component: {fileID: 2136175186}
   - component: {fileID: 2136175188}
   - component: {fileID: 2136175187}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof (184)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165159,3 +166686,4 @@ SceneRoots:
   - {fileID: 693596535}
   - {fileID: 930394350}
   - {fileID: 1301452141}
+  - {fileID: 608124565}
