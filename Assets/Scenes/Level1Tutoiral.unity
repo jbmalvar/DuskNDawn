@@ -752,6 +752,7 @@ GameObject:
   - component: {fileID: 110581887}
   - component: {fileID: 110581886}
   - component: {fileID: 110581885}
+  - component: {fileID: 110581888}
   m_Layer: 0
   m_Name: Wall (3)
   m_TagString: Untagged
@@ -852,6 +853,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 110581883}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &110581888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110581883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &113989876 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5039237686859369908, guid: 9f6eb9b041cc23f4080df303337cfcba, type: 3}
@@ -930,6 +946,7 @@ GameObject:
   - component: {fileID: 128743213}
   - component: {fileID: 128743212}
   - component: {fileID: 128743211}
+  - component: {fileID: 128743215}
   m_Layer: 0
   m_Name: Wall (14)
   m_TagString: Untagged
@@ -1030,6 +1047,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 758512640}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &128743215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128743210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &131969069
 GameObject:
   m_ObjectHideFlags: 0
@@ -1042,6 +1074,7 @@ GameObject:
   - component: {fileID: 131969073}
   - component: {fileID: 131969072}
   - component: {fileID: 131969071}
+  - component: {fileID: 131969074}
   m_Layer: 0
   m_Name: Wall (23)
   m_TagString: Untagged
@@ -1142,6 +1175,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131969069}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &131969074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131969069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!4 &147096728 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 569655254227853485, guid: 1a96656b96d5a37498f73aa6b26f821b, type: 3}
@@ -1330,6 +1378,7 @@ GameObject:
   - component: {fileID: 165657316}
   - component: {fileID: 165657315}
   - component: {fileID: 165657314}
+  - component: {fileID: 165657318}
   m_Layer: 0
   m_Name: Wall (11)
   m_TagString: Untagged
@@ -1430,6 +1479,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 758512640}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &165657318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165657313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!4 &177132316 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 569655254227853485, guid: 1a96656b96d5a37498f73aa6b26f821b, type: 3}
@@ -1447,6 +1511,7 @@ GameObject:
   - component: {fileID: 177836273}
   - component: {fileID: 177836272}
   - component: {fileID: 177836271}
+  - component: {fileID: 177836274}
   m_Layer: 0
   m_Name: Wall (20)
   m_TagString: Untagged
@@ -1547,6 +1612,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 177836269}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &177836274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177836269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &194779788
 GameObject:
   m_ObjectHideFlags: 0
@@ -1779,6 +1859,7 @@ GameObject:
   - component: {fileID: 219183395}
   - component: {fileID: 219183394}
   - component: {fileID: 219183393}
+  - component: {fileID: 219183396}
   m_Layer: 0
   m_Name: Wall (15)
   m_TagString: Untagged
@@ -1879,6 +1960,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 219183391}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &219183396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219183391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &222737605
 GameObject:
   m_ObjectHideFlags: 0
@@ -2328,6 +2424,7 @@ GameObject:
   - component: {fileID: 284096082}
   - component: {fileID: 284096081}
   - component: {fileID: 284096080}
+  - component: {fileID: 284096083}
   m_Layer: 0
   m_Name: Wall (35)
   m_TagString: Untagged
@@ -2428,6 +2525,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 284096078}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &284096083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284096078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!4 &292190218 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3425034450812426412, guid: 9f6eb9b041cc23f4080df303337cfcba, type: 3}
@@ -2687,6 +2799,7 @@ GameObject:
   - component: {fileID: 315616191}
   - component: {fileID: 315616190}
   - component: {fileID: 315616189}
+  - component: {fileID: 315616192}
   m_Layer: 0
   m_Name: Wall (33)
   m_TagString: Untagged
@@ -2787,6 +2900,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 315616187}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &315616192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315616187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &317129991 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1656138854286247247, guid: 9f6eb9b041cc23f4080df303337cfcba, type: 3}
@@ -3167,6 +3295,7 @@ GameObject:
   - component: {fileID: 364701649}
   - component: {fileID: 364701648}
   - component: {fileID: 364701647}
+  - component: {fileID: 364701650}
   m_Layer: 0
   m_Name: Wall (17)
   m_TagString: Untagged
@@ -3267,6 +3396,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 364701645}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &364701650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364701645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &373013955
 GameObject:
   m_ObjectHideFlags: 0
@@ -5937,6 +6081,7 @@ GameObject:
   - component: {fileID: 583617037}
   - component: {fileID: 583617036}
   - component: {fileID: 583617035}
+  - component: {fileID: 583617038}
   m_Layer: 0
   m_Name: Wall (37)
   m_TagString: Untagged
@@ -6037,6 +6182,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 583617033}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &583617038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583617033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1001 &590325141
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6114,6 +6274,7 @@ GameObject:
   - component: {fileID: 595540423}
   - component: {fileID: 595540422}
   - component: {fileID: 595540421}
+  - component: {fileID: 595540425}
   m_Layer: 0
   m_Name: Wall (13)
   m_TagString: Untagged
@@ -6214,6 +6375,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 758512640}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &595540425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595540420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1001 &596722449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6554,6 +6730,7 @@ GameObject:
   - component: {fileID: 611765363}
   - component: {fileID: 611765362}
   - component: {fileID: 611765361}
+  - component: {fileID: 611765364}
   m_Layer: 0
   m_Name: Wall (16)
   m_TagString: Untagged
@@ -6654,6 +6831,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 611765359}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &611765364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611765359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1001 &612790702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6796,6 +6988,7 @@ GameObject:
   - component: {fileID: 631994649}
   - component: {fileID: 631994648}
   - component: {fileID: 631994647}
+  - component: {fileID: 631994650}
   m_Layer: 0
   m_Name: Wall (31)
   m_TagString: Untagged
@@ -6896,6 +7089,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 631994645}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &631994650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631994645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &632227812
 GameObject:
   m_ObjectHideFlags: 0
@@ -7020,6 +7228,7 @@ GameObject:
   - component: {fileID: 651902452}
   - component: {fileID: 651902451}
   - component: {fileID: 651902450}
+  - component: {fileID: 651902453}
   m_Layer: 0
   m_Name: Wall (18)
   m_TagString: Untagged
@@ -7120,6 +7329,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 651902448}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &651902453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651902448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1001 &653519738
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7226,6 +7450,7 @@ GameObject:
   - component: {fileID: 666346333}
   - component: {fileID: 666346332}
   - component: {fileID: 666346331}
+  - component: {fileID: 666346335}
   m_Layer: 0
   m_Name: Wall (9)
   m_TagString: Untagged
@@ -7326,6 +7551,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 758512640}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &666346335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666346330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &680072102 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1959757632758914350, guid: 9f6eb9b041cc23f4080df303337cfcba, type: 3}
@@ -7458,6 +7698,7 @@ GameObject:
   - component: {fileID: 717304285}
   - component: {fileID: 717304284}
   - component: {fileID: 717304283}
+  - component: {fileID: 717304287}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -7558,6 +7799,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 758512640}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &717304287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 717304282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &717376099
 GameObject:
   m_ObjectHideFlags: 0
@@ -7821,6 +8077,7 @@ GameObject:
   - component: {fileID: 744745748}
   - component: {fileID: 744745747}
   - component: {fileID: 744745746}
+  - component: {fileID: 744745749}
   m_Layer: 0
   m_Name: Wall (30)
   m_TagString: Untagged
@@ -7921,6 +8178,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 744745744}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &744745749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744745744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &758512639
 GameObject:
   m_ObjectHideFlags: 0
@@ -8156,6 +8428,7 @@ GameObject:
   - component: {fileID: 776124369}
   - component: {fileID: 776124368}
   - component: {fileID: 776124367}
+  - component: {fileID: 776124370}
   m_Layer: 0
   m_Name: Wall (25)
   m_TagString: Untagged
@@ -8256,6 +8529,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 776124365}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &776124370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776124365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1001 &778837529
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8508,6 +8796,7 @@ GameObject:
   - component: {fileID: 800079569}
   - component: {fileID: 800079568}
   - component: {fileID: 800079567}
+  - component: {fileID: 800079571}
   m_Layer: 0
   m_Name: Wall (10)
   m_TagString: Untagged
@@ -8608,6 +8897,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 758512640}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &800079571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800079566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &800741955
 GameObject:
   m_ObjectHideFlags: 0
@@ -9233,6 +9537,7 @@ GameObject:
   - component: {fileID: 870128417}
   - component: {fileID: 870128416}
   - component: {fileID: 870128415}
+  - component: {fileID: 870128418}
   m_Layer: 0
   m_Name: Wall (26)
   m_TagString: Untagged
@@ -9333,6 +9638,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 870128413}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &870128418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870128413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &876591717
 GameObject:
   m_ObjectHideFlags: 0
@@ -9825,6 +10145,7 @@ GameObject:
   - component: {fileID: 920208205}
   - component: {fileID: 920208204}
   - component: {fileID: 920208203}
+  - component: {fileID: 920208206}
   m_Layer: 0
   m_Name: Wall (41)
   m_TagString: Untagged
@@ -9925,6 +10246,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 920208201}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &920208206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920208201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &937558571
 GameObject:
   m_ObjectHideFlags: 0
@@ -10016,6 +10352,7 @@ GameObject:
   - component: {fileID: 948902928}
   - component: {fileID: 948902927}
   - component: {fileID: 948902926}
+  - component: {fileID: 948902929}
   m_Layer: 0
   m_Name: Wall (40)
   m_TagString: Untagged
@@ -10116,6 +10453,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 948902924}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &948902929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948902924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &950322640 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4130246788429178768, guid: 9f6eb9b041cc23f4080df303337cfcba, type: 3}
@@ -10983,6 +11335,7 @@ GameObject:
   - component: {fileID: 1037468344}
   - component: {fileID: 1037468343}
   - component: {fileID: 1037468342}
+  - component: {fileID: 1037468346}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -11083,6 +11436,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 758512640}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1037468346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037468341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &1081175683
 GameObject:
   m_ObjectHideFlags: 0
@@ -11452,6 +11820,7 @@ GameObject:
   - component: {fileID: 1100762904}
   - component: {fileID: 1100762903}
   - component: {fileID: 1100762902}
+  - component: {fileID: 1100762905}
   m_Layer: 0
   m_Name: Wall (5)
   m_TagString: Untagged
@@ -11552,6 +11921,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1100762900}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1100762905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100762900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &1116381506
 GameObject:
   m_ObjectHideFlags: 0
@@ -11564,6 +11948,7 @@ GameObject:
   - component: {fileID: 1116381510}
   - component: {fileID: 1116381509}
   - component: {fileID: 1116381508}
+  - component: {fileID: 1116381511}
   m_Layer: 8
   m_Name: Floor (3)
   m_TagString: Untagged
@@ -11664,6 +12049,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1116381506}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1116381511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116381506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &1116777359
 GameObject:
   m_ObjectHideFlags: 0
@@ -11676,6 +12076,7 @@ GameObject:
   - component: {fileID: 1116777363}
   - component: {fileID: 1116777362}
   - component: {fileID: 1116777361}
+  - component: {fileID: 1116777364}
   m_Layer: 0
   m_Name: Wall (32)
   m_TagString: Untagged
@@ -11776,6 +12177,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1116777359}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1116777364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116777359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &1120277195 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7437786878796786930, guid: 9f6eb9b041cc23f4080df303337cfcba, type: 3}
@@ -12712,6 +13128,7 @@ GameObject:
   - component: {fileID: 1250335679}
   - component: {fileID: 1250335678}
   - component: {fileID: 1250335677}
+  - component: {fileID: 1250335680}
   m_Layer: 0
   m_Name: Wall (28)
   m_TagString: Untagged
@@ -12812,6 +13229,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1250335675}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1250335680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250335675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &1253028361 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 695524351506800273, guid: e87ea63bf3339784bb6459a7c836d16e, type: 3}
@@ -12855,6 +13287,7 @@ GameObject:
   - component: {fileID: 1262557496}
   - component: {fileID: 1262557495}
   - component: {fileID: 1262557494}
+  - component: {fileID: 1262557498}
   m_Layer: 0
   m_Name: Wall (8)
   m_TagString: Untagged
@@ -12955,6 +13388,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 758512640}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1262557498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262557493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &1266857223
 GameObject:
   m_ObjectHideFlags: 0
@@ -13079,6 +13527,7 @@ GameObject:
   - component: {fileID: 1282081025}
   - component: {fileID: 1282081024}
   - component: {fileID: 1282081023}
+  - component: {fileID: 1282081026}
   m_Layer: 0
   m_Name: Floor (7)
   m_TagString: Untagged
@@ -13179,6 +13628,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1282081021}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1282081026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282081021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &1286704317
 GameObject:
   m_ObjectHideFlags: 0
@@ -13431,6 +13895,7 @@ GameObject:
   - component: {fileID: 1318923885}
   - component: {fileID: 1318923884}
   - component: {fileID: 1318923883}
+  - component: {fileID: 1318923887}
   m_Layer: 0
   m_Name: Wall (2)
   m_TagString: Untagged
@@ -13531,6 +13996,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 758512640}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1318923887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318923882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &1329370085
 GameObject:
   m_ObjectHideFlags: 0
@@ -13841,6 +14321,7 @@ GameObject:
   - component: {fileID: 1348975361}
   - component: {fileID: 1348975360}
   - component: {fileID: 1348975359}
+  - component: {fileID: 1348975362}
   m_Layer: 0
   m_Name: Wall (24)
   m_TagString: Untagged
@@ -13941,6 +14422,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1348975357}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1348975362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348975357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &1351005379 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8950134633120721467, guid: 9f6eb9b041cc23f4080df303337cfcba, type: 3}
@@ -14586,6 +15082,7 @@ GameObject:
   - component: {fileID: 1412098761}
   - component: {fileID: 1412098760}
   - component: {fileID: 1412098759}
+  - component: {fileID: 1412098763}
   m_Layer: 0
   m_Name: Wall (4)
   m_TagString: Untagged
@@ -14686,6 +15183,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 758512640}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1412098763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412098758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &1420656239
 GameObject:
   m_ObjectHideFlags: 0
@@ -14810,6 +15322,7 @@ GameObject:
   - component: {fileID: 1421899173}
   - component: {fileID: 1421899172}
   - component: {fileID: 1421899171}
+  - component: {fileID: 1421899174}
   m_Layer: 0
   m_Name: Wall (27)
   m_TagString: Untagged
@@ -14910,6 +15423,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1421899169}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1421899174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421899169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &1423335015
 GameObject:
   m_ObjectHideFlags: 0
@@ -15197,6 +15725,7 @@ GameObject:
   - component: {fileID: 1471227732}
   - component: {fileID: 1471227731}
   - component: {fileID: 1471227730}
+  - component: {fileID: 1471227734}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -15297,6 +15826,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 758512640}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1471227734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471227729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &1477512241
 GameObject:
   m_ObjectHideFlags: 0
@@ -15662,6 +16206,7 @@ GameObject:
   - component: {fileID: 1522740181}
   - component: {fileID: 1522740180}
   - component: {fileID: 1522740179}
+  - component: {fileID: 1522740182}
   m_Layer: 0
   m_Name: Wall (43)
   m_TagString: Untagged
@@ -15762,6 +16307,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1522740177}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1522740182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522740177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &1534459810
 GameObject:
   m_ObjectHideFlags: 0
@@ -16021,6 +16581,7 @@ GameObject:
   - component: {fileID: 1552107068}
   - component: {fileID: 1552107067}
   - component: {fileID: 1552107066}
+  - component: {fileID: 1552107069}
   m_Layer: 0
   m_Name: Wall (22)
   m_TagString: Untagged
@@ -16121,6 +16682,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1552107064}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1552107069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552107064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!4 &1556702217 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 569655254227853485, guid: 1a96656b96d5a37498f73aa6b26f821b, type: 3}
@@ -16413,6 +16989,7 @@ GameObject:
   - component: {fileID: 1593215385}
   - component: {fileID: 1593215384}
   - component: {fileID: 1593215383}
+  - component: {fileID: 1593215386}
   m_Layer: 0
   m_Name: Wall (38)
   m_TagString: Untagged
@@ -16513,6 +17090,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1593215381}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1593215386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593215381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &1601333617
 GameObject:
   m_ObjectHideFlags: 0
@@ -16900,6 +17492,7 @@ GameObject:
   - component: {fileID: 1613698383}
   - component: {fileID: 1613698382}
   - component: {fileID: 1613698381}
+  - component: {fileID: 1613698384}
   m_Layer: 0
   m_Name: Wall (19)
   m_TagString: Untagged
@@ -17000,6 +17593,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1613698379}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1613698384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613698379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!4 &1629237948 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4011077083501845521, guid: 5fe6194b562581343b266bb252a5bf9a, type: 3}
@@ -17189,6 +17797,7 @@ GameObject:
   - component: {fileID: 1650871588}
   - component: {fileID: 1650871587}
   - component: {fileID: 1650871586}
+  - component: {fileID: 1650871589}
   m_Layer: 0
   m_Name: Wall (36)
   m_TagString: Untagged
@@ -17289,6 +17898,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1650871584}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1650871589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650871584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &1655580207
 GameObject:
   m_ObjectHideFlags: 0
@@ -17301,6 +17925,7 @@ GameObject:
   - component: {fileID: 1655580211}
   - component: {fileID: 1655580210}
   - component: {fileID: 1655580209}
+  - component: {fileID: 1655580212}
   m_Layer: 0
   m_Name: Wall (17)
   m_TagString: Untagged
@@ -17401,6 +18026,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1655580207}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1655580212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655580207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &1674854326
 GameObject:
   m_ObjectHideFlags: 0
@@ -17413,6 +18053,7 @@ GameObject:
   - component: {fileID: 1674854330}
   - component: {fileID: 1674854329}
   - component: {fileID: 1674854328}
+  - component: {fileID: 1674854331}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -17513,6 +18154,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1674854326}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1674854331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674854326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &1685884456
 GameObject:
   m_ObjectHideFlags: 0
@@ -17525,6 +18181,7 @@ GameObject:
   - component: {fileID: 1685884459}
   - component: {fileID: 1685884458}
   - component: {fileID: 1685884457}
+  - component: {fileID: 1685884461}
   m_Layer: 0
   m_Name: Wall (7)
   m_TagString: Untagged
@@ -17625,6 +18282,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 758512640}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1685884461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685884456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &1722294988 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 374289202576707483, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
@@ -17712,6 +18384,7 @@ GameObject:
   - component: {fileID: 1731076158}
   - component: {fileID: 1731076157}
   - component: {fileID: 1731076156}
+  - component: {fileID: 1731076159}
   m_Layer: 0
   m_Name: Wall (18)
   m_TagString: Untagged
@@ -17812,6 +18485,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1731076154}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1731076159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731076154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &1733198443
 GameObject:
   m_ObjectHideFlags: 0
@@ -17926,6 +18614,7 @@ GameObject:
   - component: {fileID: 1740926654}
   - component: {fileID: 1740926653}
   - component: {fileID: 1740926652}
+  - component: {fileID: 1740926655}
   m_Layer: 0
   m_Name: Wall (21)
   m_TagString: Untagged
@@ -18026,6 +18715,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740926650}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1740926655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740926650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1001 &1746913749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18867,6 +19571,7 @@ GameObject:
   - component: {fileID: 1876798433}
   - component: {fileID: 1876798432}
   - component: {fileID: 1876798431}
+  - component: {fileID: 1876798434}
   m_Layer: 0
   m_Name: Wall (19)
   m_TagString: Untagged
@@ -18967,6 +19672,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1876798429}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1876798434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876798429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &1886198709
 GameObject:
   m_ObjectHideFlags: 0
@@ -20532,6 +21252,7 @@ GameObject:
   - component: {fileID: 2059300843}
   - component: {fileID: 2059300842}
   - component: {fileID: 2059300841}
+  - component: {fileID: 2059300844}
   m_Layer: 0
   m_Name: Wall (34)
   m_TagString: Untagged
@@ -20632,6 +21353,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2059300839}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2059300844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059300839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &2060881988
 GameObject:
   m_ObjectHideFlags: 0
@@ -20809,6 +21545,7 @@ GameObject:
   - component: {fileID: 2068919667}
   - component: {fileID: 2068919666}
   - component: {fileID: 2068919665}
+  - component: {fileID: 2068919668}
   m_Layer: 0
   m_Name: Wall (39)
   m_TagString: Untagged
@@ -20909,6 +21646,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2068919663}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2068919668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068919663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &2069610245
 GameObject:
   m_ObjectHideFlags: 0
@@ -21033,6 +21785,7 @@ GameObject:
   - component: {fileID: 2085300533}
   - component: {fileID: 2085300532}
   - component: {fileID: 2085300531}
+  - component: {fileID: 2085300534}
   m_Layer: 0
   m_Name: Wall (42)
   m_TagString: Untagged
@@ -21133,6 +21886,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2085300529}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2085300534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085300529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e855b8fbdc8703c4d86c60a13da7db1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeMaterialSwapper
+  presentMaterial: {fileID: 2100000, guid: 6e92dd84e2b91f144b66fac970ff7ce9, type: 2}
+  pastMaterial: {fileID: 2100000, guid: 2952bc158c146614fb070dadfac1b4de, type: 2}
+  ignoreTag: IgnoreTimeTravel
 --- !u!1 &2101272891
 GameObject:
   m_ObjectHideFlags: 0
