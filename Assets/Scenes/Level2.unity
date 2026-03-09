@@ -326198,7 +326198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8947ee6a627ebe419b6d843f127e45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelTracker
-  levelIndex: 1
+  levelIndex: 2
 --- !u!65 &953829899
 BoxCollider:
   m_ObjectHideFlags: 0
