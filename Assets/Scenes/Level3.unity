@@ -60157,8 +60157,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.26885504, y: 2.5667658, z: 2.452234}
-  m_Center: {x: 0.000003874302, y: 1.2678578, z: -1.221232}
+  m_Size: {x: 6.2500734, y: 2.5667658, z: 2.452234}
+  m_Center: {x: -2.9906049, y: 1.2678578, z: -1.221232}
 --- !u!23 &812121129
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -116993,6 +116993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelEndTrigger
   nextLevelIndex: 4
+  interactPrompt: {fileID: 0}
   useTransition: 1
   transitionUI: {fileID: 0}
   transitionDelay: 3
@@ -168342,3 +168343,4 @@ SceneRoots:
   - {fileID: 608124565}
   - {fileID: 617774959}
   - {fileID: 274339517}
+  - {fileID: 1336884797}

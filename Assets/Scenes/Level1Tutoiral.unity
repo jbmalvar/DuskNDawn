@@ -7554,9 +7554,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   nextLevelIndex: 2
+  interactPrompt: {fileID: 1645656992}
   useTransition: 1
   transitionUI: {fileID: 1922359784}
-  transitionDelay: 3
+  transitionDelay: 1
 --- !u!1 &716453446 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5236561765933100219, guid: 9f6eb9b041cc23f4080df303337cfcba, type: 3}
@@ -22227,3 +22228,4 @@ SceneRoots:
   - {fileID: 1649709149}
   - {fileID: 232958090}
   - {fileID: 1922359788}
+  - {fileID: 1191279548}
