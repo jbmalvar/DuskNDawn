@@ -144,7 +144,7 @@ public class AnalyticsManager : MonoBehaviour
         sessionData = new AnalyticsPayload
         {
             player_uid = savedUID, 
-            version_number = "DevTest2", 
+            version_number = "1.1.1", 
             ip_address = "handled_by_backend",
             session_id = Guid.NewGuid().ToString(), 
             levels = new LevelEvents[5], 
