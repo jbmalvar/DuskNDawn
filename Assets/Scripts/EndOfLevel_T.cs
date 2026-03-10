@@ -6,33 +6,92 @@ public class LevelEndTrigger : MonoBehaviour
 {
     public int nextLevelIndex = 2; 
     
+    [Header("UI Settings")]
+    [Tooltip("Drag your 'Press E to advance' UI text or GameObject here.")]
+    public GameObject interactPrompt;
+
     [Header("Transition Settings")]
     public bool useTransition = true; 
     public GameObject transitionUI; 
     public float transitionDelay = 3f; 
 
     private bool isTransitioning = false; 
+    private bool isPlayerInRange = false; 
 
-    void OnTriggerEnter(Collider other)
+    void Start()
     {
-        if (other.CompareTag("Player") && !isTransitioning)
+        // Ensure the prompt is hidden when the level starts
+        if (interactPrompt != null)
         {
-            isTransitioning = true; 
+            interactPrompt.SetActive(false);
+        }
+    }
+
+    void Update()
+    {
+        // Check if the player is inside the trigger, presses 'E', and we aren't already transitioning
+        if (isPlayerInRange && Input.GetKeyDown(KeyCode.E) && !isTransitioning)
+        {
+            StartTransition();
+        }
+    }
+
+  void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Something entered the trigger: " + other.gameObject.name); // ADD THIS LINE
+
+        // Mark the player as in range and show the UI prompt
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("It was the player!"); // ADD THIS LINE
+            isPlayerInRange = true; 
             
-            if (nextLevelIndex > PlayerPrefs.GetInt("LevelReached", 1))
+            if (interactPrompt != null)
             {
-                PlayerPrefs.SetInt("LevelReached", nextLevelIndex);
-                PlayerPrefs.Save(); 
+                interactPrompt.SetActive(true);
             }
-            
-            if (useTransition)
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        // Mark the player as out of range and hide the UI prompt
+        if (other.CompareTag("Player"))
+        {
+            isPlayerInRange = false;
+
+            if (interactPrompt != null)
             {
-                StartCoroutine(ShowTransitionAndLoadAsync());
+                interactPrompt.SetActive(false);
             }
-            else
-            {
-                SceneManager.LoadScene(nextLevelIndex);
-            }
+        }
+    }
+
+    private void StartTransition()
+    {
+        isTransitioning = true; 
+        
+        // Hide the prompt immediately once the player triggers the transition
+        if (interactPrompt != null)
+        {
+            interactPrompt.SetActive(false);
+        }
+
+        // Save level progress
+        if (nextLevelIndex > PlayerPrefs.GetInt("LevelReached", 1))
+        {
+            PlayerPrefs.SetInt("LevelReached", nextLevelIndex);
+            PlayerPrefs.Save(); 
+        }
+        
+        // Start transition or load immediately
+        if (useTransition)
+        {
+            StartCoroutine(ShowTransitionAndLoadAsync());
+        }
+        else
+        {
+            SceneManager.LoadScene(nextLevelIndex);
         }
     }
 
@@ -56,7 +115,7 @@ public class LevelEndTrigger : MonoBehaviour
         // 4. Wait for your transition delay (using real-world time)
         yield return new WaitForSecondsRealtime(transitionDelay);
 
-        // 5. Ensure the background load is finished (Unity stops progress at 0.9f when ready)
+        // 5. Ensure the background load is finished
         while (asyncLoad.progress < 0.9f)
         {
             yield return null;
