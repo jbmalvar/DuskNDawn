@@ -13541,7 +13541,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Try again! Remember, never look away.
+  m_text: He's not done with you... yet. Try again!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13563,7 +13563,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
+  m_TextStyleHashCode: 97690656
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -51808,8 +51808,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DeathMenuController
   deathText: {fileID: 373202190}
-  deathMessage: Try again. Never look away!
-  restartDelay: 3
+  deathMessage: He's not done with you... yet. Try again!
+  restartDelay: 4
   audioSource: {fileID: 0}
   respawnSound: {fileID: 0}
 --- !u!114 &1424008015
