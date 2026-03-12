@@ -1,24 +1,46 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // REQUIRED for loading scenes
+using UnityEngine.SceneManagement; 
+using System.Collections; 
+using TMPro; // 1. WE ADDED THIS LINE to tell Unity we are using TextMeshPro
 
 public class DeathMenuController : MonoBehaviour
 {
-    // Function to reload the current level
-    public void RetryGame()
+    [Header("UI & Timing")]
+    // 2. WE CHANGED "Text" to "TextMeshProUGUI" HERE
+    [SerializeField] private TextMeshProUGUI deathText; 
+    
+    [SerializeField] private string deathMessage = "He feels pity for you, try again.";
+    [SerializeField] private float restartDelay = 3f; 
+
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip respawnSound;
+
+    private void OnEnable()
     {
-        // Get the name of the active scene and reload it
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        
-        // Ensure time is running again (just in case it was paused)
-        Time.timeScale = 1f; 
+        StartCoroutine(DeathSequence());
     }
 
-    // Function to go to the Main Menu
-    public void QuitToMenu()
+    private IEnumerator DeathSequence()
     {
-        // Make sure your menu scene is named exactly "MainMenu" (case sensitive)
-        SceneManager.LoadScene("MainMenu");
-        
-        Time.timeScale = 1f;
+        // Show the pity text
+        if (deathText != null)
+        {
+            deathText.text = deathMessage;
+            deathText.gameObject.SetActive(true);
+        }
+
+        // Play the respawn/death audio
+        if (audioSource != null && respawnSound != null)
+        {
+            audioSource.PlayOneShot(respawnSound);
+        }
+
+        // Wait for the specified amount of seconds in REAL time 
+        yield return new WaitForSecondsRealtime(restartDelay);
+
+        // Reload the current level and unpause time
+        Time.timeScale = 1f; 
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
