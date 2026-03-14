@@ -61022,6 +61022,9 @@ MonoBehaviour:
   restartDelay: 4
   audioSource: {fileID: 0}
   respawnSound: {fileID: 0}
+  respawnPoint: {fileID: 1145288483}
+  player: {fileID: 1206349968}
+  monster: {fileID: 1541538779}
 --- !u!114 &825482339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88722,6 +88725,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1144996682}
   m_Mesh: {fileID: 1163783463231324772, guid: cc7bc3b0209956c49851110f8de79b95, type: 3}
+--- !u!1 &1145288482
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1145288483}
+  m_Layer: 0
+  m_Name: Respawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1145288483
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145288482}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 6, z: -29.957}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1145919506
 GameObject:
   m_ObjectHideFlags: 0
@@ -167805,3 +167839,4 @@ SceneRoots:
   - {fileID: 617774959}
   - {fileID: 274339517}
   - {fileID: 1336884797}
+  - {fileID: 1145288483}

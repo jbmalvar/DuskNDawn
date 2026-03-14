@@ -51812,9 +51812,9 @@ MonoBehaviour:
   restartDelay: 4
   audioSource: {fileID: 0}
   respawnSound: {fileID: 0}
-  respawnPoint: {fileID: 0}
-  player: {fileID: 0}
-  monster: {fileID: 0}
+  respawnPoint: {fileID: 1930426700}
+  player: {fileID: 2139681833}
+  monster: {fileID: 2139675549}
 --- !u!114 &1424008015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66698,74 +66698,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1060913614}
   m_SourcePrefab: {fileID: 100100000, guid: a88c93906dc972443b44b94218c748e6, type: 3}
---- !u!1 &1863231480 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6860308045672635716, guid: 7a75fdd2ce80e67429969637b32a221f, type: 3}
-  m_PrefabInstance: {fileID: 2135736496}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1863231481
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1863231480}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &1863231482
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1863231480}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &1863231483
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1863231480}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1864140487
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69030,6 +68962,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1927763135}
   m_Mesh: {fileID: 1163783463231324772, guid: cc7bc3b0209956c49851110f8de79b95, type: 3}
+--- !u!1 &1930426699
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1930426700}
+  m_Layer: 0
+  m_Name: Respawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1930426700
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930426699}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -50.13, y: 1.15, z: 61}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1936637942 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5766174479949629310, guid: a88c93906dc972443b44b94218c748e6, type: 3}
@@ -69273,7 +69236,7 @@ Transform:
   m_GameObject: {fileID: 1943326150}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.312, y: 0, z: 0}
+  m_LocalPosition: {x: 0.20126629, y: 0, z: 0.04113524}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -77655,15 +77618,6 @@ PrefabInstance:
       insertIndex: 31
       addedObject: {fileID: 285782685}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6860308045672635716, guid: 7a75fdd2ce80e67429969637b32a221f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1863231483}
-    - targetCorrespondingSourceObject: {fileID: 6860308045672635716, guid: 7a75fdd2ce80e67429969637b32a221f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1863231482}
-    - targetCorrespondingSourceObject: {fileID: 6860308045672635716, guid: 7a75fdd2ce80e67429969637b32a221f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1863231481}
     - targetCorrespondingSourceObject: {fileID: 4850700916515198822, guid: 7a75fdd2ce80e67429969637b32a221f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2114395691}
@@ -78504,3 +78458,4 @@ SceneRoots:
   - {fileID: 1099836469}
   - {fileID: 1551719812}
   - {fileID: 1147240386}
+  - {fileID: 1930426700}

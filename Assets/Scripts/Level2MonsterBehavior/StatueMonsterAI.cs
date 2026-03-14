@@ -24,9 +24,16 @@ public class StatueMonsterAI : MonoBehaviour
     private Animator animator;
     private bool isDead = false; 
 
-    void Start()
+    private Vector3 startingPosition;
+
+    // To fix the floating camera bug
+    private Vector3 originalCamLocalPos;
+    private Quaternion originalCamLocalRot;
+
+void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        startingPosition = transform.position;
         
         // --- ADD THIS PITY SYSTEM BLOCK ---
         if (PityManager.Instance != null && agent != null)
@@ -136,6 +143,10 @@ public class StatueMonsterAI : MonoBehaviour
         // 5. THE DEATH STARE LOOP
         // Save the original clip plane so we can restore it later if needed
         float originalClip = mainCam.nearClipPlane;
+
+        originalCamLocalPos = mainCam.transform.localPosition;
+        originalCamLocalRot = mainCam.transform.localRotation;
+
         mainCam.nearClipPlane = 0.01f; // <--- MAGIC FIX: Allows rendering SUPER close
 
         float timer = 0;
@@ -246,5 +257,43 @@ public class StatueMonsterAI : MonoBehaviour
         }
         if (movementAudio != null) movementAudio.Stop();
         if (animator != null) animator.speed = 0; 
+    }
+
+// --- CALL THIS WHEN RESPAWNING WITHOUT RELOADING THE SCENE ---
+// --- CALL THIS WHEN RESPAWNING WITHOUT RELOADING THE SCENE ---
+    public void ResetMonster()
+    {
+        isDead = false; // Tell the monster the player is alive again
+
+        if (agent != null)
+        {
+            // Instantly teleport the monster back to its starting room
+            agent.Warp(startingPosition);
+            
+            agent.isStopped = false; // Unfreeze the NavMeshAgent
+            
+            // Manually apply the new pity speed
+            if (PityManager.Instance != null)
+            {
+                agent.speed *= (1f - PityManager.Instance.monsterSlowdownPercentage);
+                chaseSpeed = agent.speed; // Keep the Inspector variable accurate
+            }
+        }
+
+        // --- ADD THIS BLOCK TO FIX THE ANIMATION ---
+        if (animator != null)
+        {
+            animator.Rebind();   // Flushes the animator and snaps it back to default
+            animator.Update(0f); // Forces the visual update immediately
+            animator.speed = 1;  // Ensures the animation isn't frozen from the stare down
+        }
+        // -------------------------------------------
+
+        // --- ADD THIS BLOCK TO FIX THE CAMERA ---
+        if (mainCam != null)
+        {
+            mainCam.transform.localPosition = originalCamLocalPos;
+            mainCam.transform.localRotation = originalCamLocalRot;
+        }
     }
 }
