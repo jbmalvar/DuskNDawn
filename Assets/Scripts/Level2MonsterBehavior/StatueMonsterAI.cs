@@ -28,6 +28,20 @@ public class StatueMonsterAI : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         
+        // --- ADD THIS PITY SYSTEM BLOCK ---
+        if (PityManager.Instance != null && agent != null)
+        {
+            // Apply the pity multiplier to the agent's actual speed
+            agent.speed *= PityManager.Instance.currentMonsterSpeedMultiplier;
+            
+            // Sync your public chaseSpeed variable just so it's accurate in the Inspector
+            chaseSpeed = agent.speed; 
+
+            // Log it so you can verify it's working!
+            Debug.Log($"[STATUE MONSTER] Level Started! Current Chase Speed is now: {agent.speed}");
+        }
+        // -----------------------------------
+
         // Auto-find components on Child
         animator = GetComponentInChildren<Animator>();
         if (monsterRenderer == null) monsterRenderer = GetComponentInChildren<Renderer>();
@@ -37,16 +51,16 @@ public class StatueMonsterAI : MonoBehaviour
         if (player == null) player = GameObject.FindGameObjectWithTag("Player")?.transform;
 
         // Force Agent settings
-    if (agent != null)
+        if (agent != null)
+        {
+            // FORCE SNAP TO NEAREST BLUE SPOT
+            NavMeshHit hit;
+            // Look for a spot within 5 meters
+            if (UnityEngine.AI.NavMesh.SamplePosition(transform.position, out hit, 5.0f, UnityEngine.AI.NavMesh.AllAreas))
             {
-                // FORCE SNAP TO NEAREST BLUE SPOT
-                NavMeshHit hit;
-                // Look for a spot within 5 meters
-                if (UnityEngine.AI.NavMesh.SamplePosition(transform.position, out hit, 5.0f, UnityEngine.AI.NavMesh.AllAreas))
-                {
-                    agent.Warp(hit.position); // Teleport to the valid spot
-                }
+                agent.Warp(hit.position); // Teleport to the valid spot
             }
+        }
     }
 
     void Update()

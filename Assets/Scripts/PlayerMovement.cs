@@ -51,6 +51,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (playerCamera != null) defaultCameraY = playerCamera.transform.localPosition.y;
 
+        if (PityManager.Instance != null)
+        {
+            regenSpeed *= PityManager.Instance.currentStaminaRegenMultiplier;
+            Debug.Log($"[PLAYER] Level Started! Current Stamina Regen Speed is now: {regenSpeed}");
+        }
+
         // Initialize Stamina
         currentStamina = maxStamina;
         if (staminaBar != null)

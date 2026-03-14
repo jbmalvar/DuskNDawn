@@ -39,6 +39,12 @@ public class DeathMenuController : MonoBehaviour
         // Wait for the specified amount of seconds in REAL time 
         yield return new WaitForSecondsRealtime(restartDelay);
 
+        // Register the death to adjust the pity stats before reloading
+        if (PityManager.Instance != null)
+        {
+            PityManager.Instance.RegisterDeath();
+        }
+
         // Reload the current level and unpause time
         Time.timeScale = 1f; 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
